@@ -1,7 +1,7 @@
 # portfolio
 
 Personal portfolio and blog. Built with [Pelican](https://getpelican.com), styled with
-[Tailwind CSS](https://tailwindcss.com) + [DaisyUI](https://daisyui.com), deployed to
+[Tailwind CSS](https://tailwindcss.com) (CDN) plus custom CSS/JS, deployed to
 [Netlify](https://netlify.com).
 
 ## Stack
@@ -12,13 +12,14 @@ Personal portfolio and blog. Built with [Pelican](https://getpelican.com), style
 | Package management | [uv](https://docs.astral.sh/uv/) |
 | Static site generator | Pelican |
 | Templates | Jinja2 |
-| Styling | Tailwind CSS CDN + DaisyUI |
+| Styling | Tailwind CSS CDN + custom CSS |
+| Linting/formatting | Ruff, djLint, pre-commit |
+| Security | gitleaks |
 | Hosting | Netlify |
-| DNS / CDN | Cloudflare |
 
 ## Prerequisites
 
-- Python 3.14.2 (via pyenv — `.python-version` is committed)
+- Python 3.14.x (via pyenv — `.python-version` is committed)
 - [uv](https://docs.astral.sh/uv/) installed
 
 ```bash
@@ -44,12 +45,13 @@ make serve         # build + serve (no auto-reload)
 make devserver     # auto-rebuild + serve
 make lint          # ruff lint
 make format        # ruff format
-make typecheck     # mypy
 make templates     # djLint template check
+make templates-fix # djLint reformat templates
+make security      # gitleaks scan
 make check         # run all checks
 make pre-commit    # run all pre-commit hooks against all files
 make clean         # remove output/
-make publish       # build with production config
+make publish       # build with production config (requires SITEURL)
 ```
 
 ## Adding a blog post
@@ -80,7 +82,7 @@ Netlify builds and deploys automatically.
 Netlify is configured via `netlify.toml`. Connect the GitHub repo in the Netlify
 dashboard and it handles everything — build, deploy, SSL.
 
-Update `SITEURL` in `publishconf.py` once you have your domain.
+Set `SITEURL` in the environment for production builds (publishconf requires it).
 
 ## Project structure
 
@@ -94,9 +96,14 @@ portfolio/
 │   │   ├── index.html  # one-pager (home, about, experience, skills, contact)
 │   │   ├── blog.html   # blog index
 │   │   └── article.html
+│   │   └── partials/
+│   │       └── nav_links.html
 │   └── static/
 │       ├── css/
+│       │   ├── app.css
+│       │   └── prose.css
 │       └── js/
+│           └── main.js
 ├── .github/
 │   └── workflows/ci.yml
 ├── .pre-commit-config.yaml

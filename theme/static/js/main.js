@@ -94,6 +94,11 @@
       entries.forEach((e) => {
         if (e.isIntersecting) {
           e.target.classList.add("is-visible");
+          if (e.target.classList.contains("reveal-group")) {
+            e.target.querySelectorAll(".reveal").forEach((child) =>
+              child.classList.add("is-visible")
+            );
+          }
           observer.unobserve(e.target);
         }
       });

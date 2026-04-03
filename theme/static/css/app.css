@@ -1,0 +1,76 @@
+/* Arrow bounce */
+:root {
+  --nav-height: 56px;
+  --arrow-bounce-duration: 2.4s;
+  --summary-line-height: 1.4;
+  --summary-lines: 3;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+
+.hero-arrow {
+  display: inline-flex;
+  animation: bounce-slow var(--arrow-bounce-duration) ease-in-out infinite;
+}
+
+/* Skill bars */
+@keyframes bar-grow {
+  from { width: 0; }
+  to   { width: var(--bar-pct); }
+}
+
+.bar-fill {
+  width: 0;
+  animation: bar-grow 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-play-state: paused;
+}
+
+.bar-fill.bar-running {
+  animation-play-state: running;
+}
+
+/* Scroll reveal — !important beats Tailwind preflight */
+.reveal {
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms) !important;
+}
+
+.reveal.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Active nav link */
+.nav-link.active {
+  color: #38bdf8 !important;
+}
+
+/* Summary clamp (Tailwind CDN doesn't include line-clamp plugin) */
+.summary-clamp {
+  display: -webkit-box;
+  line-height: var(--summary-line-height);
+  max-height: calc(var(--summary-line-height) * var(--summary-lines) * 1em);
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Scroll behaviour */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,63 @@
+[project]
+name = "Sanjeev-Portfolio-and-Blog"
+version = "0.1.0"
+description = "Sanjeev Portfolio and Blog"
+requires-python = ">=3.14"
+
+dependencies = [
+    "pelican[markdown]>=4.10.0",
+    "jinja2>=3.1.0",
+    "pelican-sitemap>=1.1.0",
+    "pelican-seo>=1.4.0",
+    "Pygments>=2.18.0",         # syntax highlighting in blog posts
+    "typogrify>=2.0.7",         # smart quotes, widows etc
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0.0",
+    "ruff>=0.9.0",
+    "djlint>=1.36.0",           # HTML/Jinja2 template linting + formatting
+    "curlylint>=0.13.1",        # Jinja2 security linting
+]
+
+# Ruff — lint + format (replaces flake8, isort, pyupgrade, bandit subset)
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+src = ["."]
+include = ["*.py"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "UP",   # pyupgrade
+    "S",    # flake8-bandit (security)
+    "SIM",  # flake8-simplify
+    "TID",  # flake8-tidy-imports
+    "RUF",  # ruff-specific rules
+    "PTH",  # use pathlib over os.path
+    "ERA",  # commented-out code
+    "PL",   # pylint
+]
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+# djLint — Jinja2 template linting
+[tool.djlint]
+profile = "jinja"
+indent = 2
+max_line_length = 120
+ignore = "H006,H031,H021,H023,J018"   # img alt warnings we handle manually

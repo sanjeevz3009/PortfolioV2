@@ -9,6 +9,7 @@
       {% endblock title %}
     </title>
     {% set base_url = SITEURL|trim('/') %}
+    {% set theme_path = base_url ~ "/theme" if base_url else "theme" %}
     {% set description %}
       {% block description %}
         Software Engineer based in the UK.
@@ -79,15 +80,15 @@
       };
     </script>
     <!-- loads after Tailwind -->
-    <link rel="stylesheet" href="{{ base_url }}/theme/css/app.css" />
-    <link rel="stylesheet" href="{{ base_url }}/theme/css/prose.css" />
+    <link rel="stylesheet" href="{{ theme_path }}/css/app.css" />
+    <link rel="stylesheet" href="{{ theme_path }}/css/prose.css" />
   </head>
   <body class="bg-zinc-900 text-gray-200 font-sans antialiased">
     <header id="site-nav"
             class="fixed top-0 left-0 right-0 z-50 h-14 bg-zinc-900/90 backdrop-blur border-b border-transparent transition-colors duration-200">
       {% set nav_items = [
         {
-          "href": "/",
+          "href": "/#home",
           "label": "Home",
           "section": "home"
         },
@@ -146,6 +147,6 @@
     <footer class="border-t border-zinc-800 py-6 text-center text-xs text-zinc-600">
       &copy; 2026 {{ SITENAME }}. All rights reserved.
     </footer>
-    <script src="{{ base_url }}/theme/js/main.js"></script>
+    <script src="{{ theme_path }}/js/main.js"></script>
   </body>
 </html>

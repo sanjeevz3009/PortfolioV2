@@ -1,0 +1,58 @@
+# Pelican output
+output/
+cache/
+.pelican/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# uv / virtualenvs
+.venv/
+venv/
+env/
+.uv/
+
+# Pyenv — .python-version is intentionally committed, not ignored
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# Pre-commit
+.pre-commit-cache/
+
+# Editors
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment / secrets — NEVER commit these
+.env
+.env.*
+!.env.example
+
+# Netlify
+.netlify/
+
+# OS
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini

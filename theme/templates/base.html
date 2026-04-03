@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        {{ SITENAME }}
+      {% endblock title %}
+    </title>
+    {% set base_url = SITEURL|trim('/') %}
+    {% set description %}
+      {% block description %}
+        Software Engineer based in the UK.
+      {% endblock description %}
+    {% endset %}
+    {% set og_title %}
+      {% block og_title %}
+        {{ SITENAME }}
+      {% endblock og_title %}
+    {% endset %}
+    {% set og_description %}
+      {% block og_description %}
+        Software Engineer based in the UK.
+      {% endblock og_description %}
+    {% endset %}
+    {% set og_type %}
+      {% block og_type %}
+        website
+      {% endblock og_type %}
+    {% endset %}
+    {% set og_url %}
+      {% block og_url %}
+        /
+      {% endblock og_url %}
+    {% endset %}
+    {% set canonical %}
+      {% block canonical %}
+        /
+      {% endblock canonical %}
+    {% endset %}
+    <meta name="description" content="{{ description|trim }}" />
+    <meta property="og:title" content="{{ og_title|trim }}" />
+    <meta property="og:description" content="{{ og_description|trim }}" />
+    <meta property="og:type" content="{{ og_type|trim }}" />
+    <meta property="og:url" content="{{ base_url }}{{ og_url|trim }}" />
+    <link rel="canonical" href="{{ base_url }}{{ canonical|trim }}" />
+    {% if FEED_ALL_ATOM %}
+      <link rel="alternate"
+            type="application/atom+xml"
+            title="{{ SITENAME }} Atom Feed"
+            href="{{ base_url }}/{{ FEED_ALL_ATOM }}" />
+    {% endif %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cyan: { 400: '#38bdf8' },
+              zinc: {
+                750: '#2a2a2a',
+                850: '#1f1f1f',
+                900: '#1c1c1c',
+                950: '#141414',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- loads after Tailwind -->
+    <link rel="stylesheet" href="{{ base_url }}/theme/css/app.css" />
+    <link rel="stylesheet" href="{{ base_url }}/theme/css/prose.css" />
+  </head>
+  <body class="bg-zinc-900 text-gray-200 font-sans antialiased">
+    <header id="site-nav"
+            class="fixed top-0 left-0 right-0 z-50 h-14 bg-zinc-900/90 backdrop-blur border-b border-transparent transition-colors duration-200">
+      {% set nav_items = [
+        {
+          "href": "/",
+          "label": "Home",
+          "section": "home"
+        },
+        {
+          "href": "/#about",
+          "label": "About",
+          "section": "about"
+        },
+        {
+          "href": "/#experience",
+          "label": "Experience",
+          "section": "experience"
+        },
+        {
+          "href": "/#skills",
+          "label": "Skills",
+          "section": "skills"
+        },
+        {
+          "href": "/blog/",
+          "label": "Blog",
+          "section": "blog"
+        },
+        {
+          "href": "/#contact",
+          "label": "Contact",
+          "section": "contact"
+        }
+      ] %}
+      <nav class="max-w-4xl mx-auto px-6 h-full flex items-center justify-center relative">
+        {% set nav_list_id = "nav-links" %}
+        {% set nav_list_class = "hidden md:flex items-center gap-8" %}
+        {% set nav_link_class = "nav-link text-sm text-gray-400 hover:text-cyan-400 transition-colors" %}
+        {% include "partials/nav_links.html" %}
+        <button id="nav-toggle"
+                class="md:hidden absolute right-6 flex flex-col gap-1.5 p-1"
+                aria-label="Toggle menu"
+                aria-expanded="false">
+          <span class="block w-5 h-px bg-gray-400 transition-all duration-200 origin-center"></span>
+          <span class="block w-5 h-px bg-gray-400 transition-all duration-200"></span>
+          <span class="block w-5 h-px bg-gray-400 transition-all duration-200 origin-center"></span>
+        </button>
+      </nav>
+      <div id="mobile-menu"
+           class="md:hidden hidden bg-zinc-900 border-b border-zinc-800 px-6 py-3">
+        {% set nav_list_id = "" %}
+        {% set nav_list_class = "flex flex-col gap-1" %}
+        {% set nav_link_class = "nav-link block py-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors" %}
+        {% include "partials/nav_links.html" %}
+      </div>
+    </header>
+    <main id="main-content">
+      {% block content %}
+      {% endblock content %}
+    </main>
+    <footer class="border-t border-zinc-800 py-6 text-center text-xs text-zinc-600">
+      &copy; 2026 {{ SITENAME }}. All rights reserved.
+    </footer>
+    <script src="{{ base_url }}/theme/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<ul {% if nav_list_id %}id="{{ nav_list_id }}"{% endif %}
+    class="{{ nav_list_class }}"
+    role="list">
+  {% for item in nav_items %}
+    <li>
+      <a href="{{ item.href }}"
+         class="{{ nav_link_class }}"
+         data-section="{{ item.section }}">{{ item.label }}</a>
+    </li>
+  {% endfor %}
+</ul>

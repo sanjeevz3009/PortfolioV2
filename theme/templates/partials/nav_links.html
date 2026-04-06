@@ -1,11 +1,16 @@
-<ul {% if nav_list_id %}id="{{ nav_list_id }}"{% endif %}
-    class="{{ nav_list_class }}"
-    role="list">
-  {% for item in nav_items %}
-    <li>
-      <a href="{{ item.href }}"
-         class="{{ nav_link_class }}"
-         data-section="{{ item.section }}">{{ item.label }}</a>
-    </li>
-  {% endfor %}
-</ul>
+{# partials/nav_links.html #}
+{% macro nav_list(items, list_id="", list_class="", link_class="") %}
+    <ul {% if list_id %}id="{{ list_id }}" {% endif %}
+        class="{{ list_class }}"
+        role="list">
+        {% for item in items %}
+            <li>
+                <a href="{{ item.href }}"
+                   class="{{ link_class }}"
+                   data-section="{{ item.section }}">
+                    {{ item.label }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}

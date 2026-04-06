@@ -5,5 +5,12 @@ rules:
     max: 120
   truthy:
     allowed-values: ["true", "false"]
+    check-keys: false
   comments:
     min-spaces-from-content: 1
+  document-start:
+    present: false
+  empty-lines:
+    max: 2
+    max-start: 0
+    max-end: 0

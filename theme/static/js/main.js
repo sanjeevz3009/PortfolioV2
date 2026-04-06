@@ -4,8 +4,14 @@
 (function () {
   const nav = document.getElementById("site-nav");
   if (!nav) return;
+
+  const threshold = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue("--scroll-threshold"),
+    10
+  );
+
   window.addEventListener("scroll", () => {
-    nav.style.borderBottomColor = window.scrollY > 10 ? "#27272a" : "transparent";
+    nav.style.borderBottomColor = window.scrollY > threshold ? "#27272a" : "transparent";
   }, { passive: true });
 })();
 
@@ -20,6 +26,7 @@
 
   // Non-home pages — match by path
   if (path.startsWith("/blog")) { setActive("blog"); return; }
+  // Any future non-home, non-blog pages default to "home" — update this if new sections are added
   if (path !== "/" && path !== "/index.html") { setActive("home"); return; }
 
   const sectionIds = ["contact", "blog-preview", "skills", "experience", "about", "home"];
@@ -94,11 +101,6 @@
       entries.forEach((e) => {
         if (e.isIntersecting) {
           e.target.classList.add("is-visible");
-          if (e.target.classList.contains("reveal-group")) {
-            e.target.querySelectorAll(".reveal").forEach((child) =>
-              child.classList.add("is-visible")
-            );
-          }
           observer.unobserve(e.target);
         }
       });
@@ -137,6 +139,7 @@
   const btnText = btn?.querySelector(".btn-text");
   const btnSend = btn?.querySelector(".btn-sending");
   const success = document.getElementById("form-success");
+  const error = document.getElementById("form-error");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -158,7 +161,7 @@
       if (btnText) btnText.classList.remove("hidden");
       if (btnSend) btnSend.classList.add("hidden");
       if (btn) btn.disabled = false;
-      alert("Something went wrong — please try again or email me directly.");
+      if (error) error.classList.remove("hidden");
     }
   });
 })();

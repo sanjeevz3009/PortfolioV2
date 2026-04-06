@@ -114,3 +114,16 @@ portfolio/
 ├── Makefile
 └── pyproject.toml
 ```
+
+## Future Enhancements
+
+- Projects section
+- CV/ Resume download
+- Hobbies and interests section
+- Photography page
+- Uses/ setup page
+- Archery page
+- Photography page
+- Reading lists or bookmarks
+- Comprehensive experience page
+- Open source / contributions

@@ -1,14 +1,12 @@
 [project]
-name = "Sanjeev-Portfolio-and-Blog"
+name = "sanjeev-portfolio-and-blog"
 version = "0.1.0"
 description = "Sanjeev Portfolio and Blog"
 requires-python = ">=3.14"
 
 dependencies = [
     "pelican[markdown]>=4.10.0",
-    "jinja2>=3.1.0",
     "pelican-sitemap>=1.1.0",
-    "pelican-seo>=1.4.0",
     "Pygments>=2.18.0",         # syntax highlighting in blog posts
     "typogrify>=2.0.7",         # smart quotes, widows etc
 ]
@@ -18,7 +16,6 @@ dev = [
     "pre-commit>=4.0.0",
     "ruff>=0.9.0",
     "djlint>=1.36.0",           # HTML/Jinja2 template linting + formatting
-    "curlylint>=0.13.1",        # Jinja2 security linting
 ]
 
 # Ruff — lint + format (replaces flake8, isort, pyupgrade, bandit subset)
@@ -42,13 +39,12 @@ select = [
     "TID",  # flake8-tidy-imports
     "RUF",  # ruff-specific rules
     "PTH",  # use pathlib over os.path
-    "ERA",  # commented-out code
     "PL",   # pylint
 ]
-ignore = []
 
-[tool.ruff.lint.isort]
-known-first-party = []
+[tool.ruff.lint.per-file-ignores]
+"publishconf.py" = ["F401", "F403"]  # wildcard import from pelicanconf
+"pelicanconf.py" = ["S"]
 
 [tool.ruff.format]
 quote-style = "double"
@@ -58,6 +54,13 @@ skip-magic-trailing-comma = false
 # djLint — Jinja2 template linting
 [tool.djlint]
 profile = "jinja"
-indent = 2
+indent = 4
 max_line_length = 120
-ignore = "H006,H031,H021,H023,J018"   # img alt warnings we handle manually
+ignore = "H006,H031,H021,H023,J018"
+
+preserve_blank_lines = true
+max_blank_lines = 2
+preserve_leading_space = false
+no_set_formatting = false
+line_break_after_multiline_tag = true
+src = ["theme/templates"]

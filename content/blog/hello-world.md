@@ -1,4 +1,4 @@
-Title: Hello, World
+Title: Mello, World
 Date: 2026-04-03
 Slug: hello-world
 Summary: First post on my new portfolio — a quick note on how it was built and what's coming.

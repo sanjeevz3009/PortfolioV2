@@ -1,11 +1,33 @@
-<!DOCTYPE html>
-
 {% from "partials/nav_links.html" import nav_list %}
 
+<!DOCTYPE html>
 <html lang="en">
     <head>
+        {% set base_url = SITEURL|trim('/') %}
+        {% set theme_path = base_url ~ "/theme" if base_url else "/theme" %}
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Sanjeev Srithevan",
+                "url": "{{ base_url }}/",
+                "image": "{{ base_url }}/theme/images/og-default.png",
+                "jobTitle": "Senior Software Engineer",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Office for National Statistics"
+                },
+                "sameAs": [
+                    "https://github.com/sanjeevz3009",
+                    "https://linkedin.com/in/sanjeev-srithevan-526718196"
+                ]
+            }
+        </script>
+
         <link rel="icon" type="image/x-icon" href="{{ base_url }}/favicon.ico" />
         <link rel="icon"
               type="image/png"
@@ -19,7 +41,6 @@
               sizes="180x180"
               href="{{ base_url }}/apple-touch-icon.png" />
         <link rel="manifest" href="{{ base_url }}/site.webmanifest" />
-        <meta name="theme-color" content="#1c1c1c" />
 
         <title>
             {% block title %}
@@ -27,12 +48,9 @@
             {% endblock title %}
         </title>
 
-        {% set base_url = SITEURL|trim('/') %}
-        {% set theme_path = base_url ~ "/theme" if base_url else "theme" %}
-
         {% set description %}
             {% block description %}
-                Senior based in the UK.
+                Senior Software Engineer based in the UK.
             {% endblock description %}
         {% endset %}
 
@@ -72,16 +90,20 @@
         <meta property="og:description" content="{{ og_description|trim }}" />
         <meta property="og:type" content="{{ og_type|trim }}" />
         <meta property="og:url" content="{{ base_url }}{{ og_url|trim }}" />
-        <meta property="og:image"
-              content="{{ base_url }}/theme/images/og-default.png" />
+
+        {# djlint:off #}
+        {% set og_image_url %}{% block og_image %}{{ base_url }}/theme/images/og-default.png{% endblock og_image %}{% endset %}
+        {% set twitter_image_url %}{% block twitter_image %}{{ base_url }}/theme/images/og-default.png{% endblock twitter_image %}{% endset %}
+        {# djlint:on #}
+
+        <meta property="og:image" content="{{ og_image_url|trim }}" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="{{ og_title|trim }}" />
         <meta name="twitter:description" content="{{ og_description|trim }}" />
-        <meta name="twitter:image"
-              content="{{ base_url }}/theme/images/og-default.png" />
+        <meta name="twitter:image" content="{{ twitter_image_url|trim }}" />
 
         <meta name="theme-color" content="#1c1c1c" />
 
@@ -126,25 +148,6 @@
         <!-- loads after Tailwind -->
         <link rel="stylesheet" href="{{ theme_path }}/css/app.css" />
         <link rel="stylesheet" href="{{ theme_path }}/css/prose.css" />
-
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "Sanjeev Srithevan",
-                "url": "{{ base_url }}/",
-                "image": "{{ base_url }}/theme/images/og-default.png",
-                "jobTitle": "Senior Software Engineer",
-                "worksFor": {
-                    "@type": "Organization",
-                    "name": "Office for National Statistics"
-                },
-                "sameAs": [
-                    "https://github.com/sanjeevz3009",
-                    "https://linkedin.com/in/sanjeev-srithevan-526718196"
-                ]
-            }
-        </script>
     </head>
 
     <body class="bg-zinc-900 text-gray-200 font-sans antialiased">
@@ -183,7 +186,8 @@
                 }
             ] %}
 
-            <nav class="max-w-4xl mx-auto px-6 h-full flex items-center justify-center relative">
+            <nav aria-label="Main navigation"
+                 class="max-w-4xl mx-auto px-6 h-full flex items-center justify-center relative">
                 {{ nav_list(nav_items, list_id="nav-links", list_class="hidden md:flex items-center gap-8", link_class="nav-link text-sm text-gray-400 hover:text-emerald-400 transition-colors") }}
 
                 <button id="nav-toggle"
@@ -196,10 +200,11 @@
                 </button>
             </nav>
 
-            <div id="mobile-menu"
+            <nav id="mobile-menu"
+                 aria-label="Mobile navigation"
                  class="md:hidden hidden bg-zinc-900 border-b border-zinc-800 px-6 py-3">
                 {{ nav_list(nav_items, list_id="mobile-nav-links", list_class="flex flex-col gap-1", link_class="nav-link block py-2 text-sm text-gray-400 hover:text-emerald-400 transition-colors") }}
-            </div>
+            </nav>
         </header>
 
         <main id="main-content">

@@ -8,15 +8,38 @@
             Hi, I am <span class="text-emerald-400">{{ AUTHOR.split()[0] }}</span>
         </h1>
 
-        <p class="text-lg text-gray-400 tracking-widest mb-16">
+        <p class="text-lg text-gray-400 tracking-widest mb-8">
             Apparently,&nbsp;&nbsp;I am a&nbsp;&nbsp;Software Engineer.
         </p>
 
-        <!-- Inline style removed; see .hero-arrow in app.css -->
+        <!-- <div class="flex items-center gap-4 mb-16">
+            <a href="/sanjeev-srithevan-cv.pdf"
+               download
+               class="inline-flex items-center gap-2 px-5 py-2.5 border border-zinc-700 rounded-lg text-sm text-gray-300 hover:border-emerald-400 hover:text-emerald-400 transition-all duration-150">
+                <svg aria-hidden="true"
+                     focusable="false"
+                     width="16"
+                     height="16"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download CV
+            </a>
+        </div> -->
+
         <a href="/#about"
            aria-label="Scroll to about"
            class="hero-arrow text-gray-500 hover:text-emerald-400">
-            <svg width="28"
+            <svg aria-hidden="true"
+                 focusable="false"
+                 width="28"
                  height="28"
                  viewBox="0 0 24 24"
                  fill="none"
@@ -30,7 +53,7 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="py-20 px-6 reveal">
+    <section id="about" class="py-20 px-6">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-white mb-8 reveal">
                 About Me
@@ -56,20 +79,23 @@
         </div>
     </section>
 
-    <!-- EXPERIENCE — vertical timeline -->
-    <section id="experience" class="py-20 px-6 reveal">
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-20 px-6">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-white text-center mb-12 reveal">
                 Experience
             </h2>
 
             <div class="relative pl-16 md:pl-20">
-                <div class="absolute left-5 md:left-7 top-0 bottom-0 w-px bg-zinc-700">
+                <div class="absolute left-5 md:left-7 top-0 bottom-0 w-px bg-zinc-700"
+                     aria-hidden="true">
                 </div>
 
                 <div class="relative mb-8 reveal">
                     <div class="absolute -left-11 md:-left-13 top-6 w-11 h-11 rounded-full border border-emerald-400 bg-zinc-900 flex items-center justify-center text-emerald-400">
-                        <svg width="18"
+                        <svg aria-hidden="true"
+                             focusable="false"
+                             width="18"
                              height="18"
                              viewBox="0 0 24 24"
                              fill="none"
@@ -87,15 +113,12 @@
                         <p class="text-xs font-medium text-emerald-400 tracking-wide mb-1">
                             2023 — Present
                         </p>
-
                         <h3 class="text-base font-semibold text-white mb-0.5">
                             Senior Software Engineer
                         </h3>
-
                         <p class="text-sm text-gray-500 mb-3">
                             Office for National Statistics
                         </p>
-
                         <p class="text-sm text-gray-400 leading-relaxed">
                             Building and maintaining dis-wagtail, a Django/Wagtail CMS serving ONS publishers.
                             Working across Kubernetes, PostgreSQL, Redis and Kafka on a distributed platform team.
@@ -107,7 +130,7 @@
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="py-20 px-6 reveal">
+    <section id="skills" class="py-20 px-6">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-white text-center mb-12 reveal">
                 Skills
@@ -118,56 +141,47 @@
                     <h3 class="text-sm font-semibold text-emerald-400 mb-5">
                         Backend
                     </h3>
-
                     <ul class="space-y-4">
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">Python</span><span class="text-gray-500">95%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 95%">
                                 </div>
                             </div>
                         </li>
-
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">Django</span><span class="text-gray-500">90%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 90%">
                                 </div>
                             </div>
                         </li>
-
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">Wagtail</span><span class="text-gray-500">85%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 85%">
                                 </div>
                             </div>
                         </li>
-
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">PostgreSQL</span><span class="text-gray-500">80%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 80%">
                                 </div>
                             </div>
                         </li>
-
                     </ul>
                 </div>
 
@@ -175,44 +189,37 @@
                     <h3 class="text-sm font-semibold text-emerald-400 mb-5">
                         Frontend
                     </h3>
-
                     <ul class="space-y-4">
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">HTML / CSS</span><span class="text-gray-500">88%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 88%">
                                 </div>
                             </div>
                         </li>
-
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">JavaScript</span><span class="text-gray-500">75%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 75%">
                                 </div>
                             </div>
                         </li>
-
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">Tailwind CSS</span><span class="text-gray-500">82%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 82%">
                                 </div>
                             </div>
                         </li>
-
                     </ul>
                 </div>
 
@@ -220,56 +227,47 @@
                     <h3 class="text-sm font-semibold text-emerald-400 mb-5">
                         Tools &amp; Infra
                     </h3>
-
                     <ul class="space-y-4">
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">Kubernetes</span><span class="text-gray-500">78%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 78%">
                                 </div>
                             </div>
                         </li>
-
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">Docker</span><span class="text-gray-500">85%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 85%">
                                 </div>
                             </div>
                         </li>
-
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">Git / CI&amp;CD</span><span class="text-gray-500">90%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 90%">
                                 </div>
                             </div>
                         </li>
-
                         <li>
                             <div class="flex justify-between text-sm mb-1.5">
                                 <span class="text-gray-200">AWS</span><span class="text-gray-500">70%</span>
                             </div>
-
                             <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
                                 <div class="bar-fill h-full bg-emerald-400 rounded-full"
                                      style="--bar-pct: 70%">
                                 </div>
                             </div>
                         </li>
-
                     </ul>
                 </div>
             </div>
@@ -278,7 +276,7 @@
 
     <!-- LATEST POSTS -->
     {% if articles %}
-        <section id="blog-preview" class="py-20 px-6 reveal">
+        <section id="blog-preview" class="py-20 px-6">
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-baseline justify-between mb-10">
                     <h2 class="text-3xl font-bold text-white reveal">
@@ -287,35 +285,46 @@
                     <a href="/blog/"
                        class="text-sm text-gray-500 hover:text-emerald-400 transition-colors reveal">View All →</a>
                 </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {% for article in articles[:3] %}
-                        <a href="{{ base_url }}/{{ article.url }}"
-                           class="flex flex-col bg-zinc-850 border border-zinc-700 rounded-xl overflow-hidden hover:border-emerald-400 hover:-translate-y-0.5 transition-all duration-150 reveal">
-                            <div class="h-36 bg-slate-800 flex items-center justify-center">
-                                <span class="text-5xl font-bold text-slate-600 uppercase select-none">{{ article.title[0] }}</span>
-                            </div>
+                        <article class="relative flex flex-col bg-zinc-850 border border-zinc-700 rounded-xl overflow-hidden hover:border-emerald-400 hover:-translate-y-0.5 transition-all duration-150 reveal">
+
+                            {% if article.cover_image %}
+                                <img src="{{ article.cover_image }}"
+                                     alt="{{ article.title }}"
+                                     class="h-36 w-full object-cover" />
+                            {% else %}
+                                <div class="h-36 bg-slate-800 flex items-center justify-center"
+                                     aria-hidden="true">
+                                    <span class="text-5xl font-bold text-slate-600 uppercase select-none">{{ article.title[0] }}</span>
+                                </div>
+                            {% endif %}
 
                             <div class="p-5 flex flex-col flex-1">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
+                                    <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
                                         {{ article.category.name if article.category else 'General' }}
-                                    </p>
-                                    <span class="text-zinc-600 text-xs">·</span>
+                                    </span>
+                                    <span class="text-zinc-600 text-xs" aria-hidden="true">·</span>
                                     <time class="text-xs text-gray-500"
                                           datetime="{{ article.date.isoformat() }}">
                                         {{ article.date.strftime("%b %d, %Y") }}
                                     </time>
                                 </div>
 
-                                <h2 class="text-base font-semibold text-white leading-snug mb-2">
-                                    {{ article.title }}
-                                </h2>
+                                <h3 class="text-base font-semibold text-white leading-snug mb-2">
+                                    <a href="{{ base_url }}/{{ article.url }}"
+                                       class="after:absolute after:inset-0">{{ article.title }}</a>
+                                </h3>
 
                                 <p class="text-sm text-gray-500 leading-relaxed flex-1 line-clamp-3 mb-4">
                                     {{ article.summary }}
                                 </p>
+
+                                <span class="text-xs text-emerald-400 font-medium">Read More →</span>
                             </div>
-                        </a>
+                        </article>
                     {% endfor %}
                 </div>
             </div>
@@ -323,7 +332,7 @@
     {% endif %}
 
     <!-- CONTACT -->
-    <section id="contact" class="py-20 px-6 reveal">
+    <section id="contact" class="py-20 px-6">
         <div class="max-w-lg mx-auto text-center">
             <h2 class="text-3xl font-bold text-emerald-400 mb-3 reveal">
                 Get In Touch
@@ -353,7 +362,6 @@
                     <label for="name" class="text-sm font-medium text-gray-300">
                         Name
                     </label>
-
                     <input id="name"
                            name="name"
                            type="text"
@@ -367,7 +375,6 @@
                     <label for="email" class="text-sm font-medium text-gray-300">
                         Email
                     </label>
-
                     <input id="email"
                            name="email"
                            type="email"
@@ -381,7 +388,6 @@
                     <label for="message" class="text-sm font-medium text-gray-300">
                         Message
                     </label>
-
                     <textarea id="message"
                               name="message"
                               placeholder="Your message..."
@@ -393,7 +399,9 @@
                 <button type="submit"
                         id="submit-btn"
                         class="w-full flex items-center justify-center gap-2 bg-emerald-400 text-zinc-900 font-semibold text-sm py-3 rounded-lg hover:opacity-90 hover:-translate-y-px transition-all disabled:opacity-60 disabled:cursor-not-allowed">
-                    <svg width="16"
+                    <svg aria-hidden="true"
+                         focusable="false"
+                         width="16"
                          height="16"
                          viewBox="0 0 24 24"
                          fill="none"
@@ -403,7 +411,6 @@
                          stroke-linejoin="round">
                         <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
                     </svg>
-
                     <span class="btn-text">Send Message</span>
                     <span class="btn-sending hidden">Sending…</span>
                 </button>
@@ -425,7 +432,9 @@
                 <a href="mailto:sanjeevz1717@gmail.com"
                    class="text-gray-500 hover:text-emerald-400 hover:-translate-y-0.5 transition-all"
                    aria-label="Email">
-                    <svg width="22"
+                    <svg aria-hidden="true"
+                         focusable="false"
+                         width="22"
                          height="22"
                          viewBox="0 0 24 24"
                          fill="none"
@@ -443,7 +452,9 @@
                    rel="noopener noreferrer"
                    class="text-gray-500 hover:text-emerald-400 hover:-translate-y-0.5 transition-all"
                    aria-label="GitHub">
-                    <svg width="22"
+                    <svg aria-hidden="true"
+                         focusable="false"
+                         width="22"
                          height="22"
                          viewBox="0 0 24 24"
                          fill="none"
@@ -460,7 +471,9 @@
                    rel="noopener noreferrer"
                    class="text-gray-500 hover:text-emerald-400 hover:-translate-y-0.5 transition-all"
                    aria-label="LinkedIn">
-                    <svg width="22"
+                    <svg aria-hidden="true"
+                         focusable="false"
+                         width="22"
                          height="22"
                          viewBox="0 0 24 24"
                          fill="none"

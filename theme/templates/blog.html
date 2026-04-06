@@ -39,22 +39,27 @@
             {% if articles %}
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {% for article in articles %}
-                        <a href="{{ base_url }}/{{ article.url }}"
-                           class="flex flex-col bg-zinc-850 border border-zinc-700 rounded-xl overflow-hidden hover:border-emerald-400 hover:-translate-y-0.5 transition-all duration-150 reveal">
+                        <article class="relative flex flex-col bg-zinc-850 border border-zinc-700 rounded-xl overflow-hidden hover:border-emerald-400 hover:-translate-y-0.5 transition-all duration-150 reveal">
 
                             <!-- Thumb -->
-                            <div class="h-44 bg-slate-800 flex items-center justify-center"
-                                 aria-hidden="true">
-                                <span class="text-6xl font-bold text-slate-600 uppercase select-none">{{ article.title[0] }}</span>
-                            </div>
+                            {% if article.cover_image %}
+                                <img src="{{ article.cover_image }}"
+                                     alt="{{ article.title }}"
+                                     class="h-44 w-full object-cover" />
+                            {% else %}
+                                <div class="h-44 bg-slate-800 flex items-center justify-center"
+                                     aria-hidden="true">
+                                    <span class="text-6xl font-bold text-slate-600 uppercase select-none">{{ article.title[0] }}</span>
+                                </div>
+                            {% endif %}
 
                             <!-- Body -->
                             <div class="p-5 flex flex-col flex-1">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
+                                    <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
                                         {{ article.category.name if article.category else 'General' }}
-                                    </p>
-                                    <span class="text-zinc-600 text-xs">·</span>
+                                    </span>
+                                    <span class="text-zinc-600 text-xs" aria-hidden="true">·</span>
                                     <time class="text-xs text-gray-500"
                                           datetime="{{ article.date.isoformat() }}">
                                         {{ article.date.strftime("%b %d, %Y") }}
@@ -62,17 +67,19 @@
                                 </div>
 
                                 <h2 class="text-base font-semibold text-white leading-snug mb-2">
-                                    {{ article.title }}
+                                    <a href="{{ base_url }}/{{ article.url }}"
+                                       class="after:absolute after:inset-0">{{ article.title }}</a>
                                 </h2>
 
                                 <p class="text-sm text-gray-500 leading-relaxed flex-1 line-clamp-3 mb-4">
                                     {{ article.summary }}
                                 </p>
+
+                                <span class="text-sm text-emerald-400 font-medium">Read Full Article →</span>
                             </div>
-                        </a>
+                        </article>
                     {% endfor %}
                 </div>
-
             {% else %}
                 <p class="text-zinc-600 text-sm py-16 text-center">
                     No posts yet — check back soon.

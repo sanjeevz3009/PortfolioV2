@@ -182,8 +182,14 @@
         body: new URLSearchParams(new FormData(form)).toString(),
       });
       if (res.ok) {
-        form.classList.add('hidden');
+        form.reset();
+        if (btnText) btnText.classList.remove('hidden');
+        if (btnSend) btnSend.classList.add('hidden');
+        if (btn) btn.disabled = false;
         if (success) success.classList.remove('hidden');
+        setTimeout(() => {
+          if (success) success.classList.add('hidden');
+        }, 5000);
       } else throw new Error(String(res.status));
     } catch {
       if (btnText) btnText.classList.remove('hidden');

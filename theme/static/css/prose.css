@@ -1,14 +1,4 @@
 /* Article prose — scoped to .prose-article only */
-
-:root {
-  --color-surface:   #252525;
-  --color-surface-2: #2a2a2a;
-  --color-border:    #333333;
-  --color-cyan:      #38bdf8;
-  --color-text:      #e5e7eb;
-  --color-muted:     #9ca3af;
-}
-
 .prose-article {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -18,7 +8,7 @@
 .prose-article h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-cyan);
+  color: var(--color-accent);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -31,30 +21,44 @@
   margin-bottom: 0.75rem;
 }
 
-.prose-article p { margin-bottom: 1.25rem; }
+.prose-article p {
+  margin-bottom: 1.25rem;
+}
 
 .prose-article a {
-  color: var(--color-cyan);
+  color: var(--color-accent);
   text-decoration: underline;
   text-decoration-color: rgba(56, 189, 248, 0.3);
   transition: text-decoration-color 150ms ease;
 }
 
-.prose-article a:hover { text-decoration-color: var(--color-cyan); }
+.prose-article a:hover {
+  text-decoration-color: var(--color-accent);
+}
 
-.prose-article strong { color: var(--color-text); font-weight: 600; }
+.prose-article strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
 
-.prose-article ul, .prose-article ol {
+.prose-article ul,
+.prose-article ol {
   padding-left: 1.5rem;
   margin-bottom: 1.25rem;
 }
 
-.prose-article ul { list-style: disc; }
-.prose-article ol { list-style: decimal; }
-.prose-article li { margin-bottom: 0.4rem; }
+.prose-article ul {
+  list-style: disc;
+}
+.prose-article ol {
+  list-style: decimal;
+}
+.prose-article li {
+  margin-bottom: 0.4rem;
+}
 
 .prose-article blockquote {
-  border-left: 3px solid var(--color-cyan);
+  border-left: 3px solid var(--color-accent);
   padding-left: 1.25rem;
   margin: 1.5rem 0;
   color: var(--color-muted);
@@ -62,10 +66,11 @@
 }
 
 .prose-article code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
   font-size: 0.875em;
-  color: var(--color-cyan);
+  color: var(--color-accent);
   background: var(--color-surface-2);
   padding: 0.15em 0.4em;
   border-radius: 4px;
@@ -95,15 +100,64 @@
 }
 
 /* Pygments syntax highlighting */
-.highlight { background: var(--color-surface); border-radius: 8px; }
-.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr { color: #c792ea; }
-.highlight .s, .highlight .s1, .highlight .s2, .highlight .sa, .highlight .sb,
-.highlight .sc, .highlight .sd, .highlight .se, .highlight .sh, .highlight .si,
-.highlight .sx, .highlight .sr, .highlight .ss { color: #c3e88d; }
-.highlight .c, .highlight .c1, .highlight .cm, .highlight .cp, .highlight .cs { color: #546e7a; font-style: italic; }
-.highlight .n, .highlight .nx { color: var(--color-text); }
-.highlight .mi, .highlight .mf, .highlight .mh, .highlight .il { color: #f78c6c; }
-.highlight .nb, .highlight .nf, .highlight .nn { color: var(--color-cyan); }
-.highlight .na, .highlight .nc, .highlight .nt { color: #ffcb6b; }
-.highlight .o, .highlight .ow { color: #89ddff; }
-.highlight .p  { color: var(--color-muted); }
+.highlight {
+  background: var(--color-surface);
+  border-radius: 8px;
+}
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr {
+  color: #c792ea;
+}
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .ss {
+  color: #c3e88d;
+}
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cp,
+.highlight .cs {
+  color: #546e7a;
+  font-style: italic;
+}
+.highlight .n,
+.highlight .nx {
+  color: var(--color-text);
+}
+.highlight .mi,
+.highlight .mf,
+.highlight .mh,
+.highlight .il {
+  color: #f78c6c;
+}
+.highlight .nb,
+.highlight .nf,
+.highlight .nn {
+  color: var(--color-accent);
+}
+.highlight .na,
+.highlight .nc,
+.highlight .nt {
+  color: #ffcb6b;
+}
+.highlight .o,
+.highlight .ow {
+  color: #89ddff;
+}
+.highlight .p {
+  color: var(--color-muted);
+}

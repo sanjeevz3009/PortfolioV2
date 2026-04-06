@@ -28,9 +28,10 @@
     /{{ article.url }}
 {% endblock canonical %}
 
-{% block og_image %}
-    {{ base_url }}/theme/images/og-default.png
-{% endblock og_image %}
+{# djlint:off #}
+{% block og_image %}{{ base_url }}{{ article.cover_image if article.cover_image else "/theme/images/og-default.png" }}{% endblock og_image %}
+{% block twitter_image %}{{ base_url }}{{ article.cover_image if article.cover_image else "/theme/images/og-default.png" }}{% endblock twitter_image %}
+{# djlint:on #}
 
 {% block content %}
     <article class="pt-24 pb-20 px-6">
@@ -67,6 +68,8 @@
             <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
                 <span class="flex items-center gap-1.5">
                     <svg width="14"
+                         aria-hidden="true"
+                         focusable="false"
                          height="14"
                          viewBox="0 0 24 24"
                          fill="none"

@@ -2,14 +2,24 @@
 :root {
   --nav-height: 56px;
   --scroll-threshold: 10px;
+  --arrow-bounce-distance: 10px;
   --arrow-bounce-duration: 2.4s;
-  --summary-line-height: 1.4;
-  --summary-lines: 3;
+  --color-surface: #252525;
+  --color-surface-2: #2a2a2a;
+  --color-border: #333333;
+  --color-accent: #34d399; /* emerald-400 */
+  --color-text: #e5e7eb;
+  --color-muted: #9ca3af;
 }
 
 @keyframes bounce-slow {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(var(--scroll-threshold)); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--arrow-bounce-distance));
+  }
 }
 
 .hero-arrow {
@@ -19,8 +29,12 @@
 
 /* Skill bars */
 @keyframes bar-grow {
-  from { width: 0; }
-  to   { width: var(--bar-pct); }
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--bar-pct);
+  }
 }
 
 .bar-fill {
@@ -34,6 +48,11 @@
 }
 
 /* Scroll reveal — !important beats Tailwind preflight */
+/*
+ * !important required — Tailwind CDN injects styles asynchronously at runtime,
+ * overriding these rules after our stylesheet has loaded. Without !important,
+ * Tailwind's preflight resets opacity and transform before reveal can apply them.
+ */
 .reveal {
   opacity: 0 !important;
   transform: translateY(24px) !important;

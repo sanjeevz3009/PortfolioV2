@@ -8,7 +8,9 @@ OUTPUTDIR      := $(BASEDIR)/output
 CONFFILE       := $(BASEDIR)/pelicanconf.py
 PUBLISHCONF    := $(BASEDIR)/publishconf.py
 
-.PHONY: help install install-dev build serve devserver clean lint format templates templates-fix security pre-commit publish check
+SITEURL ?= https://yourdomain.com
+
+.PHONY: help install install-dev build serve devserver clean lint format templates templates-fix security pre-commit publish check format-check
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -16,7 +18,7 @@ help: ## Show this help
 
 # Setup
 install: ## Install production dependencies
-	uv sync
+	uv sync --no-group dev
 
 install-dev: ## Install all dependencies including dev tools
 	uv sync --group dev
@@ -28,14 +30,14 @@ build: ## Build the site (dev config)
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 publish: ## Build the site (production config)
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	SITEURL=$(SITEURL) $(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 clean: ## Remove generated output
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 	[ ! -d cache ] || rm -rf cache
 
 # Dev server
-serve: build ## Serve built output on localhost:8000
+serve: ## Build and serve output on localhost:8000
 	$(PELICAN) --listen -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE)
 
 devserver: ## Auto-rebuild and serve with live reload
@@ -54,10 +56,13 @@ templates: ## Lint Jinja2 templates
 templates-fix: ## Lint + reformat Jinja2 templates
 	uv run djlint theme/templates/ --profile=jinja --reformat
 
-security: ## Run gitleaks secret scan
+security: ## Run gitleaks secret scan (requires: brew install gitleaks)
 	gitleaks detect --source . --verbose
 
 pre-commit: ## Run all pre-commit hooks against all files
 	uv run pre-commit run --all-files
 
-check: lint templates ## Run all checks (no format changes)
+check: lint format-check templates ## Run all checks (no format changes)
+
+format-check: ## Check formatting without making changes
+	uv run ruff format --check .

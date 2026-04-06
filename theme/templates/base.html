@@ -1,152 +1,216 @@
 <!DOCTYPE html>
+
+{% from "partials/nav_links.html" import nav_list %}
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      {% block title %}
-        {{ SITENAME }}
-      {% endblock title %}
-    </title>
-    {% set base_url = SITEURL|trim('/') %}
-    {% set theme_path = base_url ~ "/theme" if base_url else "theme" %}
-    {% set description %}
-      {% block description %}
-        Software Engineer based in the UK.
-      {% endblock description %}
-    {% endset %}
-    {% set og_title %}
-      {% block og_title %}
-        {{ SITENAME }}
-      {% endblock og_title %}
-    {% endset %}
-    {% set og_description %}
-      {% block og_description %}
-        Software Engineer based in the UK.
-      {% endblock og_description %}
-    {% endset %}
-    {% set og_type %}
-      {% block og_type %}
-        website
-      {% endblock og_type %}
-    {% endset %}
-    {% set og_url %}
-      {% block og_url %}
-        /
-      {% endblock og_url %}
-    {% endset %}
-    {% set canonical %}
-      {% block canonical %}
-        /
-      {% endblock canonical %}
-    {% endset %}
-    <meta name="description" content="{{ description|trim }}" />
-    <meta property="og:title" content="{{ og_title|trim }}" />
-    <meta property="og:description" content="{{ og_description|trim }}" />
-    <meta property="og:type" content="{{ og_type|trim }}" />
-    <meta property="og:url" content="{{ base_url }}{{ og_url|trim }}" />
-    <link rel="canonical" href="{{ base_url }}{{ canonical|trim }}" />
-    {% if FEED_ALL_ATOM %}
-      <link rel="alternate"
-            type="application/atom+xml"
-            title="{{ SITENAME }} Atom Feed"
-            href="{{ base_url }}/{{ FEED_ALL_ATOM }}" />
-    {% endif %}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet" />
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tailwind config -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              cyan: { 400: '#38bdf8' },
-              zinc: {
-                750: '#2a2a2a',
-                850: '#1f1f1f',
-                900: '#1c1c1c',
-                950: '#141414',
-              },
-            },
-            fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
-            },
-          },
-        },
-      };
-    </script>
-    <!-- loads after Tailwind -->
-    <link rel="stylesheet" href="{{ theme_path }}/css/app.css" />
-    <link rel="stylesheet" href="{{ theme_path }}/css/prose.css" />
-  </head>
-  <body class="bg-zinc-900 text-gray-200 font-sans antialiased">
-    <header id="site-nav"
-            class="fixed top-0 left-0 right-0 z-50 h-14 bg-zinc-900/90 backdrop-blur border-b border-transparent transition-colors duration-200">
-      {% set nav_items = [
-        {
-          "href": "/#home",
-          "label": "Home",
-          "section": "home"
-        },
-        {
-          "href": "/#about",
-          "label": "About",
-          "section": "about"
-        },
-        {
-          "href": "/#experience",
-          "label": "Experience",
-          "section": "experience"
-        },
-        {
-          "href": "/#skills",
-          "label": "Skills",
-          "section": "skills"
-        },
-        {
-          "href": "/blog/",
-          "label": "Blog",
-          "section": "blog"
-        },
-        {
-          "href": "/#contact",
-          "label": "Contact",
-          "section": "contact"
-        }
-      ] %}
-      <nav class="max-w-4xl mx-auto px-6 h-full flex items-center justify-center relative">
-        {% set nav_list_id = "nav-links" %}
-        {% set nav_list_class = "hidden md:flex items-center gap-8" %}
-        {% set nav_link_class = "nav-link text-sm text-gray-400 hover:text-cyan-400 transition-colors" %}
-        {% include "partials/nav_links.html" %}
-        <button id="nav-toggle"
-                class="md:hidden absolute right-6 flex flex-col gap-1.5 p-1"
-                aria-label="Toggle menu"
-                aria-expanded="false">
-          <span class="block w-5 h-px bg-gray-400 transition-all duration-200 origin-center"></span>
-          <span class="block w-5 h-px bg-gray-400 transition-all duration-200"></span>
-          <span class="block w-5 h-px bg-gray-400 transition-all duration-200 origin-center"></span>
-        </button>
-      </nav>
-      <div id="mobile-menu"
-           class="md:hidden hidden bg-zinc-900 border-b border-zinc-800 px-6 py-3">
-        {% set nav_list_id = "" %}
-        {% set nav_list_class = "flex flex-col gap-1" %}
-        {% set nav_link_class = "nav-link block py-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors" %}
-        {% include "partials/nav_links.html" %}
-      </div>
-    </header>
-    <main id="main-content">
-      {% block content %}
-      {% endblock content %}
-    </main>
-    <footer class="border-t border-zinc-800 py-6 text-center text-xs text-zinc-600">
-      &copy; 2026 {{ SITENAME }}. All rights reserved.
-    </footer>
-    <script src="{{ theme_path }}/js/main.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="{{ base_url }}/favicon.ico" />
+        <link rel="icon"
+              type="image/png"
+              sizes="16x16"
+              href="{{ base_url }}/favicon-16x16.png" />
+        <link rel="icon"
+              type="image/png"
+              sizes="32x32"
+              href="{{ base_url }}/favicon-32x32.png" />
+        <link rel="apple-touch-icon"
+              sizes="180x180"
+              href="{{ base_url }}/apple-touch-icon.png" />
+        <link rel="manifest" href="{{ base_url }}/site.webmanifest" />
+        <meta name="theme-color" content="#1c1c1c" />
+
+        <title>
+            {% block title %}
+                {{ SITENAME }}
+            {% endblock title %}
+        </title>
+
+        {% set base_url = SITEURL|trim('/') %}
+        {% set theme_path = base_url ~ "/theme" if base_url else "theme" %}
+
+        {% set description %}
+            {% block description %}
+                Senior based in the UK.
+            {% endblock description %}
+        {% endset %}
+
+        {% set og_title %}
+            {% block og_title %}
+                {{ SITENAME }}
+            {% endblock og_title %}
+        {% endset %}
+
+        {% set og_description %}
+            {% block og_description %}
+                Senior Software Engineer based in the UK.
+            {% endblock og_description %}
+        {% endset %}
+
+        {% set og_type %}
+            {% block og_type %}
+                website
+            {% endblock og_type %}
+        {% endset %}
+
+        {% set og_url %}
+            {% block og_url %}
+                /
+            {% endblock og_url %}
+        {% endset %}
+
+        {% set canonical %}
+            {% block canonical %}
+                /
+            {% endblock canonical %}
+        {% endset %}
+
+        <meta name="author" content="{{ AUTHOR }}" />
+        <meta name="description" content="{{ description|trim }}" />
+        <meta property="og:title" content="{{ og_title|trim }}" />
+        <meta property="og:description" content="{{ og_description|trim }}" />
+        <meta property="og:type" content="{{ og_type|trim }}" />
+        <meta property="og:url" content="{{ base_url }}{{ og_url|trim }}" />
+        <meta property="og:image"
+              content="{{ base_url }}/theme/images/og-default.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{{ og_title|trim }}" />
+        <meta name="twitter:description" content="{{ og_description|trim }}" />
+        <meta name="twitter:image"
+              content="{{ base_url }}/theme/images/og-default.png" />
+
+        <meta name="theme-color" content="#1c1c1c" />
+
+        <link rel="canonical" href="{{ base_url }}{{ canonical|trim }}" />
+
+        {% if FEED_ALL_ATOM %}
+            <link rel="alternate"
+                  type="application/atom+xml"
+                  title="{{ SITENAME }} Atom Feed"
+                  href="{{ base_url }}/{{ FEED_ALL_ATOM }}" />
+        {% endif %}
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+              rel="stylesheet" />
+
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Tailwind config -->
+        <script>
+            tailwind.config = {
+                theme: {
+                extend: {
+                    colors: {
+                    zinc: {
+                        750: '#2a2a2a',
+                        850: '#111111',
+                        900: '#0a0a0a',
+                        950: '#050505',
+                    },
+                    },
+                    fontFamily: {
+                    sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+                },
+            };
+        </script>
+
+        <!-- loads after Tailwind -->
+        <link rel="stylesheet" href="{{ theme_path }}/css/app.css" />
+        <link rel="stylesheet" href="{{ theme_path }}/css/prose.css" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Sanjeev Srithevan",
+                "url": "{{ base_url }}/",
+                "image": "{{ base_url }}/theme/images/og-default.png",
+                "jobTitle": "Senior Software Engineer",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Office for National Statistics"
+                },
+                "sameAs": [
+                    "https://github.com/sanjeevz3009",
+                    "https://linkedin.com/in/sanjeev-srithevan-526718196"
+                ]
+            }
+        </script>
+    </head>
+
+    <body class="bg-zinc-900 text-gray-200 font-sans antialiased">
+        <header id="site-nav"
+                class="fixed top-0 left-0 right-0 z-50 h-14 bg-zinc-900/90 backdrop-blur border-b border-transparent transition-colors duration-200">
+            {% set nav_items = [
+                {
+                    "href": "/#home",
+                    "label": "Home",
+                    "section": "home"
+                },
+                {
+                    "href": "/#about",
+                    "label": "About",
+                    "section": "about"
+                },
+                {
+                    "href": "/#experience",
+                    "label": "Experience",
+                    "section": "experience"
+                },
+                {
+                    "href": "/#skills",
+                    "label": "Skills",
+                    "section": "skills"
+                },
+                {
+                    "href": "/blog/",
+                    "label": "Blog",
+                    "section": "blog"
+                },
+                {
+                    "href": "/#contact",
+                    "label": "Contact",
+                    "section": "contact"
+                }
+            ] %}
+
+            <nav class="max-w-4xl mx-auto px-6 h-full flex items-center justify-center relative">
+                {{ nav_list(nav_items, list_id="nav-links", list_class="hidden md:flex items-center gap-8", link_class="nav-link text-sm text-gray-400 hover:text-emerald-400 transition-colors") }}
+
+                <button id="nav-toggle"
+                        class="md:hidden absolute right-6 flex flex-col gap-1.5 p-1"
+                        aria-label="Toggle menu"
+                        aria-expanded="false">
+                    <span class="block w-5 h-px bg-gray-400 transition-all duration-200 origin-center"></span>
+                    <span class="block w-5 h-px bg-gray-400 transition-all duration-200"></span>
+                    <span class="block w-5 h-px bg-gray-400 transition-all duration-200 origin-center"></span>
+                </button>
+            </nav>
+
+            <div id="mobile-menu"
+                 class="md:hidden hidden bg-zinc-900 border-b border-zinc-800 px-6 py-3">
+                {{ nav_list(nav_items, list_id="mobile-nav-links", list_class="flex flex-col gap-1", link_class="nav-link block py-2 text-sm text-gray-400 hover:text-emerald-400 transition-colors") }}
+            </div>
+        </header>
+
+        <main id="main-content">
+            {% block content %}
+            {% endblock content %}
+        </main>
+
+        <footer class="border-t border-zinc-800 py-6 text-center text-xs text-zinc-600">
+            &copy; {{ CURRENT_YEAR }} {{ SITENAME }}. All rights reserved.
+        </footer>
+
+        <script src="{{ theme_path }}/js/main.js"></script>
+    </body>
 </html>

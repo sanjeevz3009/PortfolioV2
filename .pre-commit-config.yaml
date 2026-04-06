@@ -29,18 +29,12 @@ repos:
     hooks:
       - id: gitleaks
 
-  # HTML/Jinja2 templates - lint + format
+  # HTML/Jinja2 templates - lint only (no auto-reformat)
   - repo: https://github.com/Riverside-Healthcare/djLint
     rev: v1.36.4
     hooks:
       - id: djlint-jinja
-        files: \.html$
-        exclude: ^output/
-        types_or: [html, jinja]
-      - id: djlint-reformat-jinja
-        files: \.html$
-        exclude: ^output/
-        types_or: [html, jinja]
+        files: theme/templates/
 
   # Markdown
   - repo: https://github.com/igorshubovych/markdownlint-cli
@@ -55,17 +49,3 @@ repos:
     hooks:
       - id: yamllint
         args: ["-c", ".yamllint.yml"]
-
-  # Local commands
-  - repo: local
-    hooks:
-      - id: make-lint
-        name: make lint
-        entry: make lint
-        language: system
-        pass_filenames: false
-      - id: make-templates
-        name: make templates
-        entry: make templates
-        language: system
-        pass_filenames: false

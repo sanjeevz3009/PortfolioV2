@@ -1,6 +1,7 @@
 /* Arrow bounce */
 :root {
   --nav-height: 56px;
+  --scroll-threshold: 10px;
   --arrow-bounce-duration: 2.4s;
   --summary-line-height: 1.4;
   --summary-lines: 3;
@@ -8,7 +9,7 @@
 
 @keyframes bounce-slow {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(10px); }
+  50%       { transform: translateY(var(--scroll-threshold)); }
 }
 
 .hero-arrow {
@@ -48,17 +49,7 @@
 
 /* Active nav link */
 .nav-link.active {
-  color: #38bdf8 !important;
-}
-
-/* Summary clamp (Tailwind CDN doesn't include line-clamp plugin) */
-.summary-clamp {
-  display: -webkit-box;
-  line-height: var(--summary-line-height);
-  max-height: calc(var(--summary-line-height) * var(--summary-lines) * 1em);
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  color: #34d399 !important;
 }
 
 /* Scroll behaviour */

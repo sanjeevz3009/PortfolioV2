@@ -16,8 +16,9 @@
   window.addEventListener(
     'scroll',
     () => {
+      // Use zinc-900 (#18181b) to match Figma nav border-zinc-900
       nav.style.borderBottomColor =
-        window.scrollY > threshold ? '#27272a' : 'transparent';
+        window.scrollY > threshold ? '#18181b' : 'transparent';
     },
     { passive: true },
   );
@@ -55,8 +56,6 @@
   ];
 
   const onScroll = () => {
-    // Walk sections from bottom to top — first one whose top is above
-    // the middle of the viewport wins
     const mid = window.innerHeight / 2;
     for (const id of sectionIds) {
       const el = document.getElementById(id);
@@ -72,7 +71,7 @@
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  requestAnimationFrame(onScroll); // run after first paint
+  requestAnimationFrame(onScroll);
 })();
 
 // Mobile nav
@@ -98,6 +97,15 @@
     if (nav && !nav.contains(e.target)) {
       menu.classList.add('hidden');
       toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Escape key closes mobile menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+      menu.classList.add('hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
     }
   });
 })();
@@ -136,28 +144,7 @@
   targets.forEach((el) => observer.observe(el));
 })();
 
-// Skill bars — animate when scrolled into view
-(function () {
-  const cards = document.querySelectorAll('.skill-card');
-  if (!cards.length || !('IntersectionObserver' in window)) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target
-            .querySelectorAll('.bar-fill')
-            .forEach((b) => b.classList.add('bar-running'));
-          observer.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.3 },
-  );
-
-  cards.forEach((card) => observer.observe(card));
-})();
-
+// Contact form — Netlify AJAX
 (function () {
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -165,7 +152,7 @@
   const btnText = btn?.querySelector('.btn-text');
   const btnSend = btn?.querySelector('.btn-sending');
   const success = document.getElementById('form-success');
-  const error = document.getElementById('form-error');
+  const errorMsg = document.getElementById('form-error');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -180,18 +167,18 @@
       !emailEl.value.trim() ||
       !messageEl.value.trim()
     ) {
-      if (error) {
-        error.textContent = 'Please fill in all fields before submitting.';
-        error.classList.remove('hidden');
+      if (errorMsg) {
+        errorMsg.textContent = 'Please fill in all fields before submitting.';
+        errorMsg.classList.remove('hidden');
       }
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailEl.value.trim())) {
-      if (error) {
-        error.textContent = 'Please enter a valid email address.';
-        error.classList.remove('hidden');
+      if (errorMsg) {
+        errorMsg.textContent = 'Please enter a valid email address.';
+        errorMsg.classList.remove('hidden');
       }
       return;
     }
@@ -199,7 +186,7 @@
     if (btnText) btnText.classList.add('hidden');
     if (btnSend) btnSend.classList.remove('hidden');
     if (btn) btn.disabled = true;
-    if (error) error.classList.add('hidden');
+    if (errorMsg) errorMsg.classList.add('hidden');
 
     try {
       const res = await fetch(form.action || '/', {
@@ -221,19 +208,11 @@
       if (btnText) btnText.classList.remove('hidden');
       if (btnSend) btnSend.classList.add('hidden');
       if (btn) btn.disabled = false;
-      if (error) {
-        error.textContent =
+      if (errorMsg) {
+        errorMsg.textContent =
           'Something went wrong — please try again or email me directly.';
-        error.classList.remove('hidden');
+        errorMsg.classList.remove('hidden');
       }
     }
   });
 })();
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
-    menu.classList.add('hidden');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.focus(); // return focus to the toggle button
-  }
-});

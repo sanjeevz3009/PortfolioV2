@@ -1,78 +1,36 @@
-/* Arrow bounce */
 :root {
-  --nav-height: 56px;
+  --nav-height: 64px;
   --scroll-threshold: 10px;
   --arrow-bounce-distance: 10px;
   --arrow-bounce-duration: 2.4s;
-  --color-surface: #252525;
-  --color-surface-2: #2a2a2a;
-  --color-border: #333333;
-  --color-accent: #34d399; /* emerald-400 */
-  --color-text: #e5e7eb;
-  --color-muted: #9ca3af;
+  --color-bg: #000000;
+  --color-surface: #09090b;
+  --color-surface-2: #0a0a0a;
+  --color-border: #3f3f46;
+  --color-accent: #34d399;
+  --color-text: #fafafa;
+  --color-muted: #71717a;
+  --color-muted-2: #a1a1aa;
 }
 
-@keyframes bounce-slow {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(var(--arrow-bounce-distance));
-  }
-}
-
-.hero-arrow {
-  display: inline-flex;
-  animation: bounce-slow var(--arrow-bounce-duration) ease-in-out infinite;
-}
-
-/* Skill bars */
-@keyframes bar-grow {
-  from {
-    width: 0;
-  }
-  to {
-    width: var(--bar-pct);
-  }
-}
-
-.bar-fill {
-  width: 0;
-  animation: bar-grow 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-play-state: paused;
-}
-
-.bar-fill.bar-running {
-  animation-play-state: running;
-}
-
-/* Scroll reveal — !important beats Tailwind preflight */
-/*
- * !important required — Tailwind CDN injects styles asynchronously at runtime,
- * overriding these rules after our stylesheet has loaded. Without !important,
- * Tailwind's preflight resets opacity and transform before reveal can apply them.
- */
-.reveal {
-  opacity: 0 !important;
-  transform: translateY(24px) !important;
-  transition:
-    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms) !important;
-}
-
-.reveal.is-visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* Active nav link */
-.nav-link.active {
-  color: #34d399 !important;
-}
-
-/* Scroll behaviour */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-height) + 16px);
+}
+
+.about-copy p {
+  margin-bottom: 1.25rem;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-arrow { animation: none !important; }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

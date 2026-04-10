@@ -41,6 +41,7 @@
               sizes="180x180"
               href="{{ base_url }}/apple-touch-icon.png" />
         <link rel="manifest" href="{{ base_url }}/site.webmanifest" />
+        <meta name="theme-color" content="#000000" />
 
         <title>
             {% block title %}
@@ -105,8 +106,6 @@
         <meta name="twitter:description" content="{{ og_description|trim }}" />
         <meta name="twitter:image" content="{{ twitter_image_url|trim }}" />
 
-        <meta name="theme-color" content="#1c1c1c" />
-
         <link rel="canonical" href="{{ base_url }}{{ canonical|trim }}" />
 
         {% if FEED_ALL_ATOM %}
@@ -124,35 +123,64 @@
         <!-- Tailwind CDN -->
         <script src="https://cdn.tailwindcss.com"></script>
 
-        <!-- Tailwind config -->
+        <!-- Tailwind config — matches Figma dark theme -->
         <script>
-            tailwind.config = {
-                theme: {
-                extend: {
-                    colors: {
-                    zinc: {
-                        750: '#2a2a2a',
-                        850: '#111111',
-                        900: '#0a0a0a',
-                        950: '#050505',
-                    },
-                    },
-                    fontFamily: {
-                    sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  zinc: {
+                    750: '#2a2a2a',
+                    850: '#111111',
+                    900: '#0a0a0a',
+                    950: '#09090b',
+                  },
                 },
+                fontFamily: {
+                  sans: ['Inter', 'system-ui', 'sans-serif'],
                 },
-            };
+              },
+            },
+          };
         </script>
 
-        <!-- loads after Tailwind -->
+        <!-- Our CSS after Tailwind — wins the cascade -->
         <link rel="stylesheet" href="{{ theme_path }}/css/app.css" />
         <link rel="stylesheet" href="{{ theme_path }}/css/prose.css" />
+
+        <style>
+            @keyframes bounce-slow {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(10px); }
+            }
+            .hero-arrow {
+                display: inline-flex !important;
+                animation: bounce-slow 2.4s ease-in-out infinite !important;
+            }
+            .reveal {
+                opacity: 0 !important;
+                transform: translateY(24px) !important;
+                transition:
+                    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+                    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms) !important;
+            }
+            .reveal.is-visible {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+            .nav-link.active {
+                color: #34d399 !important;
+            }
+        </style>
     </head>
 
-    <body class="bg-zinc-900 text-gray-200 font-sans antialiased">
+    <!-- Pure black body — matches Figma bg-black -->
+    <body class="bg-black text-zinc-200 font-sans antialiased">
+
+        <!-- Nav — bg-black/90 backdrop-blur -->
         <header id="site-nav"
-                class="fixed top-0 left-0 right-0 z-50 h-14 bg-zinc-900/90 backdrop-blur border-b border-transparent transition-colors duration-200">
+                class="fixed top-0 left-0 right-0 z-50 h-16 bg-black/90 backdrop-blur-md border-b border-zinc-900 transition-colors duration-200">
+
             {% set nav_items = [
                 {
                     "href": "/#home",
@@ -187,23 +215,23 @@
             ] %}
 
             <nav aria-label="Main navigation"
-                 class="max-w-4xl mx-auto px-6 h-full flex items-center justify-center relative">
-                {{ nav_list(nav_items, list_id="nav-links", list_class="hidden md:flex items-center gap-8", link_class="nav-link text-sm text-gray-400 hover:text-emerald-400 transition-colors") }}
+                 class="max-w-6xl mx-auto px-6 h-full flex items-center justify-center relative">
+                {{ nav_list(nav_items, list_id="nav-links", list_class="hidden md:flex items-center gap-8", link_class="nav-link text-sm text-zinc-500 hover:text-emerald-300 transition-colors") }}
 
                 <button id="nav-toggle"
                         class="md:hidden absolute right-6 flex flex-col gap-1.5 p-1"
                         aria-label="Toggle menu"
                         aria-expanded="false">
-                    <span class="block w-5 h-px bg-gray-400 transition-all duration-200 origin-center"></span>
-                    <span class="block w-5 h-px bg-gray-400 transition-all duration-200"></span>
-                    <span class="block w-5 h-px bg-gray-400 transition-all duration-200 origin-center"></span>
+                    <span class="block w-5 h-px bg-zinc-500 transition-all duration-200 origin-center"></span>
+                    <span class="block w-5 h-px bg-zinc-500 transition-all duration-200"></span>
+                    <span class="block w-5 h-px bg-zinc-500 transition-all duration-200 origin-center"></span>
                 </button>
             </nav>
 
             <nav id="mobile-menu"
                  aria-label="Mobile navigation"
-                 class="md:hidden hidden bg-zinc-900 border-b border-zinc-800 px-6 py-3">
-                {{ nav_list(nav_items, list_id="mobile-nav-links", list_class="flex flex-col gap-1", link_class="nav-link block py-2 text-sm text-gray-400 hover:text-emerald-400 transition-colors") }}
+                 class="md:hidden hidden bg-black border-b border-zinc-900 px-6 py-3">
+                {{ nav_list(nav_items, list_id="mobile-nav-links", list_class="flex flex-col gap-1", link_class="nav-link block py-2 text-sm text-zinc-500 hover:text-emerald-300 transition-colors") }}
             </nav>
         </header>
 
@@ -212,7 +240,7 @@
             {% endblock content %}
         </main>
 
-        <footer class="border-t border-zinc-800 py-6 text-center text-xs text-zinc-600">
+        <footer class="border-t border-zinc-900 py-6 text-center text-xs text-zinc-600">
             &copy; {{ CURRENT_YEAR }} {{ SITENAME }}. All rights reserved.
         </footer>
 

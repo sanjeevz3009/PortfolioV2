@@ -1,44 +1,46 @@
-/* Article prose — scoped to .prose-article only */
+/* PROSE — scoped to .prose-article only
+  Colours pulled from Figma theme.css prose definitions */
 .prose-article {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: var(--color-muted);
+  color: #a1a1aa; /* zinc-400 */
 }
 
 .prose-article h2 {
   font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-accent);
+  font-weight: 600;
+  color: #34d399; /* emerald-400 */
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .prose-article h3 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #34d399; /* emerald-400 — matches Figma .prose h3 */
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 
 .prose-article p {
   margin-bottom: 1.25rem;
+  line-height: 1.75;
+  color: #a1a1aa;
 }
 
 .prose-article a {
-  color: var(--color-accent);
+  color: #34d399;
   text-decoration: underline;
-  text-decoration-color: rgba(56, 189, 248, 0.3);
-  transition: text-decoration-color 150ms ease;
+  transition: color 150ms ease;
 }
 
 .prose-article a:hover {
-  text-decoration-color: var(--color-accent);
+  color: #6ee7b7; /* emerald-300 */
 }
 
 .prose-article strong {
-  color: var(--color-text);
   font-weight: 600;
+  color: #f4f4f5; /* zinc-100 */
 }
 
 .prose-article ul,
@@ -47,38 +49,37 @@
   margin-bottom: 1.25rem;
 }
 
-.prose-article ul {
-  list-style: disc;
-}
-.prose-article ol {
-  list-style: decimal;
-}
+.prose-article ul { list-style: disc; }
+.prose-article ol { list-style: decimal; }
+
 .prose-article li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  color: #a1a1aa;
 }
 
 .prose-article blockquote {
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid #34d399;
   padding-left: 1.25rem;
   margin: 1.5rem 0;
-  color: var(--color-muted);
+  color: #71717a;
   font-style: italic;
 }
 
 .prose-article code {
-  font-family:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
   font-size: 0.875em;
-  color: var(--color-accent);
-  background: var(--color-surface-2);
-  padding: 0.15em 0.4em;
-  border-radius: 4px;
+  color: #34d399;
+  background: #09090b; /* zinc-950 — matches Figma */
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  border: 1px solid #27272a; /* zinc-800 */
 }
 
 .prose-article pre {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
   padding: 1.25rem;
   overflow-x: auto;
   margin: 1.5rem 0;
@@ -89,28 +90,29 @@
 .prose-article pre code {
   background: none;
   padding: 0;
-  color: var(--color-text);
+  color: #f4f4f5;
   font-size: inherit;
+  border: none;
 }
 
 .prose-article hr {
   border: none;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #27272a;
   margin: 2rem 0;
 }
 
-/* Pygments syntax highlighting */
+/* PYGMENTS SYNTAX HIGHLIGHTING */
 .highlight {
-  background: var(--color-surface);
+  background: #09090b;
   border-radius: 8px;
 }
+
 .highlight .k,
 .highlight .kd,
 .highlight .kn,
 .highlight .kp,
-.highlight .kr {
-  color: #c792ea;
-}
+.highlight .kr { color: #c792ea; }
+
 .highlight .s,
 .highlight .s1,
 .highlight .s2,
@@ -123,41 +125,31 @@
 .highlight .si,
 .highlight .sx,
 .highlight .sr,
-.highlight .ss {
-  color: #c3e88d;
-}
+.highlight .ss { color: #c3e88d; }
+
 .highlight .c,
 .highlight .c1,
 .highlight .cm,
 .highlight .cp,
-.highlight .cs {
-  color: #546e7a;
-  font-style: italic;
-}
+.highlight .cs { color: #546e7a; font-style: italic; }
+
 .highlight .n,
-.highlight .nx {
-  color: var(--color-text);
-}
+.highlight .nx { color: #f4f4f5; }
+
 .highlight .mi,
 .highlight .mf,
 .highlight .mh,
-.highlight .il {
-  color: #f78c6c;
-}
+.highlight .il { color: #f78c6c; }
+
 .highlight .nb,
 .highlight .nf,
-.highlight .nn {
-  color: var(--color-accent);
-}
+.highlight .nn { color: #34d399; }
+
 .highlight .na,
 .highlight .nc,
-.highlight .nt {
-  color: #ffcb6b;
-}
+.highlight .nt { color: #ffcb6b; }
+
 .highlight .o,
-.highlight .ow {
-  color: #89ddff;
-}
-.highlight .p {
-  color: var(--color-muted);
-}
+.highlight .ow { color: #89ddff; }
+
+.highlight .p  { color: #a1a1aa; }

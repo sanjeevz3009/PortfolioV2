@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
+import json
 from datetime import datetime
+from pathlib import Path
+
+import markdown
 
 AUTHOR = "Sanjeev Srithevan"
 SITENAME = "Sanjeev Srithevan"
@@ -115,3 +119,26 @@ LOAD_CONTENT_CACHE = False
 PAGINATED_TEMPLATES = {"blog": None}
 
 CURRENT_YEAR = datetime.now().year
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+HOME_CONTENT_DIR = PROJECT_ROOT / "content" / "home"
+
+
+def _load_home_about_html() -> str:
+    about_path = HOME_CONTENT_DIR / "about.md"
+    raw = about_path.read_text(encoding="utf-8")
+    return markdown.markdown(
+        raw,
+        extensions=list(MARKDOWN["extension_configs"].keys()),
+        extension_configs=MARKDOWN["extension_configs"],
+        output_format=MARKDOWN.get("output_format", "html5"),
+    )
+
+
+def _load_home_profile() -> dict:
+    profile_path = HOME_CONTENT_DIR / "profile.json"
+    return json.loads(profile_path.read_text(encoding="utf-8"))
+
+
+HOME_ABOUT_HTML = _load_home_about_html()
+HOME_PROFILE = _load_home_profile()

@@ -158,7 +158,6 @@
   cards.forEach((card) => observer.observe(card));
 })();
 
-// Contact form — Netlify AJAX
 (function () {
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -170,10 +169,37 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Validate fields
+    const nameEl = form.querySelector('#name');
+    const emailEl = form.querySelector('#email');
+    const messageEl = form.querySelector('#message');
+
+    if (
+      !nameEl.value.trim() ||
+      !emailEl.value.trim() ||
+      !messageEl.value.trim()
+    ) {
+      if (error) {
+        error.textContent = 'Please fill in all fields before submitting.';
+        error.classList.remove('hidden');
+      }
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailEl.value.trim())) {
+      if (error) {
+        error.textContent = 'Please enter a valid email address.';
+        error.classList.remove('hidden');
+      }
+      return;
+    }
+
     if (btnText) btnText.classList.add('hidden');
     if (btnSend) btnSend.classList.remove('hidden');
     if (btn) btn.disabled = true;
-    if (error) error.classList.add('hidden'); // hide previous error on retry
+    if (error) error.classList.add('hidden');
 
     try {
       const res = await fetch(form.action || '/', {
@@ -195,7 +221,11 @@
       if (btnText) btnText.classList.remove('hidden');
       if (btnSend) btnSend.classList.add('hidden');
       if (btn) btn.disabled = false;
-      if (error) error.classList.remove('hidden');
+      if (error) {
+        error.textContent =
+          'Something went wrong — please try again or email me directly.';
+        error.classList.remove('hidden');
+      }
     }
   });
 })();

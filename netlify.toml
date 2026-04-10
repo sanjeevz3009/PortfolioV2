@@ -7,6 +7,12 @@
   # SITEURL set in Netlify dashboard → Site settings → Environment variables
 
 [[redirects]]
+  from = "/blog/"
+  to = "/blog/index.html"
+  status = 200
+  force = false
+
+[[redirects]]
   from = "/blog"
   to = "/blog/"
   status = 301

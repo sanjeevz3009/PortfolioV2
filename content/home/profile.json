@@ -55,5 +55,37 @@
         { "name": "AWS", "level": "Intermediate" }
       ]
     }
+  ],
+  "projects": [
+    {
+      "title": "IMAX Sentinel",
+      "description": "A BFI IMAX screening watcher that monitors Christopher Nolan film listings and sends Telegram alerts when tickets appear. Uses Camoufox to bypass Cloudflare detection.",
+      "tech": [
+        "Python",
+        "Camoufox",
+        "SQLite",
+        "Telegram API",
+        "GitHub Actions"
+      ],
+      "github": "https://github.com/sanjeevz3009/imax-sentinel",
+      "live": "",
+      "featured": true
+    },
+    {
+      "title": "Newsletter Sentinel",
+      "description": "A personal pipeline that fetches newsletters from Gmail, deduplicates stories using Jaccard similarity, and generates AI-powered daily digests via Claude.",
+      "tech": ["Python", "Claude API", "SQLite", "Gmail API", "Railway"],
+      "github": "https://github.com/sanjeevz3009/newsletter-sentinel",
+      "live": "",
+      "featured": true
+    },
+    {
+      "title": "Portfolio & Blog",
+      "description": "This site — a static portfolio and blog built with Pelican, Jinja2 and Tailwind CSS. Deployed to Netlify with GitHub Actions CI.",
+      "tech": ["Python", "Pelican", "Jinja2", "Tailwind CSS", "Netlify"],
+      "github": "https://github.com/sanjeevz3009/portfolio",
+      "live": "https://sanjeev-srithevan.netlify.app",
+      "featured": false
+    }
   ]
 }

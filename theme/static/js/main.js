@@ -49,6 +49,7 @@
   const sectionIds = [
     'contact',
     'blog-preview',
+    'projects',
     'skills',
     'experience',
     'about',

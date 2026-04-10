@@ -158,9 +158,9 @@
     e.preventDefault();
 
     // Validate fields
-    const nameEl = form.querySelector('#name');
-    const emailEl = form.querySelector('#email');
-    const messageEl = form.querySelector('#message');
+    const nameEl = document.getElementById('name');
+    const emailEl = document.getElementById('email');
+    const messageEl = document.getElementById('message');
 
     if (
       !nameEl.value.trim() ||

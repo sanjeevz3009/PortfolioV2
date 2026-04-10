@@ -1,0 +1,59 @@
+{
+  "experience": [
+    {
+      "period": "2023 — Present",
+      "role": "Senior Software Engineer",
+      "company": "Office for National Statistics",
+      "summary": "Building and maintaining dis-wagtail, a Django/Wagtail CMS serving ONS publishers. Working across Kubernetes, PostgreSQL, Redis and Kafka on a distributed platform team."
+    },
+    {
+      "period": "2020 — 2023",
+      "role": "Software Engineer",
+      "company": "Office for National Statistics",
+      "summary": "Worked on the development of dis-wagtail, a Django/Wagtail CMS serving ONS publishers. Contributed to the design and implementation of new features, as well as maintaining and improving existing functionality."
+    },
+    {
+      "period": "2018 — 2020",
+      "role": "Software Engineer",
+      "company": "University of Manchester",
+      "summary": "Developed and maintained web applications using Python and Django. Collaborated with cross-functional teams to deliver high-quality software solutions for academic research projects."
+    },
+    {
+      "period": "2016 — 2018",
+      "role": "Junior Software Engineer",
+      "company": "Tech Solutions Ltd",
+      "summary": "Assisted in the development of web applications and provided support for existing software. Gained experience in Python, Django, and frontend technologies while working on various client projects."
+    }
+  ],
+  "skills": [
+    {
+      "title": "Backend",
+      "icon": "M12 2C12 2 8 4 8 10l6 6c6 0 8-4 8-4M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM3.29 15l1.41 1.41M13 6l2 2M8.5 10.5l5 5",
+      "items": [
+        { "name": "Python", "level": "Expert" },
+        { "name": "Django", "level": "Expert" },
+        { "name": "Wagtail", "level": "Advanced" },
+        { "name": "PostgreSQL", "level": "Advanced" }
+      ]
+    },
+    {
+      "title": "Frontend",
+      "icon": "M16 18l6-6-6-6M8 6l-6 6 6 6",
+      "items": [
+        { "name": "HTML / CSS", "level": "Expert" },
+        { "name": "JavaScript", "level": "Advanced" },
+        { "name": "Tailwind CSS", "level": "Advanced" }
+      ]
+    },
+    {
+      "title": "Tools & Infra",
+      "icon": "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",
+      "items": [
+        { "name": "Kubernetes", "level": "Advanced" },
+        { "name": "Docker", "level": "Advanced" },
+        { "name": "Git / CI&CD", "level": "Expert" },
+        { "name": "AWS", "level": "Intermediate" }
+      ]
+    }
+  ]
+}

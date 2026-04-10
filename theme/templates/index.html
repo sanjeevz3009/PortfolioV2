@@ -1,35 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
+
     <!-- HERO -->
     <section id="home"
-             class="min-h-screen flex flex-col items-center justify-center pt-14 text-center px-6">
-        <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">
+             class="min-h-screen flex flex-col items-center justify-center relative text-center px-6">
+        <h1 class="text-6xl md:text-7xl font-normal leading-tight mb-4">
             Hi, I am <span class="text-emerald-400">{{ AUTHOR.split()[0] }}</span>
         </h1>
 
-        <p class="text-lg text-gray-400 tracking-widest mb-8">
-            Apparently,&nbsp;&nbsp;I am a&nbsp;&nbsp;Software Engineer.
-        </p>
+        <div class="flex gap-3 justify-center text-2xl text-zinc-500 mt-8 mb-0">
+            <span>Developer.</span>
+            <span>Creator.</span>
+            <span>Designer.</span>
+        </div>
 
-        <!-- <div class="flex items-center gap-4 mb-16">
-            <a href="/sanjeev-srithevan-cv.pdf" download class="inline-flex items-center gap-2 px-5 py-2.5 border border-zinc-700 rounded-lg text-sm text-gray-300 hover:border-emerald-400 hover:text-emerald-400 transition-all duration-150">
-                <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                Download CV
-            </a>
-        </div> -->
-
+        <!-- Bouncing arrow — absolute bottom centre -->
         <a href="/#about"
            aria-label="Scroll to about"
-           class="hero-arrow text-gray-500 hover:text-emerald-400">
+           class="hero-arrow absolute bottom-12 left-1/2 -translate-x-1/2 text-zinc-500 hover:text-emerald-400 transition-colors">
             <svg aria-hidden="true"
                  focusable="false"
-                 width="28"
-                 height="28"
+                 width="32"
+                 height="32"
                  viewBox="0 0 24 24"
                  fill="none"
                  stroke="currentColor"
@@ -42,222 +35,168 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-white mb-8 reveal">
+    <section id="about"
+             class="min-h-screen flex items-center justify-center py-20 px-6">
+        <div class="max-w-3xl mx-auto w-full">
+            <h2 class="text-4xl font-normal mb-8 text-emerald-400 reveal">
                 About Me
             </h2>
-
-            <div class="space-y-5 max-w-2xl">
-                <p class="text-gray-400 text-lg leading-relaxed reveal">
-                    I'm a passionate developer with a love for creating elegant solutions to complex
-                    problems. My journey in technology has been driven by curiosity and a constant desire
-                    to learn and grow.
-                </p>
-
-                <p class="text-gray-400 text-lg leading-relaxed reveal">
-                    When I'm not coding, you'll find me exploring new technologies, contributing to
-                    open-source projects, or sharing knowledge with the developer community. I believe in
-                    writing clean, maintainable code that makes a difference.
-                </p>
-
-                <p class="text-gray-400 text-lg leading-relaxed reveal">
-                    Let's build something amazing together.
-                </p>
+            <div class="about-copy space-y-4 text-zinc-400 text-lg leading-relaxed reveal">
+                {{ HOME_ABOUT_HTML | safe }}
             </div>
         </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-white text-center mb-12 reveal">
+    <section id="experience"
+             class="min-h-screen flex items-center justify-center py-20 px-6">
+        <div class="max-w-4xl mx-auto w-full">
+            <h2 class="text-4xl font-normal mb-16 text-emerald-400 text-center reveal">
                 Experience
             </h2>
 
-            <div class="relative pl-16 md:pl-20">
-                <div class="absolute left-5 md:left-7 top-0 bottom-0 w-px bg-zinc-700"
+            <div class="relative">
+                <!-- Gradient timeline line -->
+                <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-400 via-emerald-500 to-transparent"
                      aria-hidden="true">
                 </div>
 
-                <div class="relative mb-8 reveal">
-                    <div class="absolute -left-11 md:-left-13 top-6 w-11 h-11 rounded-full border border-emerald-400 bg-zinc-900 flex items-center justify-center text-emerald-400">
-                        <svg aria-hidden="true"
-                             focusable="false"
-                             width="18"
-                             height="18"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="1.5"
-                             stroke-linecap="round"
-                             stroke-linejoin="round">
-                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-                            <path d="m3.29 15 1.41 1.41M13 6l2 2M8.5 10.5l5 5" />
-                            <path d="M12 2C12 2 8 4 8 10l6 6c6 0 8-4 8-4" />
-                        </svg>
-                    </div>
+                <div class="space-y-12">
+                    {% for job in HOME_PROFILE.experience %}
+                        <div class="relative pl-24 reveal">
+                            <!-- Icon circle -->
+                            <div class="absolute left-0 w-16 h-16 rounded-full bg-black border-2 border-emerald-400 flex items-center justify-center text-emerald-400">
+                                <svg aria-hidden="true"
+                                     focusable="false"
+                                     width="22"
+                                     height="22"
+                                     viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="1.5"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                                    <path d="m3.29 15 1.41 1.41M13 6l2 2M8.5 10.5l5 5" />
+                                    <path d="M12 2C12 2 8 4 8 10l6 6c6 0 8-4 8-4" />
+                                </svg>
+                            </div>
 
-                    <div class="bg-zinc-850 border border-zinc-700 rounded-xl p-6 hover:border-emerald-400 transition-colors duration-150">
-                        <p class="text-xs font-medium text-emerald-400 tracking-wide mb-1">
-                            2023 — Present
-                        </p>
-                        <h3 class="text-base font-semibold text-white mb-0.5">
-                            Senior Software Engineer
-                        </h3>
-                        <p class="text-sm text-gray-500 mb-3">
-                            Office for National Statistics
-                        </p>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            Building and maintaining dis-wagtail, a Django/Wagtail CMS serving ONS publishers.
-                            Working across Kubernetes, PostgreSQL, Redis and Kafka on a distributed platform team.
-                        </p>
-                    </div>
+                            <!-- Card — bg-zinc-950/50 border-zinc-900 matches Figma -->
+                            <div class="bg-zinc-950/50 border border-zinc-900 rounded-lg p-6 hover:border-emerald-400/50 transition-colors duration-200">
+                                <div class="text-emerald-400 text-sm mb-2">
+                                    {{ job.period }}
+                                </div>
+                                <h3 class="text-xl font-medium text-white mb-1">
+                                    {{ job.role }}
+                                </h3>
+                                <div class="text-zinc-500 mb-3 text-sm">
+                                    {{ job.company }}
+                                </div>
+                                <p class="text-zinc-400 text-sm leading-relaxed">
+                                    {{ job.summary }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-white text-center mb-12 reveal">
+    <section id="skills"
+             class="min-h-screen flex items-center justify-center py-20 px-6">
+        <div class="max-w-4xl mx-auto w-full">
+            <h2 class="text-4xl font-normal text-emerald-400 text-center mb-16 reveal">
                 Skills
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="skill-card bg-zinc-850 border border-zinc-700 rounded-xl p-6 reveal">
-                    <h3 class="text-sm font-semibold text-emerald-400 mb-5">
-                        Backend
-                    </h3>
-                    <ul class="space-y-4">
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">Python</span><span class="text-gray-500">95%</span>
-                            </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 95%">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">Django</span><span class="text-gray-500">90%</span>
-                            </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 90%">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">Wagtail</span><span class="text-gray-500">85%</span>
-                            </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 85%">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">PostgreSQL</span><span class="text-gray-500">80%</span>
-                            </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 80%">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {% for group in HOME_PROFILE.skills %}
+                    <div class="bg-zinc-950/50 border border-zinc-900 rounded-lg p-6 hover:border-emerald-400/30 transition-colors duration-200 reveal">
 
-                <div class="skill-card bg-zinc-850 border border-zinc-700 rounded-xl p-6 reveal">
-                    <h3 class="text-sm font-semibold text-emerald-400 mb-5">
-                        Frontend
-                    </h3>
-                    <ul class="space-y-4">
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">HTML / CSS</span><span class="text-gray-500">88%</span>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-2 bg-emerald-400/10 rounded-lg flex items-center justify-center">
+                                <svg aria-hidden="true"
+                                     focusable="false"
+                                     width="22"
+                                     height="22"
+                                     viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="#34d399"
+                                     stroke-width="1.5"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <path d="{{ group.icon }}" />
+                                </svg>
                             </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 88%">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">JavaScript</span><span class="text-gray-500">75%</span>
-                            </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 75%">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">Tailwind CSS</span><span class="text-gray-500">82%</span>
-                            </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 82%">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                            <h3 class="text-xl font-medium text-emerald-400">
+                                {{ group.title }}
+                            </h3>
+                        </div>
 
-                <div class="skill-card bg-zinc-850 border border-zinc-700 rounded-xl p-6 reveal">
-                    <h3 class="text-sm font-semibold text-emerald-400 mb-5">
-                        Tools &amp; Infra
-                    </h3>
-                    <ul class="space-y-4">
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">Kubernetes</span><span class="text-gray-500">78%</span>
-                            </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 78%">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">Docker</span><span class="text-gray-500">85%</span>
-                            </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 85%">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">Git / CI&amp;CD</span><span class="text-gray-500">90%</span>
-                            </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 90%">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex justify-between text-sm mb-1.5">
-                                <span class="text-gray-200">AWS</span><span class="text-gray-500">70%</span>
-                            </div>
-                            <div class="h-1 bg-zinc-700 rounded-full overflow-hidden">
-                                <div class="bar-fill h-full bg-emerald-400 rounded-full"
-                                     style="--bar-pct: 70%">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                        <ul class="space-y-3">
+                            {% for skill in group["items"] %}
+                                {% if skill.level == "Expert" %}
+                                    {% set dots = 3 %}
+                                {% elif skill.level == "Advanced" %}
+                                    {% set dots = 2 %}
+                                {% else %}
+                                    {% set dots = 1 %}
+                                {% endif %}
+
+                                <li class="flex items-center justify-between group">
+                                    <span class="text-sm text-zinc-300 group-hover:text-white transition-colors duration-150">
+                                        {{ skill.name }}
+                                    </span>
+                                    <div class="flex items-center gap-1" aria-label="{{ skill.level }}">
+                                        {% for i in range(3) %}
+                                            <div class="w-2 h-2 rounded-full {% if i < dots %}bg-emerald-400{% else %}bg-zinc-800{% endif %}">
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Legend -->
+            <div class="flex justify-center gap-8 mt-12 text-xs text-zinc-500 reveal">
+                <div class="flex items-center gap-2">
+                    <div class="flex gap-1" aria-hidden="true">
+                        <div class="w-2 h-2 rounded-full bg-emerald-400">
+                        </div>
+                        <div class="w-2 h-2 rounded-full bg-emerald-400">
+                        </div>
+                        <div class="w-2 h-2 rounded-full bg-emerald-400">
+                        </div>
+                    </div>
+                    <span>Expert</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="flex gap-1" aria-hidden="true">
+                        <div class="w-2 h-2 rounded-full bg-emerald-400">
+                        </div>
+                        <div class="w-2 h-2 rounded-full bg-emerald-400">
+                        </div>
+                        <div class="w-2 h-2 rounded-full bg-zinc-800">
+                        </div>
+                    </div>
+                    <span>Advanced</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="flex gap-1" aria-hidden="true">
+                        <div class="w-2 h-2 rounded-full bg-emerald-400">
+                        </div>
+                        <div class="w-2 h-2 rounded-full bg-zinc-800">
+                        </div>
+                        <div class="w-2 h-2 rounded-full bg-zinc-800">
+                        </div>
+                    </div>
+                    <span>Intermediate</span>
                 </div>
             </div>
         </div>
@@ -265,53 +204,94 @@
 
     <!-- LATEST POSTS -->
     {% if articles %}
-        <section id="blog-preview" class="py-20 px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="flex items-baseline justify-between mb-10">
-                    <h2 class="text-3xl font-bold text-white reveal">
+        <section id="blog-preview"
+                 class="min-h-screen flex items-center justify-center py-20 px-6">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="flex justify-between items-center mb-12">
+                    <h2 class="text-4xl font-normal text-emerald-400 reveal">
                         Latest Posts
                     </h2>
                     <a href="/blog/"
-                       class="text-sm text-gray-500 hover:text-emerald-400 transition-colors reveal">View All →</a>
+                       class="text-zinc-500 hover:text-emerald-400 transition-colors flex items-center gap-2 text-sm reveal">
+                        View All
+                        <svg aria-hidden="true"
+                             focusable="false"
+                             width="16"
+                             height="16"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.5"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {% for article in articles[:3] %}
-                        <article class="relative flex flex-col bg-zinc-850 border border-zinc-700 rounded-xl overflow-hidden hover:border-emerald-400 hover:-translate-y-0.5 transition-all duration-150 reveal">
+                        <article class="relative flex flex-col bg-zinc-950/50 border border-zinc-900 rounded-lg overflow-hidden hover:border-emerald-400/50 transition-all duration-200 group reveal">
 
+                            <!-- Gradient thumb — matches Figma from-emerald-400/20 to-black -->
                             {% if article.cover_image %}
                                 <img src="{{ article.cover_image }}"
                                      alt="{{ article.title }}"
-                                     class="h-36 w-full object-cover" />
+                                     class="h-48 w-full object-cover" />
                             {% else %}
-                                <div class="h-36 bg-slate-800 flex items-center justify-center"
+                                <div class="h-48 bg-gradient-to-br from-emerald-400/20 to-black flex items-center justify-center"
                                      aria-hidden="true">
-                                    <span class="text-5xl font-bold text-slate-600 uppercase select-none">{{ article.title[0] }}</span>
+                                    <span class="text-6xl font-bold opacity-20 uppercase select-none">{{ article.title[0] }}</span>
                                 </div>
                             {% endif %}
 
-                            <div class="p-5 flex flex-col flex-1">
-                                <div class="flex items-center gap-2 mb-2">
-                                    <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
-                                        {{ article.category.name if article.category else 'General' }}
-                                    </span>
-                                    <span class="text-zinc-600 text-xs" aria-hidden="true">·</span>
-                                    <time class="text-xs text-gray-500"
-                                          datetime="{{ article.date.isoformat() }}">
-                                        {{ article.date.strftime("%b %d, %Y") }}
-                                    </time>
+                            <div class="p-6 flex flex-col flex-1">
+                                <div class="text-emerald-400 text-sm mb-2">
+                                    {{ article.category.name if article.category else 'General' }}
                                 </div>
 
-                                <h3 class="text-base font-semibold text-white leading-snug mb-2">
+                                <h3 class="text-xl font-medium mb-3 group-hover:text-emerald-400 transition-colors">
                                     <a href="{{ base_url }}/{{ article.url }}"
                                        class="after:absolute after:inset-0">{{ article.title }}</a>
                                 </h3>
 
-                                <p class="text-sm text-gray-500 leading-relaxed flex-1 line-clamp-3 mb-4">
+                                <p class="text-zinc-500 text-sm mb-4 flex-1 line-clamp-2">
                                     {{ article.summary }}
                                 </p>
 
-                                <span class="text-xs text-emerald-400 font-medium">Read More →</span>
+                                <div class="flex items-center gap-4 text-zinc-600 text-xs mb-4">
+                                    <span class="flex items-center gap-1">
+                                        <svg aria-hidden="true"
+                                             focusable="false"
+                                             width="14"
+                                             height="14"
+                                             viewBox="0 0 24 24"
+                                             fill="none"
+                                             stroke="currentColor"
+                                             stroke-width="1.5"
+                                             stroke-linecap="round"
+                                             stroke-linejoin="round">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
+                                        </svg>
+                                        <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime("%b %d") }}</time>
+                                    </span>
+                                </div>
+
+                                <span class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 text-sm">
+                                    Read More
+                                    <svg aria-hidden="true"
+                                         focusable="false"
+                                         width="14"
+                                         height="14"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="1.5"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </span>
                             </div>
                         </article>
                     {% endfor %}
@@ -321,13 +301,13 @@
     {% endif %}
 
     <!-- CONTACT -->
-    <section id="contact" class="py-20 px-6">
-        <div class="max-w-lg mx-auto text-center">
-            <h2 class="text-3xl font-bold text-emerald-400 mb-3 reveal">
+    <section id="contact"
+             class="min-h-screen flex items-center justify-center py-20 px-6">
+        <div class="max-w-2xl mx-auto w-full">
+            <h2 class="text-4xl font-normal mb-4 text-emerald-400 text-center reveal">
                 Get In Touch
             </h2>
-
-            <p class="text-gray-400 mb-10 reveal">
+            <p class="text-zinc-400 text-center mb-12 reveal">
                 Have a project in mind or just want to say hi? Feel free to reach out!
             </p>
 
@@ -337,7 +317,7 @@
                   data-netlify="true"
                   netlify-honeypot="bot-field"
                   id="contact-form"
-                  class="text-left space-y-5 reveal"
+                  class="space-y-6 mb-12 reveal"
                   novalidate>
                 <p class="hidden" aria-hidden="true">
                     <label>
@@ -345,11 +325,10 @@
                         <input name="bot-field" tabindex="-1" />
                     </label>
                 </p>
-
                 <input type="hidden" name="form-name" value="contact" />
 
-                <div class="flex flex-col gap-1.5">
-                    <label for="name" class="text-sm font-medium text-gray-300">
+                <div>
+                    <label for="name" class="block text-zinc-400 mb-2 text-sm">
                         Name
                     </label>
                     <input id="name"
@@ -358,11 +337,11 @@
                            placeholder="Your name"
                            required
                            autocomplete="name"
-                           class="bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-zinc-600 outline-none focus:border-emerald-400 transition-colors" />
+                           class="w-full px-4 py-3 bg-zinc-950 border border-zinc-900 rounded-lg text-white placeholder-zinc-700 focus:outline-none focus:border-emerald-400 transition-colors text-sm" />
                 </div>
 
-                <div class="flex flex-col gap-1.5">
-                    <label for="email" class="text-sm font-medium text-gray-300">
+                <div>
+                    <label for="email" class="block text-zinc-400 mb-2 text-sm">
                         Email
                     </label>
                     <input id="email"
@@ -371,28 +350,28 @@
                            placeholder="your.email@example.com"
                            required
                            autocomplete="email"
-                           class="bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-zinc-600 outline-none focus:border-emerald-400 transition-colors" />
+                           class="w-full px-4 py-3 bg-zinc-950 border border-zinc-900 rounded-lg text-white placeholder-zinc-700 focus:outline-none focus:border-emerald-400 transition-colors text-sm" />
                 </div>
 
-                <div class="flex flex-col gap-1.5">
-                    <label for="message" class="text-sm font-medium text-gray-300">
+                <div>
+                    <label for="message" class="block text-zinc-400 mb-2 text-sm">
                         Message
                     </label>
                     <textarea id="message"
                               name="message"
                               placeholder="Your message..."
-                              rows="6"
+                              rows="5"
                               required
-                              class="bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-zinc-600 outline-none focus:border-emerald-400 transition-colors resize-y"></textarea>
+                              class="w-full px-4 py-3 bg-zinc-950 border border-zinc-900 rounded-lg text-white placeholder-zinc-700 focus:outline-none focus:border-emerald-400 transition-colors resize-none text-sm"></textarea>
                 </div>
 
                 <button type="submit"
                         id="submit-btn"
-                        class="w-full flex items-center justify-center gap-2 bg-emerald-400 text-zinc-900 font-semibold text-sm py-3 rounded-lg hover:opacity-90 hover:-translate-y-px transition-all disabled:opacity-60 disabled:cursor-not-allowed">
+                        class="w-full py-3 bg-emerald-400 text-black font-medium rounded-lg hover:bg-emerald-500 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                     <svg aria-hidden="true"
                          focusable="false"
-                         width="16"
-                         height="16"
+                         width="18"
+                         height="18"
                          viewBox="0 0 24 24"
                          fill="none"
                          stroke="currentColor"
@@ -418,14 +397,15 @@
                 </p>
             </form>
 
-            <div class="flex items-center justify-center gap-6 mt-10 reveal">
+            <!-- Social icons -->
+            <div class="flex justify-center gap-6 reveal">
                 <a href="mailto:sanjeevz1717@gmail.com"
-                   class="text-gray-500 hover:text-emerald-400 hover:-translate-y-0.5 transition-all"
+                   class="text-zinc-500 hover:text-emerald-400 transition-colors"
                    aria-label="Email">
                     <svg aria-hidden="true"
                          focusable="false"
-                         width="22"
-                         height="22"
+                         width="24"
+                         height="24"
                          viewBox="0 0 24 24"
                          fill="none"
                          stroke="currentColor"
@@ -436,16 +416,15 @@
                         <polyline points="22,6 12,13 2,6" />
                     </svg>
                 </a>
-
                 <a href="https://github.com/sanjeevz3009"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="text-gray-500 hover:text-emerald-400 hover:-translate-y-0.5 transition-all"
+                   class="text-zinc-500 hover:text-emerald-400 transition-colors"
                    aria-label="GitHub">
                     <svg aria-hidden="true"
                          focusable="false"
-                         width="22"
-                         height="22"
+                         width="24"
+                         height="24"
                          viewBox="0 0 24 24"
                          fill="none"
                          stroke="currentColor"
@@ -455,16 +434,15 @@
                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
                     </svg>
                 </a>
-
                 <a href="https://linkedin.com/in/sanjeev-srithevan-526718196"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="text-gray-500 hover:text-emerald-400 hover:-translate-y-0.5 transition-all"
+                   class="text-zinc-500 hover:text-emerald-400 transition-colors"
                    aria-label="LinkedIn">
                     <svg aria-hidden="true"
                          focusable="false"
-                         width="22"
-                         height="22"
+                         width="24"
+                         height="24"
                          viewBox="0 0 24 24"
                          fill="none"
                          stroke="currentColor"
@@ -478,4 +456,5 @@
             </div>
         </div>
     </section>
+
 {% endblock content %}

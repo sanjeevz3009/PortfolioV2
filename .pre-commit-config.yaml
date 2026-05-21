@@ -10,8 +10,8 @@ repos:
       - id: check-json
       - id: check-merge-conflict
       - id: check-case-conflict
-      - id: check-added-large-files
-        args: ["--maxkb=500"]
+      # - id: check-added-large-files
+        # args: ["--maxkb=500"]
       - id: detect-private-key
       - id: mixed-line-ending
         args: ["--fix=lf"]

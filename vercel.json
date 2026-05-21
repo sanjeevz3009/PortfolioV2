@@ -1,7 +1,7 @@
 {
-  "buildCommand": "pip install uv && uv sync --no-group dev && uv run pelican content -s publishconf.py",
+  "buildCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && source $HOME/.cargo/env && uv sync --no-group dev && uv run pelican content -s publishconf.py",
   "outputDirectory": "output",
-  "installCommand": "pip install uv",
+  "installCommand": "",
   "framework": null,
   "headers": [
     {

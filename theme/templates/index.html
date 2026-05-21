@@ -444,20 +444,16 @@
                 Have a project in mind or just want to say hi? Feel free to reach out!
             </p>
 
-            <form name="contact"
+            <form id="contact-form"
+                  action="https://api.web3forms.com/submit"
                   method="post"
-                  action="/"
-                  data-netlify="true"
-                  netlify-honeypot="bot-field"
-                  id="contact-form"
                   class="space-y-6 mb-12 reveal">
-                <p class="hidden" aria-hidden="true">
-                    <label>
-                        Don't fill this out:
-                        <input name="bot-field" tabindex="-1" />
-                    </label>
-                </p>
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="access_key" value="34406196-83b4-4243-a30e-1c5b34e58b11" />
+                <input type="hidden" name="subject" value="New contact from portfolio" />
+                <input type="hidden" name="redirect" value="false" />
+
+                <!-- honeypot -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
 
                 <div>
                     <label for="name" class="block text-zinc-400 mb-2 text-sm">

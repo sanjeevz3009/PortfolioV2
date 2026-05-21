@@ -195,7 +195,8 @@
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(new FormData(form)).toString(),
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (res.ok && data.success) {
         form.reset();
         if (btnText) btnText.classList.remove('hidden');
         if (btnSend) btnSend.classList.add('hidden');

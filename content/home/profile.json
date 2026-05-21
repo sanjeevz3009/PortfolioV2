@@ -1,59 +1,199 @@
 {
   "experience": [
     {
-      "period": "2023 — Present",
-      "role": "Senior Software Engineer",
-      "company": "Office for National Statistics",
-      "summary": "Building and maintaining dis-wagtail, a Django/Wagtail CMS serving ONS publishers. Working across Kubernetes, PostgreSQL, Redis and Kafka on a distributed platform team."
+      "period": "March 2025 — Present",
+      "role": "Senior Software Engineer: New Website Platform (NWP) CMS Team",
+      "company": "Office for National Statistics, London UK",
+      "summary": "Worked on the Wagtail-based CMS powering the new ONS website platform, contributing across backend engineering, search integration, authentication, CI/CD, developer experience, and technical leadership.\n\nKey highlights:\n\n• Led and implemented the Wagtail–Kafka search integration, synchronising CMS content updates with the ONS Search Service using event-driven architecture and Kafka messaging.\n• Developed REST API endpoints using Django REST Framework (DRF) to expose indexable CMS content with pagination and contract-compliant schemas for downstream search services.\n• Integrated AWS Cognito authentication into Wagtail CMS using JWT-based authentication flows and custom Django middleware.\n• Led sandbox search integration work, collaborating with OpenSauce developers and producing reusable Confluence testing and integration documentation adopted by multiple teams.\n• Designed and implemented complex cross-pollination functionality enabling dynamic content surfacing between Topic, Statistical Article, and Methodology pages.\n• Delivered UX and backend improvements across Wagtail, including redirect logic, validation consistency improvements, and maintainable block refactors.\n• Diagnosed and resolved CI/CD and Kafka broker integration issues, improving pipeline stability and local developer workflows.\n• Supported Django upgrades, dependency maintenance, flaky test remediation, hotfixes, and build reliability improvements.\n• Led knowledge transfer sessions, onboarding support, PR reviews, release activities, and cross-functional collaboration with QA, User Research, BAs, PMs, and infrastructure engineers.\n• Contributed to staging integrations, deployment validation, release coordination, and long-term maintainability initiatives.\n\nTechnologies: Python, Django, Wagtail, DRF, Kafka, AWS Cognito, JWT, Playwright, Docker, CI/CD, Concourse, PostgreSQL, Jinja2, TypeScript, Terraform, and AWS services."
     },
     {
-      "period": "2020 — 2023",
-      "role": "Software Engineer",
-      "company": "Office for National Statistics",
-      "summary": "Worked on the development of dis-wagtail, a Django/Wagtail CMS serving ONS publishers. Contributed to the design and implementation of new features, as well as maintaining and improving existing functionality."
+      "period": "June 2024 — March 2025",
+      "role": "Software Engineer: EQ Author (Census) & New Website Platform (ONS Website Replatforming/ Transformation) Teams",
+      "company": "Office for National Statistics, London UK",
+      "summary": "Worked on the New Website Platform (NWP) Content Management System, contributing to the development and improvement of large-scale internal CMS platforms using Python, Django, Wagtail, and front-end technologies.\n\nKey highlights:\n\n• Coordinated and managed development work across engineers with varying experience levels, refining Jira tickets and helping maintain delivery flow.\n• Co-led the Taxonomy and UI Testing Suite initiatives using Behave and Playwright, driving improvements across multiple engineering workstreams.\n• Delivered UX and UI improvements using Jinja2 and the ONS Design System.\n• Led development of the Main Menu and Footer Menu systems within Wagtail CMS, including custom validation functionality and pair programming with placement students.\n• Delivered multiple Wagtail component and UI enhancements, including PanelBlock improvements, spacing fixes, icon updates, and title refinements.\n• Led UX-focused improvements within the Wagtail admin experience based on user research findings, improving validation error handling and help text consistency.\n• Authored engineering documentation and process improvements, including code review standards and ONS Design System upgrade guidance.\n\nTechnologies: Python, Django, Wagtail, Jinja2, Playwright, Behave, TypeScript, JavaScript, AWS, CI/CD, ONS Design System.\n\nContributed to the EQ Author platform, working across front-end, authentication, validation, and UX improvement initiatives using React, Node.js, Express.js, and Firebase technologies.\n\nKey highlights:\n\n• Enhanced authentication resilience by implementing timeout functionality within custom authentication flows.\n• Mentored and pair-programmed with RTD students, supporting onboarding, development confidence, and code quality.\n• Led a UX improvement SPIKE for the EQ Survey Creation Tool extractor, analysing workflows and proposing design-led technical improvements.\n• Facilitated knowledge transfer during the EQ Runner and EQ Author team merge, helping maintain architectural alignment and continuity.\n• Identified documentation gaps across systems and raised technical improvement initiatives to improve maintainability and onboarding.\n• Worked with AJV schema validation and resolved front-end console error issues to improve application reliability.\n• Selected by the technical lead to lead the Python Flask component of a new service initiative.\n\nTechnologies: React, TypeScript, JavaScript, Node.js, Express.js, Firebase Auth, Python, Flask, AJV, CI/CD."
     },
     {
-      "period": "2018 — 2020",
-      "role": "Software Engineer",
-      "company": "University of Manchester",
-      "summary": "Developed and maintained web applications using Python and Django. Collaborated with cross-functional teams to deliver high-quality software solutions for academic research projects."
+      "period": "September 2022 — May 2024",
+      "role": "Junior Software Engineer: Statistical Methods Library Team",
+      "company": "Office for National Statistics, Titchfield UK",
+      "summary": "Worked across multiple teams within ONS, contributing to large-scale government applications and internal platforms using Python, Flask, React, TypeScript, Node.js, AWS, and CI/CD tooling.\n\nKey highlights:\n\n• Led a proof of concept integrating a headless CMS into the Statistical Methods Library platform, later refined for production deployment.\n• Collaborated with tech leads, architects, stakeholders, and steering groups on system design, security, scalability, and delivery decisions.\n• Developed front-end and back-end features across Flask and React applications handling large-scale Census and statistical data workflows.\n• Built and improved automated testing pipelines using Selenium, Behave, Pytest, and CI/CD tooling, helping reduce execution times through pipeline parallelisation.\n• Delivered technical documentation, onboarding guides, presentations, demos, and knowledge-sharing sessions across engineering communities.\n• Supported non-functional testing initiatives including performance, accessibility, load, stress, and security testing.\n• Mentored placement students and supported developer onboarding and knowledge transfer across teams.\n\nTechnologies used included Python, Flask, Pandas, React, TypeScript, Node.js, Express.js, AWS, Terraform, Jenkins, Concourse CI, Selenium, Playwright, Pytest, and Apache JMeter."
     },
     {
-      "period": "2016 — 2018",
-      "role": "Junior Software Engineer",
-      "company": "Tech Solutions Ltd",
-      "summary": "Assisted in the development of web applications and provided support for existing software. Gained experience in Python, Django, and frontend technologies while working on various client projects."
+      "period": "April 2021 — April 2021",
+      "role": "Technology Spring Intern, Software Engineering",
+      "company": "JPMorgan Chase & Co, Bournemouth UK",
+      "summary": "Worked on a programming project utilising fuzzy logic to develop a sanctions screening application.\n\nAttended technical sessions and workshops, gaining early exposure to:\n\n• Agile software development methodologies\n• Cybersecurity within FinTech\n• Technology in Corporate & Investment Banking\n• User Experience (UX) design principles and workshops\n\nThis experience gave me an early understanding of how technology, software engineering, and business intersect within real-world industries."
+    },
+    {
+      "period": "June 2019 - June 2019",
+      "role": "Database Assistant",
+      "company": "UK Home Office, London UK",
+      "summary": "During my time at the Home Office, I gained hands-on experience working with and managing large-scale databases in a real-world operational environment.\n\nMy responsibilities included verifying and uploading immigration documentation, ensuring records were processed accurately and securely. I also cross-referenced physical immigration documents against internal system records to maintain data accuracy and integrity.\n\nThis experience gave me valuable insight into how large government systems operate, particularly around data handling, verification processes, and attention to detail in high-responsibility environments."
     }
   ],
   "skills": [
     {
-      "title": "Backend",
+      "title": "Backend & Languages",
       "icon": "M12 2C12 2 8 4 8 10l6 6c6 0 8-4 8-4M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM3.29 15l1.41 1.41M13 6l2 2M8.5 10.5l5 5",
       "items": [
         { "name": "Python", "level": "Expert" },
         { "name": "Django", "level": "Expert" },
-        { "name": "Wagtail", "level": "Advanced" },
-        { "name": "PostgreSQL", "level": "Advanced" }
+        { "name": "Wagtail", "level": "Expert" },
+        { "name": "Flask", "level": "Advanced" },
+        { "name": "TypeScript", "level": "Intermediate" },
+        { "name": "Node.js", "level": "Advanced" },
+        { "name": "Express.js", "level": "Intermediate" }
       ]
     },
     {
       "title": "Frontend",
       "icon": "M16 18l6-6-6-6M8 6l-6 6 6 6",
       "items": [
-        { "name": "HTML / CSS", "level": "Expert" },
         { "name": "JavaScript", "level": "Advanced" },
-        { "name": "Tailwind CSS", "level": "Advanced" }
+        { "name": "React", "level": "Intermediate" },
+        { "name": "HTML / CSS", "level": "Advanced" },
+        { "name": "Tailwind CSS", "level": "Advanced" },
+        { "name": "Jinja2", "level": "Expert" }
       ]
     },
     {
-      "title": "Tools & Infra",
+      "title": "Databases",
+      "icon": "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
+      "items": [
+        { "name": "PostgreSQL", "level": "Intermediate" },
+        { "name": "SQLite", "level": "Advanced" },
+        { "name": "MongoDB", "level": "Intermediate" },
+        { "name": "DynamoDB", "level": "Intermediate" }
+      ]
+    },
+    {
+      "title": "Cloud & Infrastructure",
+      "icon": "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2M12 3v18M3 12h18",
+      "items": [
+        { "name": "AWS (S3, EC2, Cognito)", "level": "Intermediate" },
+        { "name": "Docker", "level": "Intermediate" },
+        { "name": "Kubernetes", "level": "Intermediate" },
+        { "name": "Terraform", "level": "Intermediate" }
+      ]
+    },
+    {
+      "title": "CI/CD & DevOps",
       "icon": "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",
       "items": [
-        { "name": "Kubernetes", "level": "Advanced" },
-        { "name": "Docker", "level": "Advanced" },
-        { "name": "Git / CI&CD", "level": "Expert" },
-        { "name": "AWS", "level": "Intermediate" }
+        { "name": "Git", "level": "Advanced" },
+        { "name": "GitHub Actions", "level": "Advanced" },
+        { "name": "Concourse CI", "level": "Advanced" },
+        { "name": "Kafka", "level": "Advanced" }
       ]
+    },
+    {
+      "title": "Testing & QA",
+      "icon": "M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11",
+      "items": [
+        { "name": "Pytest", "level": "Advanced" },
+        { "name": "Jest", "level": "Advanced" },
+        { "name": "Playwright", "level": "Advanced" },
+        { "name": "Cypress", "level": "Advanced" },
+        { "name": "Cucumber/Behave", "level": "Expert" }
+      ]
+    },
+    {
+      "title": "Architecture & Design",
+      "icon": "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+      "items": [
+        { "name": "REST APIs", "level": "Advanced" },
+        { "name": "Microservices", "level": "Advanced" },
+        { "name": "System Design", "level": "Advanced" },
+        { "name": "OOP", "level": "Advanced" }
+      ]
+    },
+    {
+      "title": "CMS & Content",
+      "icon": "M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z",
+      "items": [
+        { "name": "Wagtail CMS", "level": "Expert" },
+        { "name": "Contentful", "level": "Advanced" },
+        { "name": "ONS Design System", "level": "Expert" }
+      ]
+    }
+  ],
+  "bonus_skills": [
+    {
+      "label": "Community",
+      "icon": "ti-users-group",
+      "title": "Software Engineering CoP Board",
+      "description": "Active board member involved in recruitment, role-profile reviews, and career-progression framework updates.",
+      "badge": "Board member"
+    },
+    {
+      "label": "Events",
+      "icon": "ti-presentation",
+      "title": "Talks, hackathons & community sessions",
+      "description": "Organised community talks, hackathons, newsletters, and technical exchange sessions. Delivered a talk on headless content management systems.",
+      "badge": "Speaker"
+    },
+    {
+      "label": "Leadership",
+      "icon": "ti-exchange",
+      "title": "Community Tech Exchange Team",
+      "description": "Led the initiative to form the team, working directly with the Head of Profession and Innovation Team. Delivered 7+ community sessions for Python and JS.",
+      "badge": "Founder"
+    },
+    {
+      "label": "Standards",
+      "icon": "ti-settings-2",
+      "title": "Technical Advisory Group (TAG)",
+      "description": "Contributed to the creation and review of software-engineering principles and standards to align practices across ONS.",
+      "badge": "Contributor"
+    },
+    {
+      "label": "Outreach",
+      "icon": "ti-building-community",
+      "title": "Outreach Ambassador",
+      "description": "Promoted ONS programmes such as Year-in-Industry and Apprenticeships. Delivered onboarding sessions, presentations, and Q&A panels for new placement students.",
+      "badge": "Ambassador"
+    },
+    {
+      "label": "Mentoring",
+      "icon": "ti-user-star",
+      "title": "Student mentoring & leadership",
+      "description": "Mentored 4+ students, supporting their technical growth across teams and disciplines.",
+      "badge": "4+ mentees"
+    },
+    {
+      "label": "Engagement",
+      "icon": "ti-speakerphone",
+      "title": "Show-and-tells & workshops",
+      "description": "Regularly presented at internal and external show-and-tells, dev meetings, and product away-days. Brought in guest speakers and contributed Loom guides for QATs, researchers, and PMs.",
+      "badge": "Regular contributor"
+    },
+    {
+      "label": "Process",
+      "icon": "ti-file-description",
+      "title": "Documentation & templates",
+      "description": "Authored template repositories, documentation standards, and technical guides. Created and refined tech-debt tickets to improve backlog hygiene.",
+      "badge": "Process owner"
+    },
+    {
+      "label": "Strategy",
+      "icon": "ti-rocket",
+      "title": "Strategic initiatives",
+      "description": "Participated in CPD Log Pilot, GDD Pay Framework, and career-progression reviews. Initiated discussions on engineering best practices within tech sessions.",
+      "badge": "Strategic contributor"
+    },
+    {
+      "label": "Collaboration",
+      "icon": "ti-sitemap",
+      "title": "Cross-functional collaboration",
+      "description": "Worked closely with QATs, user researchers, DMs, TLs, BAs, and PMs to triage and refine cards for key releases; provided support during resourcing gaps.",
+      "badge": "Cross-functional"
+    },
+    {
+      "label": "Post-release",
+      "icon": "ti-zoom-check",
+      "title": "Post-release investigations",
+      "description": "Led investigation and documentation of post-Day-1 features such as live production data sync and audit logging, facilitating workshops and recording findings on Confluence.",
+      "badge": "Lead investigator"
     }
   ],
   "projects": [

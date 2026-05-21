@@ -218,3 +218,31 @@
     }
   });
 })();
+
+// Experience card "See more" toggle
+(function () {
+  const buttons = document.querySelectorAll('.see-more-btn');
+  if (!buttons.length) return;
+
+  buttons.forEach((btn) => {
+    const card = btn.closest('.relative.pl-24');
+    const summary = card?.querySelector('.job-summary');
+    if (!summary) return;
+
+    btn.addEventListener('click', () => {
+      const isExpanded = summary.classList.toggle('line-clamp-3');
+      const label = btn.querySelector('.btn-label');
+      const chevron = btn.querySelector('.chevron');
+
+      if (isExpanded) {
+        if (label) label.textContent = 'See more';
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
+        btn.setAttribute('aria-label', 'Expand summary');
+      } else {
+        if (label) label.textContent = 'See less';
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+        btn.setAttribute('aria-label', 'Collapse summary');
+      }
+    });
+  });
+})();

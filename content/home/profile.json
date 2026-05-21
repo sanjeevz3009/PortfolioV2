@@ -215,16 +215,72 @@
       "title": "Newsletter Sentinel",
       "description": "A personal pipeline that fetches newsletters from Gmail, deduplicates stories using Jaccard similarity, and generates AI-powered daily digests via Claude.",
       "tech": ["Python", "Claude API", "SQLite", "Gmail API", "Railway"],
-      "github": "https://github.com/sanjeevz3009/newsletter-sentinel",
+      "github": "https://github.com/sanjeevz3009/NewsletterSentinel",
+      "live": "",
+      "featured": true
+    },
+    {
+      "title": "SignSense",
+      "description": "An AI-powered sign language recognition and learning application using an LSTM neural network and MediaPipe hand tracking to detect and classify gestures in real-time via webcam.",
+      "tech": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "OpenCV",
+        "MediaPipe",
+        "Streamlit"
+      ],
+      "github": "https://github.com/sanjeevz3009/SignSense-AI-Powered-Sign-Language-Recognition",
+      "live": "",
+      "featured": true
+    },
+    {
+      "title": "BinSense",
+      "description": "A smart waste management system using IoT sensors to monitor bin fill levels in real-time, with dynamic route optimisation to reduce collection costs and carbon emissions.",
+      "tech": [
+        "Python",
+        "Flask",
+        "Jinja2",
+        "Chart.js",
+        "C++",
+        "Arduino",
+        "ESP32"
+      ],
+      "github": "https://github.com/sanjeevz3009/IoT-Web-App",
       "live": "",
       "featured": true
     },
     {
       "title": "Portfolio & Blog",
-      "description": "This site — a static portfolio and blog built with Pelican, Jinja2 and Tailwind CSS. Deployed to Vercel with GitHub Actions CI.",
+      "description": "This site - a static portfolio and blog built with Pelican, Jinja2 and Tailwind CSS. Deployed to Vercel with GitHub Actions CI.",
       "tech": ["Python", "Pelican", "Jinja2", "Tailwind CSS", "Vercel"],
       "github": "https://github.com/sanjeevz3009/portfolio",
       "live": "https://project-g4so0.vercel.app/",
+      "featured": true
+    },
+    {
+      "title": "Scrabble",
+      "description": "A fully playable browser-based Scrabble game with multiple board designs, letter scoring, double/triple word and letter squares, valid word checking, and connection validation.",
+      "tech": ["JavaScript", "Node.js", "HTML", "CSS"],
+      "github": "https://github.com/sanjeevz3009/Scrabble",
+      "live": "",
+      "featured": false
+    },
+    {
+      "title": "Wordle",
+      "description": "A faithful browser-based of the viral word game Wordle, rebuilt from scratch with all the core game logic and features of the original.",
+      "tech": ["JavaScript", "Node.js", "HTML", "CSS"],
+      "github": "https://github.com/sanjeevz3009/WordleClone",
+      "live": "",
+      "featured": false
+    },
+
+    {
+      "title": "QJet",
+      "description": "A desktop airline booking and management system with role-based access for customers, staff, and admins. Features flight booking, cancellations, email-based password resets, and admin analytics dashboards exportable to Excel.",
+      "tech": ["Python", "Tkinter", "SQLite", "Matplotlib"],
+      "github": "https://github.com/sanjeevz3009/QJet",
+      "live": "",
       "featured": false
     }
   ]

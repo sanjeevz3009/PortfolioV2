@@ -254,7 +254,7 @@
       "title": "Portfolio & Blog",
       "description": "This site - a static portfolio and blog built with Pelican, Jinja2 and Tailwind CSS. Deployed to Vercel with GitHub Actions CI.",
       "tech": ["Python", "Pelican", "Jinja2", "Tailwind CSS", "Vercel"],
-      "github": "https://github.com/sanjeevz3009/portfolio",
+      "github": "https://github.com/sanjeevz3009/PortfolioV2",
       "live": "https://project-g4so0.vercel.app/",
       "featured": true
     },
@@ -268,7 +268,7 @@
     },
     {
       "title": "Wordle",
-      "description": "A faithful browser-based of the viral word game Wordle, rebuilt from scratch with all the core game logic and features of the original.",
+      "description": "A browser-based of the viral word game Wordle, rebuilt from scratch with all the core game logic and features of the original.",
       "tech": ["JavaScript", "Node.js", "HTML", "CSS"],
       "github": "https://github.com/sanjeevz3009/WordleClone",
       "live": "",

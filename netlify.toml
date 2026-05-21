@@ -4,7 +4,7 @@
 
 [build.environment]
   PYTHON_VERSION = "3.14.2"
-  # SITEURL set in Netlify dashboard → Site settings → Environment variables
+  # SITEURL
 
 [[redirects]]
   from = "/blog/"

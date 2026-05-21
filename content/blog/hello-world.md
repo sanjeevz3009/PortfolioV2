@@ -5,7 +5,7 @@ Category: General
 Summary: First post on my new portfolio — a quick note on how it was built and what's coming.
 <!-- cover_image: /theme/images/hello-world-cover.jpg -->
 
-This is the first post on my new portfolio site. Built with [Pelican](https://getpelican.com), a Python static site generator, and deployed to [Netlify](https://netlify.com).
+This is the first post on my new portfolio site. Built with [Pelican](https://getpelican.com), a Python static site generator, and deployed to [Vercel](https://vercel.com).
 
 ## Why a static site?
 
@@ -14,7 +14,7 @@ I spend my days working in Django and Wagtail. For a personal portfolio that sta
 A static site gives me:
 
 - **Zero infrastructure** - no server to patch, no database to back up
-- **Free hosting** - Netlify's free tier is more than enough
+- **Free hosting** - Vercel's free tier is more than enough
 - **Fast deploys** - `git push` and the site is live in ~30 seconds
 - **Full control** - plain HTML, CSS and Markdown, no magic
 
@@ -29,7 +29,7 @@ Here's the full picture:
 | Static site generator | Pelican |
 | Templates | Jinja2 |
 | Styling | Tailwind CSS |
-| Deployment | Netlify |
+| Deployment | Vercel |
 
 ## A code example
 
@@ -42,7 +42,7 @@ TIMEZONE = "Europe/London"
 PLUGINS = ["pelican.plugins.sitemap"]
 ```
 
-Security headers, caching, and redirects are all handled in `netlify.toml` - no server config needed.
+Security headers, caching, and redirects are all handled in `vercel.json` - no server config needed.
 
 ## Blockquote example
 

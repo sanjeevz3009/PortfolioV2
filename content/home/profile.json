@@ -81,10 +81,10 @@
     },
     {
       "title": "Portfolio & Blog",
-      "description": "This site — a static portfolio and blog built with Pelican, Jinja2 and Tailwind CSS. Deployed to Netlify with GitHub Actions CI.",
-      "tech": ["Python", "Pelican", "Jinja2", "Tailwind CSS", "Netlify"],
+      "description": "This site — a static portfolio and blog built with Pelican, Jinja2 and Tailwind CSS. Deployed to Vercel with GitHub Actions CI.",
+      "tech": ["Python", "Pelican", "Jinja2", "Tailwind CSS", "Vercel"],
       "github": "https://github.com/sanjeevz3009/portfolio",
-      "live": "https://sanjeev-srithevan.netlify.app",
+      "live": "https://project-g4so0.vercel.app/",
       "featured": false
     }
   ]

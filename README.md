@@ -2,7 +2,7 @@
 
 Personal portfolio and blog. Built with [Pelican](https://getpelican.com), styled with
 [Tailwind CSS](https://tailwindcss.com) (CDN) plus custom CSS/JS, deployed to
-[Netlify](https://netlify.com).
+[Vercel](https://vercel.com).
 
 ## Stack
 
@@ -15,7 +15,7 @@ Personal portfolio and blog. Built with [Pelican](https://getpelican.com), style
 | Styling | Tailwind CSS CDN + custom CSS |
 | Linting/formatting | Ruff, djLint, pre-commit |
 | Security | gitleaks |
-| Hosting | Netlify |
+| Hosting | Vercel |
 
 ## Prerequisites
 
@@ -75,11 +75,11 @@ git commit -m "feat: add post — my post title"
 git push
 ```
 
-Netlify builds and deploys automatically.
+Vercel builds and deploys automatically.
 
 ## Deployment
 
-Netlify is configured via `netlify.toml`. Connect the GitHub repo in the Netlify
+Vercel is configured via `vercel.json`. Connect the GitHub repo in Vercel
 dashboard and it handles everything — build, deploy, SSL.
 
 Set `SITEURL` in the environment for production builds (publishconf requires it).
@@ -110,7 +110,7 @@ portfolio/
 ├── .python-version
 ├── pelicanconf.py      # dev config
 ├── publishconf.py      # production config
-├── netlify.toml
+├── vercel.json
 ├── Makefile
 └── pyproject.toml
 ```

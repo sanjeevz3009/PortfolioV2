@@ -145,7 +145,7 @@
   targets.forEach((el) => observer.observe(el));
 })();
 
-// Contact form — Netlify AJAX
+// Contact form
 (function () {
   const form = document.getElementById('contact-form');
   if (!form) return;

@@ -12,7 +12,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from pelicanconf import *  # noqa: E402
 
-# Set via environment variable — Netlify: Site settings → Environment variables
+# Set environment variable
 # Local production test: export SITEURL=https://yourdomain.com
 try:
     SITEURL = os.environ["SITEURL"]

@@ -73,97 +73,111 @@
     <section id="experience"
              class="min-h-screen flex items-center justify-center py-20 px-6">
         <div class="max-w-4xl mx-auto w-full">
-            <h2 class="text-4xl font-normal text-emerald-400 mb-12 text-center reveal">
+            <h2 class="text-4xl font-normal text-emerald-400 text-center mb-16 reveal">
                 Experience
             </h2>
 
             {% for job in HOME_PROFILE.experience %}
-                <div class="bg-zinc-950/50 border border-zinc-900 rounded-2xl overflow-hidden mb-5 hover:border-emerald-400/20 transition-colors duration-200 reveal">
+                <div class="grid gap-x-4 mb-6 reveal"
+                     style="grid-template-columns: 110px 20px 1fr">
 
-                    <!-- Header -->
-                    <div class="px-7 py-6 border-b border-zinc-900">
-
-                        <!-- Top row: date chip right-aligned -->
-                        <div class="flex justify-start mb-3">
-                            <span class="font-mono text-[11px] tracking-widest uppercase text-emerald-400 bg-emerald-400/7 border border-emerald-400/15 rounded-md px-3 py-1.5 whitespace-nowrap">
-                                {{ job.period }}
-                            </span>
-                        </div>
-
-                        <!-- Role · Company stacked naturally -->
-                        <p class="text-white font-bold text-base leading-snug mb-3">
-                            {{ job.role.split(":")[0] .strip() }}
-                            <span class="text-emerald-400">&nbsp;· {{ job.company }}</span>
-                        </p>
-
-                        <!-- Team + Location -->
-                        <div class="flex flex-wrap gap-x-4 gap-y-1">
-                            {% if ':' in job.role %}
-                                <span class="font-mono text-[11px] flex items-baseline gap-1.5">
-                                    <span class="text-zinc-700 uppercase tracking-widest shrink-0">Team</span>
-                                    <span class="text-zinc-500">{{ job.role.split(":")[1] .strip() }}</span>
-                                </span>
+                    <!-- Date -->
+                    <!-- Date -->
+                    <div class="text-right pt-1">
+                        <span class="font-mono text-[11px] tracking-widest uppercase text-zinc-500 leading-relaxed">
+                            {% set parts = job.period.split('—') %}
+                            {% if parts|length > 1 %}
+                                {{ parts[0].strip() }} — {{ parts[1].strip() }}
+                            {% else %}
+                                {{ parts[0].strip() }}
                             {% endif %}
-                            {% if job.location %}
-                                <span class="font-mono text-[11px] flex items-baseline gap-1.5">
-                                    <span class="text-zinc-700 uppercase tracking-widest shrink-0">Location</span>
-                                    <span class="text-zinc-500">{{ job.location }}</span>
-                                </span>
-                            {% endif %}
-                        </div>
-
+                        </span>
                     </div>
-
-                    <div class="exp-card-body">
-                        <!-- Summary -->
-                        {% if job.summary_short %}
-                            <div class="px-7 py-5 border-b border-zinc-900">
-                                <p class="text-sm text-zinc-500 leading-relaxed">
-                                    {{ job.summary_short }}
-                                </p>
+                    <!-- Spine -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-2.5 h-2.5 rounded-full flex-shrink-0 mt-1 {% if loop.first %}bg-emerald-400 ring-4 ring-emerald-400/15 {% else %}bg-zinc-700{% endif %}">
+                        </div>
+                        {% if not loop.last %}
+                            <div class="flex-1 w-px bg-zinc-800 mt-1">
                             </div>
                         {% endif %}
+                    </div>
 
-                        <!-- Bullets -->
-                        {% if job.highlights %}
-                            <div class="exp-bullets px-7">
-                                {% for highlight in job.highlights %}
-                                    <div class="exp-bullet flex items-start gap-3 py-3.5 {% if not loop.last %}border-b border-zinc-900/80{% endif %} {% if loop.index > 3 %}hidden{% endif %}">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-emerald-400/40 flex-shrink-0 mt-[0.45rem]">
-                                        </div>
-                                        <p class="text-sm text-zinc-500 leading-relaxed">
-                                            {{ highlight }}
-                                        </p>
-                                    </div>
-                                {% endfor %}
+                    <!-- Card -->
+                    <div class="bg-zinc-950/50 border border-zinc-900 rounded-2xl overflow-hidden hover:border-emerald-400/20 transition-colors duration-200 mb-6">
+
+                        <!-- Header -->
+                        <div class="px-7 py-6 border-b border-zinc-900">
+                            <p class="text-white font-bold text-base leading-snug mb-2">
+                                {{ job.role.split(":")[0] .strip() }}
+                                <span class="text-emerald-400">&nbsp;· {{ job.company }}</span>
+                            </p>
+                            <div class="flex flex-wrap gap-x-4 gap-y-1">
+                                {% if ':' in job.role %}
+                                    <span class="font-mono text-[11px] flex items-baseline gap-1.5">
+                                        <span class="text-zinc-700 uppercase tracking-widest shrink-0">Team</span>
+                                        <span class="text-zinc-500">{{ job.role.split(":")[1] .strip() }}</span>
+                                    </span>
+                                {% endif %}
+                                {% if job.location %}
+                                    <span class="font-mono text-[11px] flex items-baseline gap-1.5">
+                                        <span class="text-zinc-700 uppercase tracking-widest shrink-0">Location</span>
+                                        <span class="text-zinc-500">{{ job.location }}</span>
+                                    </span>
+                                {% endif %}
                             </div>
+                        </div>
 
-                            <!-- See more toggle — only if more than 3 highlights -->
-                            {% if job.highlights|length > 3 %}
-                                <div class="px-7 pb-4 pt-2">
-                                    <button onclick="toggleHighlights(this)"
-                                            data-expanded="false"
-                                            class="font-mono text-[11px] uppercase tracking-widest text-zinc-600 border border-zinc-800 rounded-md px-3 py-1.5 hover:text-emerald-400 hover:border-emerald-400/30 transition-colors duration-200">
-                                        See more ↓
-                                    </button>
+                        <!-- Body -->
+                        <div class="exp-card-body">
+                            {% if job.summary_short %}
+                                <div class="px-7 py-5 border-b border-zinc-900">
+                                    <p class="text-sm text-zinc-500 leading-relaxed">
+                                        {{ job.summary_short }}
+                                    </p>
                                 </div>
                             {% endif %}
-                        {% endif %}
-                    </div>
 
-                    <!-- Tech tags -->
-                    {% if job.technologies %}
-                        <div class="px-7 py-4 border-t border-zinc-900 flex flex-wrap gap-1.5">
-                            {% for tech in job.technologies %}
-                                <span class="font-mono text-[11px] tracking-wide text-emerald-400 bg-emerald-400/6 border border-emerald-400/15 rounded-full px-2.5 py-0.5 hover:bg-emerald-400/12 hover:border-emerald-400/30 transition-colors duration-150 cursor-default">
-                                    {{ tech }}
-                                </span>
-                            {% endfor %}
+                            {% if job.highlights %}
+                                <div class="exp-bullets px-7">
+                                    {% for highlight in job.highlights %}
+                                        <div class="exp-bullet flex items-start gap-3 py-3.5 {% if not loop.last %}border-b border-zinc-900/80{% endif %} {% if loop.index > 3 %}hidden{% endif %}">
+                                            <div class="w-1.5 h-1.5 rounded-full bg-emerald-400/40 flex-shrink-0 mt-[0.45rem]">
+                                            </div>
+                                            <p class="text-sm text-zinc-500 leading-relaxed">
+                                                {{ highlight }}
+                                            </p>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                {% if job.highlights|length > 3 %}
+                                    <div class="px-7 pb-4 pt-2">
+                                        <button onclick="toggleHighlights(this)"
+                                                data-expanded="false"
+                                                class="font-mono text-[11px] uppercase tracking-widest text-zinc-600 border border-zinc-800 rounded-md px-3 py-1.5 hover:text-emerald-400 hover:border-emerald-400/30 transition-colors duration-200">
+                                            See more ↓
+                                        </button>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
                         </div>
-                    {% endif %}
+
+                        <!-- Tech tags -->
+                        {% if job.technologies %}
+                            <div class="px-7 py-4 border-t border-zinc-900 flex flex-wrap gap-1.5">
+                                {% for tech in job.technologies %}
+                                    <span class="font-mono text-[11px] tracking-wide text-emerald-400 bg-emerald-400/6 border border-emerald-400/15 rounded-full px-2.5 py-0.5 hover:bg-emerald-400/12 hover:border-emerald-400/30 transition-colors duration-150 cursor-default">
+                                        {{ tech }}
+                                    </span>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                    </div>
 
                 </div>
             {% endfor %}
+
         </div>
     </section>
 

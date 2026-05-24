@@ -34,3 +34,18 @@ html {
     transition: none !important;
   }
 }
+
+@media (max-width: 768px) {
+  #experience .grid {
+    grid-template-columns: 1fr !important;
+  }
+  #experience .grid > div:nth-child(1) {
+    text-align: left !important;
+    padding-top: 0 !important;
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  #experience .grid > div:nth-child(2) {
+    display: none !important;
+  }
+}

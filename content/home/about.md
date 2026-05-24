@@ -1,6 +1,6 @@
 Hello, I guess you wanted to know about me, so here you are 🤔 Welcome!
 
-I’m Sanjeev, but you can call me **Sanj**. I love coding (duh) and solving complex problems end to end. Not just disappearing into a flow state and coding my life away, but actually leading development efforts, collaborating with business stakeholders, working within multidisciplinary teams, and helping drive projects toward successful delivery.
+I’m Sanjeev, but you can call me **Sanj**. I love coding (when things work without errors or when I don't know why it works but it works...) and solving complex problems end to end. Not just disappearing into a flow state and coding my life away, but actually leading development efforts, collaborating with business stakeholders, working within multidisciplinary teams, and helping drive projects toward successful delivery.
 
 I enjoy the full journey of building software, from architecture and problem-solving to communication, teamwork, and turning ideas into something real that people can use.
 

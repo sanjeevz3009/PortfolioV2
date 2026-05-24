@@ -115,3 +115,7 @@ html {
   -webkit-text-stroke: 1.5px #34d399;
   color: transparent;
 }
+
+#about {
+  overflow: hidden;
+}

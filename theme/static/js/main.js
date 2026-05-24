@@ -220,29 +220,15 @@
 })();
 
 // Experience card "See more" toggle
-(function () {
-  const buttons = document.querySelectorAll('.see-more-btn');
-  if (!buttons.length) return;
+window.toggleHighlights = function (btn) {
+  const expanded = btn.dataset.expanded === 'true';
+  const cardBody = btn.closest('.exp-card-body');
+  if (!cardBody) return;
 
-  buttons.forEach((btn) => {
-    const card = btn.closest('.relative.pl-24');
-    const summary = card?.querySelector('.job-summary');
-    if (!summary) return;
-
-    btn.addEventListener('click', () => {
-      const isExpanded = summary.classList.toggle('line-clamp-3');
-      const label = btn.querySelector('.btn-label');
-      const chevron = btn.querySelector('.chevron');
-
-      if (isExpanded) {
-        if (label) label.textContent = 'See more';
-        if (chevron) chevron.style.transform = 'rotate(0deg)';
-        btn.setAttribute('aria-label', 'Expand summary');
-      } else {
-        if (label) label.textContent = 'See less';
-        if (chevron) chevron.style.transform = 'rotate(180deg)';
-        btn.setAttribute('aria-label', 'Collapse summary');
-      }
-    });
+  cardBody.querySelectorAll('.exp-bullet').forEach((el, i) => {
+    if (i >= 3) el.classList.toggle('hidden', expanded);
   });
-})();
+
+  btn.dataset.expanded = String(!expanded);
+  btn.textContent = !expanded ? 'See less ↑' : 'See more ↓';
+};

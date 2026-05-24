@@ -73,76 +73,97 @@
     <section id="experience"
              class="min-h-screen flex items-center justify-center py-20 px-6">
         <div class="max-w-4xl mx-auto w-full">
-            <h2 class="text-4xl font-normal mb-16 text-emerald-400 text-center reveal">
+            <h2 class="text-4xl font-normal text-emerald-400 mb-12 text-center reveal">
                 Experience
             </h2>
 
-            <div class="relative">
-                <!-- Gradient timeline line -->
-                <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-400 via-emerald-500 to-transparent"
-                     aria-hidden="true">
-                </div>
+            {% for job in HOME_PROFILE.experience %}
+                <div class="bg-zinc-950/50 border border-zinc-900 rounded-2xl overflow-hidden mb-5 hover:border-emerald-400/20 transition-colors duration-200 reveal">
 
-                <div class="space-y-12">
-                    {% for job in HOME_PROFILE.experience %}
-                        <div class="relative pl-24 reveal">
-                            <!-- Icon circle -->
-                            <div class="absolute left-0 w-16 h-16 rounded-full bg-black border-2 border-emerald-400 flex items-center justify-center text-emerald-400">
-                                <svg aria-hidden="true"
-                                     focusable="false"
-                                     width="22"
-                                     height="22"
-                                     viewBox="0 0 24 24"
-                                     fill="none"
-                                     stroke="currentColor"
-                                     stroke-width="1.5"
-                                     stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-                                    <path d="m3.29 15 1.41 1.41M13 6l2 2M8.5 10.5l5 5" />
-                                    <path d="M12 2C12 2 8 4 8 10l6 6c6 0 8-4 8-4" />
-                                </svg>
-                            </div>
+                    <!-- Header -->
+                    <div class="px-7 py-6 border-b border-zinc-900">
 
-                            <!-- Card — bg-zinc-950/50 border-zinc-900 matches Figma -->
-                            <div class="bg-zinc-950/50 border border-zinc-900 rounded-lg p-6 hover:border-emerald-400/50 transition-colors duration-200">
-                                <div class="text-emerald-400 text-sm mb-2">
-                                    {{ job.period }}
-                                </div>
-                                <h3 class="text-xl font-medium text-white mb-1">
-                                    {{ job.company }}
-                                </h3>
-                                <p class="text-zinc-400 text-sm mb-3">
-                                    {{ job.role }}
-                                </p>
-                                <p class="text-zinc-400 text-sm leading-relaxed whitespace-pre-line job-summary line-clamp-3"
-                                   data-full-text="{{ job.summary }}">
-                                    {{ job.summary }}
-                                </p>
-                                {% if job.summary and job.summary|length > 200 %}
-                                    <button class="see-more-btn mt-2 text-emerald-400 hover:text-emerald-300 text-xs flex items-center gap-1 transition-colors"
-                                            aria-label="Expand summary">
-                                        <span class="btn-label">See more</span>
-                                        <svg aria-hidden="true"
-                                             focusable="false"
-                                             width="12"
-                                             height="12"
-                                             viewBox="0 0 24 24"
-                                             fill="none"
-                                             stroke="currentColor"
-                                             stroke-width="2"
-                                             stroke-linecap="round"
-                                             stroke-linejoin="round"
-                                             class="chevron">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </button>
-                                {% endif %}
-                            </div>
+                        <!-- Top row: date chip right-aligned -->
+                        <div class="flex justify-start mb-3">
+                            <span class="font-mono text-[11px] tracking-widest uppercase text-emerald-400 bg-emerald-400/7 border border-emerald-400/15 rounded-md px-3 py-1.5 whitespace-nowrap">
+                                {{ job.period }}
+                            </span>
                         </div>
-                    {% endfor %}
+
+                        <!-- Role · Company stacked naturally -->
+                        <p class="text-white font-bold text-base leading-snug mb-3">
+                            {{ job.role.split(":")[0] .strip() }}
+                            <span class="text-emerald-400">&nbsp;· {{ job.company }}</span>
+                        </p>
+
+                        <!-- Team + Location -->
+                        <div class="flex flex-wrap gap-x-4 gap-y-1">
+                            {% if ':' in job.role %}
+                                <span class="font-mono text-[11px] flex items-baseline gap-1.5">
+                                    <span class="text-zinc-700 uppercase tracking-widest shrink-0">Team</span>
+                                    <span class="text-zinc-500">{{ job.role.split(":")[1] .strip() }}</span>
+                                </span>
+                            {% endif %}
+                            {% if job.location %}
+                                <span class="font-mono text-[11px] flex items-baseline gap-1.5">
+                                    <span class="text-zinc-700 uppercase tracking-widest shrink-0">Location</span>
+                                    <span class="text-zinc-500">{{ job.location }}</span>
+                                </span>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                    <div class="exp-card-body">
+                        <!-- Summary -->
+                        {% if job.summary_short %}
+                            <div class="px-7 py-5 border-b border-zinc-900">
+                                <p class="text-sm text-zinc-500 leading-relaxed">
+                                    {{ job.summary_short }}
+                                </p>
+                            </div>
+                        {% endif %}
+
+                        <!-- Bullets -->
+                        {% if job.highlights %}
+                            <div class="exp-bullets px-7">
+                                {% for highlight in job.highlights %}
+                                    <div class="exp-bullet flex items-start gap-3 py-3.5 {% if not loop.last %}border-b border-zinc-900/80{% endif %} {% if loop.index > 3 %}hidden{% endif %}">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-emerald-400/40 flex-shrink-0 mt-[0.45rem]">
+                                        </div>
+                                        <p class="text-sm text-zinc-500 leading-relaxed">
+                                            {{ highlight }}
+                                        </p>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <!-- See more toggle — only if more than 3 highlights -->
+                            {% if job.highlights|length > 3 %}
+                                <div class="px-7 pb-4 pt-2">
+                                    <button onclick="toggleHighlights(this)"
+                                            data-expanded="false"
+                                            class="font-mono text-[11px] uppercase tracking-widest text-zinc-600 border border-zinc-800 rounded-md px-3 py-1.5 hover:text-emerald-400 hover:border-emerald-400/30 transition-colors duration-200">
+                                        See more ↓
+                                    </button>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+
+                    <!-- Tech tags -->
+                    {% if job.technologies %}
+                        <div class="px-7 py-4 border-t border-zinc-900 flex flex-wrap gap-1.5">
+                            {% for tech in job.technologies %}
+                                <span class="font-mono text-[11px] tracking-wide text-emerald-400 bg-emerald-400/6 border border-emerald-400/15 rounded-full px-2.5 py-0.5 hover:bg-emerald-400/12 hover:border-emerald-400/30 transition-colors duration-150 cursor-default">
+                                    {{ tech }}
+                                </span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 

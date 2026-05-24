@@ -2,34 +2,120 @@
   "photo": "/images/photo.jpg",
   "experience": [
     {
-      "period": "March 2025 - Present",
+      "period": "March 2025 — Present",
       "role": "Senior Software Engineer: New Website Platform (NWP) CMS Team",
-      "company": "Office for National Statistics, London UK",
-      "summary": "Worked on the Wagtail-based CMS powering the new ONS website platform, contributing across backend engineering, search integration, authentication, CI/CD, developer experience, and technical leadership.\n\nKey highlights:\n\n• Led and implemented the Wagtail–Kafka search integration, synchronising CMS content updates with the ONS Search Service using event-driven architecture and Kafka messaging.\n• Developed REST API endpoints using Django REST Framework (DRF) to expose indexable CMS content with pagination and contract-compliant schemas for downstream search services.\n• Integrated AWS Cognito authentication into Wagtail CMS using JWT-based authentication flows and custom Django middleware.\n• Led sandbox search integration work, collaborating with OpenSauce developers and producing reusable Confluence testing and integration documentation adopted by multiple teams.\n• Designed and implemented complex cross-pollination functionality enabling dynamic content surfacing between Topic, Statistical Article, and Methodology pages.\n• Delivered UX and backend improvements across Wagtail, including redirect logic, validation consistency improvements, and maintainable block refactors.\n• Diagnosed and resolved CI/CD and Kafka broker integration issues, improving pipeline stability and local developer workflows.\n• Supported Django upgrades, dependency maintenance, flaky test remediation, hotfixes, and build reliability improvements.\n• Led knowledge transfer sessions, onboarding support, PR reviews, release activities, and cross-functional collaboration with QA, User Research, BAs, PMs, and infrastructure engineers.\n• Contributed to staging integrations, deployment validation, release coordination, and long-term maintainability initiatives.\n\nTechnologies: Python, Django, Wagtail, DRF, Kafka, AWS Cognito, JWT, Playwright, Docker, CI/CD, Concourse, PostgreSQL, Jinja2, TypeScript, Terraform, and AWS services."
+      "company": "Office for National Statistics",
+      "location": "London, UK",
+      "summary_short": "Worked on the Wagtail-based CMS powering the new ONS website platform, contributing across backend engineering, search integration, authentication, CI/CD, developer experience, and technical leadership.",
+      "highlights": [
+        "Led and implemented the Wagtail–Kafka search integration, synchronising CMS content updates with the ONS Search Service using event-driven architecture and Kafka messaging.",
+        "Developed REST API endpoints using Django REST Framework (DRF) to expose indexable CMS content with pagination and contract-compliant schemas for downstream search services.",
+        "Integrated AWS Cognito authentication into Wagtail CMS using JWT-based authentication flows and custom Django middleware.",
+        "Led sandbox search integration work, collaborating with OpenSauce developers and producing reusable Confluence testing and integration documentation adopted by multiple teams.",
+        "Designed and implemented complex cross-pollination functionality enabling dynamic content surfacing between Topic, Statistical Article, and Methodology pages.",
+        "Delivered UX and backend improvements across Wagtail, including redirect logic, validation consistency improvements, and maintainable block refactors.",
+        "Diagnosed and resolved CI/CD and Kafka broker integration issues, improving pipeline stability and local developer workflows.",
+        "Supported Django upgrades, dependency maintenance, flaky test remediation, hotfixes, and build reliability improvements.",
+        "Led knowledge transfer sessions, onboarding support, PR reviews, release activities, and cross-functional collaboration with QA, User Research, BAs, PMs, and infrastructure engineers."
+      ],
+      "technologies": [
+        "Python",
+        "Django",
+        "Wagtail",
+        "DRF",
+        "Kafka",
+        "AWS Cognito",
+        "JWT",
+        "Playwright",
+        "Docker",
+        "Concourse",
+        "PostgreSQL",
+        "Jinja2",
+        "TypeScript",
+        "Terraform"
+      ]
     },
     {
-      "period": "June 2024 - March 2025",
-      "role": "Software Engineer: EQ Author (Census) & New Website Platform (ONS Website Replatforming/ Transformation) Teams",
-      "company": "Office for National Statistics, London UK",
-      "summary": "Worked on the New Website Platform (NWP) Content Management System, contributing to the development and improvement of large-scale internal CMS platforms using Python, Django, Wagtail, and front-end technologies.\n\nKey highlights:\n\n• Coordinated and managed development work across engineers with varying experience levels, refining Jira tickets and helping maintain delivery flow.\n• Co-led the Taxonomy and UI Testing Suite initiatives using Behave and Playwright, driving improvements across multiple engineering workstreams.\n• Delivered UX and UI improvements using Jinja2 and the ONS Design System.\n• Led development of the Main Menu and Footer Menu systems within Wagtail CMS, including custom validation functionality and pair programming with placement students.\n• Delivered multiple Wagtail component and UI enhancements, including PanelBlock improvements, spacing fixes, icon updates, and title refinements.\n• Led UX-focused improvements within the Wagtail admin experience based on user research findings, improving validation error handling and help text consistency.\n• Authored engineering documentation and process improvements, including code review standards and ONS Design System upgrade guidance.\n\nTechnologies: Python, Django, Wagtail, Jinja2, Playwright, Behave, TypeScript, JavaScript, AWS, CI/CD, ONS Design System.\n\nContributed to the EQ Author platform, working across front-end, authentication, validation, and UX improvement initiatives using React, Node.js, Express.js, and Firebase technologies.\n\nKey highlights:\n\n• Enhanced authentication resilience by implementing timeout functionality within custom authentication flows.\n• Mentored and pair-programmed with RTD students, supporting onboarding, development confidence, and code quality.\n• Led a UX improvement SPIKE for the EQ Survey Creation Tool extractor, analysing workflows and proposing design-led technical improvements.\n• Facilitated knowledge transfer during the EQ Runner and EQ Author team merge, helping maintain architectural alignment and continuity.\n• Identified documentation gaps across systems and raised technical improvement initiatives to improve maintainability and onboarding.\n• Worked with AJV schema validation and resolved front-end console error issues to improve application reliability.\n• Selected by the technical lead to lead the Python Flask component of a new service initiative.\n\nTechnologies: React, TypeScript, JavaScript, Node.js, Express.js, Firebase Auth, Python, Flask, AJV, CI/CD."
+      "period": "June 2024 — March 2025",
+      "role": "Software Engineer: EQ Author (Census) & New Website Platform",
+      "company": "Office for National Statistics",
+      "location": "London, UK",
+      "summary_short": "Contributed to the NWP Content Management System and the EQ Author census platform, spanning Python, Django, Wagtail, React, and Node.js across two engineering teams.",
+      "highlights": [
+        "Co-led the Taxonomy and UI Testing Suite initiatives using Behave and Playwright, driving improvements across multiple engineering workstreams.",
+        "Led development of the Main Menu and Footer Menu systems within Wagtail CMS, including custom validation functionality and pair programming with placement students.",
+        "Led UX-focused improvements within the Wagtail admin experience based on user research findings.",
+        "Enhanced authentication resilience by implementing timeout functionality within custom authentication flows on EQ Author.",
+        "Led a UX improvement SPIKE for the EQ Survey Creation Tool extractor, analysing workflows and proposing design-led technical improvements.",
+        "Selected by the technical lead to lead the Python Flask component of a new service initiative."
+      ],
+      "technologies": [
+        "Python",
+        "Django",
+        "Wagtail",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "Firebase Auth",
+        "Playwright",
+        "Behave",
+        "Flask",
+        "Jinja2"
+      ]
     },
     {
-      "period": "September 2022 - May 2024",
+      "period": "September 2022 — May 2024",
       "role": "Junior Software Engineer: Statistical Methods Library Team",
-      "company": "Office for National Statistics, Titchfield UK",
-      "summary": "Worked across multiple teams within ONS, contributing to large-scale government applications and internal platforms using Python, Flask, React, TypeScript, Node.js, AWS, and CI/CD tooling.\n\nKey highlights:\n\n• Led a proof of concept integrating a headless CMS into the Statistical Methods Library platform, later refined for production deployment.\n• Collaborated with tech leads, architects, stakeholders, and steering groups on system design, security, scalability, and delivery decisions.\n• Developed front-end and back-end features across Flask and React applications handling large-scale Census and statistical data workflows.\n• Built and improved automated testing pipelines using Selenium, Behave, Pytest, and CI/CD tooling, helping reduce execution times through pipeline parallelisation.\n• Delivered technical documentation, onboarding guides, presentations, demos, and knowledge-sharing sessions across engineering communities.\n• Supported non-functional testing initiatives including performance, accessibility, load, stress, and security testing.\n• Mentored placement students and supported developer onboarding and knowledge transfer across teams.\n\nTechnologies used included Python, Flask, Pandas, React, TypeScript, Node.js, Express.js, AWS, Terraform, Jenkins, Concourse CI, Selenium, Playwright, Pytest, and Apache JMeter."
+      "company": "Office for National Statistics",
+      "location": "Titchfield, UK",
+      "summary_short": "Worked across multiple teams within ONS, contributing to large-scale government applications and internal platforms.",
+      "highlights": [
+        "Led a proof of concept integrating a headless CMS into the Statistical Methods Library platform, later refined for production deployment.",
+        "Collaborated with tech leads, architects, stakeholders, and steering groups on system design, security, scalability, and delivery decisions.",
+        "Built and improved automated testing pipelines using Selenium, Behave, Pytest, and CI/CD tooling, reducing execution times through pipeline parallelisation.",
+        "Supported non-functional testing initiatives including performance, accessibility, load, stress, and security testing.",
+        "Mentored placement students and supported developer onboarding and knowledge transfer across teams."
+      ],
+      "technologies": [
+        "Python",
+        "Flask",
+        "Pandas",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "AWS",
+        "Terraform",
+        "Jenkins",
+        "Concourse CI",
+        "Selenium",
+        "Pytest",
+        "JMeter"
+      ]
     },
     {
-      "period": "April 2021 - April 2021",
-      "role": "Technology Spring Intern, Software Engineering",
-      "company": "JPMorgan Chase & Co, Bournemouth UK",
-      "summary": "Worked on a programming project utilising fuzzy logic to develop a sanctions screening application.\n\nAttended technical sessions and workshops, gaining early exposure to:\n\n• Agile software development methodologies\n• Cybersecurity within FinTech\n• Technology in Corporate & Investment Banking\n• User Experience (UX) design principles and workshops\n\nThis experience gave me an early understanding of how technology, software engineering, and business intersect within real-world industries."
+      "period": "April 2021",
+      "role": "Technology Spring Intern: Software Engineering",
+      "company": "JPMorgan Chase & Co",
+      "location": "Bournemouth, UK",
+      "summary_short": "Early industry exposure building a sanctions screening application using fuzzy logic, alongside Agile, cybersecurity, and UX workshops.",
+      "highlights": [
+        "Worked on a programming project utilising fuzzy logic to develop a sanctions screening application.",
+        "Attended technical sessions gaining exposure to Agile methodologies, cybersecurity within FinTech, and UX design principles."
+      ],
+      "technologies": ["Python", "Fuzzy Logic", "Agile"]
     },
     {
-      "period": "June 2019 - June 2019",
+      "period": "June 2019",
       "role": "Database Assistant",
-      "company": "UK Home Office, London UK",
-      "summary": "During my time at the Home Office, I gained hands-on experience working with and managing large-scale databases in a real-world operational environment.\n\nMy responsibilities included verifying and uploading immigration documentation, ensuring records were processed accurately and securely. I also cross-referenced physical immigration documents against internal system records to maintain data accuracy and integrity.\n\nThis experience gave me valuable insight into how large government systems operate, particularly around data handling, verification processes, and attention to detail in high-responsibility environments."
+      "company": "UK Home Office",
+      "location": "London, UK",
+      "summary_short": "Gained hands-on experience working with large-scale government databases, verifying and uploading immigration documentation with accuracy and data integrity.",
+      "highlights": [
+        "Verified and uploaded immigration documentation, ensuring records were processed accurately and securely.",
+        "Cross-referenced physical immigration documents against internal system records to maintain data accuracy and integrity."
+      ],
+      "technologies": ["Database Management", "Data Verification"]
     }
   ],
   "skills": [

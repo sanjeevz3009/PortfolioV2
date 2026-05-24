@@ -233,3 +233,11 @@ window.toggleHighlights = function (btn) {
   btn.dataset.expanded = String(!expanded);
   btn.textContent = !expanded ? 'See less ↑' : 'See more ↓';
 };
+
+document.querySelectorAll('#about img').forEach((img) => {
+  if (img.complete) {
+    img.classList.add('loaded');
+  } else {
+    img.addEventListener('load', () => img.classList.add('loaded'));
+  }
+});

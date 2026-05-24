@@ -206,6 +206,12 @@
 
             <nav aria-label="Main navigation"
                  class="max-w-6xl mx-auto px-6 h-full flex items-center justify-center relative">
+                <a href="/#home"
+                   class="absolute left-6 font-mono font-bold text-sm tracking-widest uppercase nav-logo"
+                   aria-label="Home">
+                    <span class="text-emerald-400">SANJ</span><span class="nav-logo-eev eev-outline">EEV</span>
+                </a>
+
                 {{ nav_list(nav_items, list_id="nav-links", list_class="hidden md:flex items-center gap-8", link_class="nav-link text-sm text-zinc-500 hover:text-emerald-300 transition-colors") }}
 
                 <button id="nav-toggle"

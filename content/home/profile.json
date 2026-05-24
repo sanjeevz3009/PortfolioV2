@@ -4,11 +4,11 @@
     {
       "period": "March 2025 — Present",
       "role": "Senior Software Engineer: New Website Platform (NWP) CMS Team",
-      "company": "Office for National Statistics",
+      "company": "Office for National Statistics (ONS)",
       "location": "London, UK",
-      "summary_short": "Worked on the Wagtail-based CMS powering the new ONS website platform, contributing across backend engineering, search integration, authentication, CI/CD, developer experience, and technical leadership.",
+      "summary_short": "Currently working on the Wagtail-based CMS powering the new ONS website platform, contributing across backend engineering, search integration, authentication, CI/CD, developer experience, and technical leadership.",
       "highlights": [
-        "Led and implemented the Wagtail–Kafka search integration, synchronising CMS content updates with the ONS Search Service using event-driven architecture and Kafka messaging.",
+        "Led and implemented the Wagtail-Kafka search integration, synchronising CMS content updates with the ONS Search Service using event-driven architecture and Kafka messaging.",
         "Developed REST API endpoints using Django REST Framework (DRF) to expose indexable CMS content with pagination and contract-compliant schemas for downstream search services.",
         "Integrated AWS Cognito authentication into Wagtail CMS using JWT-based authentication flows and custom Django middleware.",
         "Led sandbox search integration work, collaborating with OpenSauce developers and producing reusable Confluence testing and integration documentation adopted by multiple teams.",
@@ -22,23 +22,27 @@
         "Python",
         "Django",
         "Wagtail",
-        "DRF",
+        "Django DRF",
         "Kafka",
         "AWS Cognito",
         "JWT",
+        "Cucumber",
+        "Behave",
         "Playwright",
         "Docker",
-        "Concourse",
         "PostgreSQL",
         "Jinja2",
-        "TypeScript",
-        "Terraform"
+        "Concourse",
+        "GitHub Actions",
+        "AWS",
+        "Python Unittest",
+        "ONS Design System/ GovUK Design System"
       ]
     },
     {
       "period": "June 2024 — March 2025",
       "role": "Software Engineer: EQ Author (Census) & New Website Platform",
-      "company": "Office for National Statistics",
+      "company": "Office for National Statistics (ONS)",
       "location": "London, UK",
       "summary_short": "Contributed to the NWP Content Management System and the EQ Author census platform, spanning Python, Django, Wagtail, React, and Node.js across two engineering teams.",
       "highlights": [
@@ -61,20 +65,26 @@
         "Playwright",
         "Behave",
         "Flask",
-        "Jinja2"
+        "Jinja2",
+        "Jest",
+        "AJV",
+        "GCP",
+        "AWS"
       ]
     },
     {
       "period": "September 2022 — May 2024",
-      "role": "Junior Software Engineer: Statistical Methods Library Team",
-      "company": "Office for National Statistics",
+      "role": "Junior Software Engineer: Statistical Methods Library (SML) Team & Census Clerical Matching Team",
+      "company": "Office for National Statistics (ONS)",
       "location": "Titchfield, UK",
-      "summary_short": "Worked across multiple teams within ONS, contributing to large-scale government applications and internal platforms.",
+      "summary_short": "Worked across multiple teams within ONS, contributing to major government applications and internal platforms.",
       "highlights": [
-        "Led a proof of concept integrating a headless CMS into the Statistical Methods Library platform, later refined for production deployment.",
+        "Led a proof of concept integrating a headless CMS (Contentful) into the Statistical Methods Library platform, later refined for production deployment.",
         "Collaborated with tech leads, architects, stakeholders, and steering groups on system design, security, scalability, and delivery decisions.",
         "Built and improved automated testing pipelines using Selenium, Behave, Pytest, and CI/CD tooling, reducing execution times through pipeline parallelisation.",
         "Supported non-functional testing initiatives including performance, accessibility, load, stress, and security testing.",
+        "Supported the delivery of an imputation statistical method (Python & Pandas) by leading various components, which were integrated into the data processing pipelines.",
+        "Contributed to the development of a web application (TS, React, Node.js, Express.js) enabling clerical matchers to identify and resolve duplicate Census (data of over 60 million people) entries not caught by automated pipelines (~9% of cases).",
         "Mentored placement students and supported developer onboarding and knowledge transfer across teams."
       ],
       "technologies": [
@@ -90,7 +100,7 @@
         "Concourse CI",
         "Selenium",
         "Pytest",
-        "JMeter"
+        "Apache JMeter"
       ]
     },
     {
@@ -110,7 +120,7 @@
       "role": "Database Assistant",
       "company": "UK Home Office",
       "location": "London, UK",
-      "summary_short": "Gained hands-on experience working with large-scale government databases, verifying and uploading immigration documentation with accuracy and data integrity.",
+      "summary_short": "Gained hands-on experience working with substantial government databases, verifying and uploading immigration documentation with accuracy and data integrity.",
       "highlights": [
         "Verified and uploaded immigration documentation, ensuring records were processed accurately and securely.",
         "Cross-referenced physical immigration documents against internal system records to maintain data accuracy and integrity."
@@ -128,7 +138,7 @@
         { "name": "Wagtail", "level": "Expert" },
         { "name": "Flask", "level": "Advanced" },
         { "name": "TypeScript", "level": "Intermediate" },
-        { "name": "Node.js", "level": "Advanced" },
+        { "name": "Node.js", "level": "Intermediate" },
         { "name": "Express.js", "level": "Intermediate" }
       ]
     },
@@ -139,7 +149,7 @@
         { "name": "JavaScript", "level": "Advanced" },
         { "name": "React", "level": "Intermediate" },
         { "name": "HTML / CSS", "level": "Advanced" },
-        { "name": "Tailwind CSS", "level": "Advanced" },
+        { "name": "Tailwind CSS", "level": "Intermediate" },
         { "name": "Jinja2", "level": "Expert" }
       ]
     },
@@ -169,8 +179,8 @@
       "items": [
         { "name": "Git", "level": "Advanced" },
         { "name": "GitHub Actions", "level": "Advanced" },
-        { "name": "Concourse CI", "level": "Advanced" },
-        { "name": "Kafka", "level": "Advanced" }
+        { "name": "Concourse CI", "level": "Intermediate" },
+        { "name": "Kafka", "level": "Intermediate" }
       ]
     },
     {
@@ -178,9 +188,9 @@
       "icon": "M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11",
       "items": [
         { "name": "Pytest", "level": "Advanced" },
-        { "name": "Jest", "level": "Advanced" },
+        { "name": "Jest", "level": "Intermediate" },
         { "name": "Playwright", "level": "Advanced" },
-        { "name": "Cypress", "level": "Advanced" },
+        { "name": "Cypress", "level": "Intermediate" },
         { "name": "Cucumber/Behave", "level": "Expert" }
       ]
     },
@@ -189,7 +199,7 @@
       "icon": "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
       "items": [
         { "name": "REST APIs", "level": "Advanced" },
-        { "name": "Microservices", "level": "Advanced" },
+        { "name": "Microservices", "level": "Intermediate" },
         { "name": "System Design", "level": "Advanced" },
         { "name": "OOP", "level": "Advanced" }
       ]
@@ -208,79 +218,90 @@
     {
       "label": "Community",
       "icon": "ti-users-group",
-      "title": "Software Engineering CoP Board",
+      "title": "Software Engineering Community of Practice (CoP) Board",
       "description": "Active board member involved in recruitment, role-profile reviews, and career-progression framework updates.",
-      "badge": "Board member"
+      "badge": "Board member",
+      "companies": ["ONS"]
     },
     {
       "label": "Events",
       "icon": "ti-presentation",
       "title": "Talks, hackathons & community sessions",
-      "description": "Organised community talks, hackathons, newsletters, and technical exchange sessions. Delivered a talk on headless content management systems.",
-      "badge": "Speaker"
+      "description": "Organised community talks, hackathons, newsletters, lightning talks and technical exchange sessions. Delivered community sessions, lightning talks etc. i.e., a talk on headless content management systems.",
+      "badge": "Ograniser | Speaker",
+      "companies": ["ONS"]
     },
     {
       "label": "Leadership",
       "icon": "ti-exchange",
       "title": "Community Tech Exchange Team",
       "description": "Led the initiative to form the team, working directly with the Head of Profession and Innovation Team. Delivered 7+ community sessions for Python and JS.",
-      "badge": "Founder"
+      "badge": "Founder",
+      "companies": ["ONS"]
     },
     {
       "label": "Standards",
       "icon": "ti-settings-2",
       "title": "Technical Advisory Group (TAG)",
       "description": "Contributed to the creation and review of software-engineering principles and standards to align practices across ONS.",
-      "badge": "Contributor"
+      "badge": "Contributor",
+      "companies": ["ONS"]
     },
     {
       "label": "Outreach",
       "icon": "ti-building-community",
       "title": "Outreach Ambassador",
       "description": "Promoted ONS programmes such as Year-in-Industry and Apprenticeships. Delivered onboarding sessions, presentations, and Q&A panels for new placement students.",
-      "badge": "Ambassador"
+      "badge": "Ambassador",
+      "companies": ["ONS"]
     },
     {
       "label": "Mentoring",
       "icon": "ti-user-star",
       "title": "Student mentoring & leadership",
       "description": "Mentored 4+ students, supporting their technical growth across teams and disciplines.",
-      "badge": "4+ mentees"
+      "badge": "4+ mentees",
+      "companies": ["ONS"]
     },
     {
       "label": "Engagement",
       "icon": "ti-speakerphone",
       "title": "Show-and-tells & workshops",
-      "description": "Regularly presented at internal and external show-and-tells, dev meetings, and product away-days. Brought in guest speakers and contributed Loom guides for QATs, researchers, and PMs.",
-      "badge": "Regular contributor"
+      "description": "Regularly presented at internal and external show-and-tells for business stakeholders, dev meetings, and product away-days. Brought in guest speakers and contributed Loom guides for QATs, researchers, and PMs.",
+      "badge": "Regular contributor",
+      "companies": ["ONS"]
     },
     {
       "label": "Process",
       "icon": "ti-file-description",
       "title": "Documentation & templates",
       "description": "Authored template repositories, documentation standards, and technical guides. Created and refined tech-debt tickets to improve backlog hygiene.",
-      "badge": "Process owner"
+      "badge": "Process owner",
+      "companies": ["ONS"]
     },
     {
       "label": "Strategy",
       "icon": "ti-rocket",
       "title": "Strategic initiatives",
       "description": "Participated in CPD Log Pilot, GDD Pay Framework, and career-progression reviews. Initiated discussions on engineering best practices within tech sessions.",
-      "badge": "Strategic contributor"
+      "badge": "Strategic contributor",
+      "companies": ["ONS"]
     },
     {
       "label": "Collaboration",
       "icon": "ti-sitemap",
       "title": "Cross-functional collaboration",
-      "description": "Worked closely with QATs, user researchers, DMs, TLs, BAs, and PMs to triage and refine cards for key releases; provided support during resourcing gaps.",
-      "badge": "Cross-functional"
+      "description": "Worked closely with QATs, user researchers, DMs, TLs, BAs, and PMs to triage and refine work for key releases; provided support/ stepping up during resourcing gaps.",
+      "badge": "Cross-functional",
+      "companies": ["ONS"]
     },
     {
       "label": "Post-release",
       "icon": "ti-zoom-check",
       "title": "Post-release investigations",
       "description": "Led investigation and documentation of post-Day-1 features such as live production data sync and audit logging, facilitating workshops and recording findings on Confluence.",
-      "badge": "Lead investigator"
+      "badge": "Lead investigator",
+      "companies": ["ONS"]
     }
   ],
   "projects": [
@@ -301,7 +322,7 @@
     {
       "title": "Newsletter Sentinel",
       "description": "A personal pipeline that fetches newsletters from Gmail, deduplicates stories using Jaccard similarity, and generates AI-powered daily digests via Claude.",
-      "tech": ["Python", "Claude API", "SQLite", "Gmail API", "Railway"],
+      "tech": ["Python", "Claude API", "SQLite", "Gmail API"],
       "github": "https://github.com/sanjeevz3009/NewsletterSentinel",
       "live": "",
       "featured": true
@@ -329,7 +350,6 @@
         "Flask",
         "Jinja2",
         "Chart.js",
-        "C++",
         "Arduino",
         "ESP32"
       ],
@@ -347,7 +367,7 @@
     },
     {
       "title": "Scrabble",
-      "description": "A fully playable browser-based Scrabble game with multiple board designs, letter scoring, double/triple word and letter squares, valid word checking, and connection validation.",
+      "description": "A fully playable browser-based Scrabble game with, letter scoring, double/triple word and letter squares, valid word checking, and connection validation.",
       "tech": ["JavaScript", "Node.js", "HTML", "CSS"],
       "github": "https://github.com/sanjeevz3009/Scrabble",
       "live": "",
@@ -375,61 +395,69 @@
     {
       "icon": "🏹",
       "name": "Archery",
-      "description": "Recurve & compound. Precision under pressure."
+      "description": "I shoot a recurve olympic bow. Find the competitions I will be at below in the upcoming events section."
     },
     {
       "icon": "🏃",
       "name": "Running",
-      "description": "5Ks to 10Ks. Chasing personal bests."
+      "description": "Currently training for 10Ks, half marathons, marathons, and trail running versions of those. Find the races I'll be at below in the upcoming events section."
     },
     {
       "icon": "🏎️",
       "name": "Go Karting",
-      "description": "Track days & competitive indoor racing."
+      "description": "You will find me on the karting track trying to not spin out. See the upcoming events section for the races I'll be at."
     },
     {
       "icon": "🚗",
-      "name": "Formula Racing",
-      "description": "Sim & real-world circuit experiences."
+      "name": "Formula Car Racing",
+      "description": "You will find me on the track, at Silverstone."
     },
     {
       "icon": "📷",
       "name": "Photography",
-      "description": "Street, motorsport & landscape."
+      "description": "Just started recently, got a shitty DSLR and film camera."
     }
   ],
   "upcoming_events": [
     {
-      "month": "Jun",
-      "day": "08",
-      "title": "London 10K — Hyde Park",
-      "meta": "Hyde Park, London · Race day",
+      "month": "May",
+      "day": "31",
+      "title": "AJ Bell Great Manchester Run: 10K",
+      "meta": "Manchester · Race day",
       "tag": "Running",
       "tag_type": "run"
     },
     {
-      "month": "Jun",
-      "day": "21",
-      "title": "AWS Summit London 2025",
-      "meta": "ExCeL London · Conference",
-      "tag": "Tech",
-      "tag_type": "tech"
+      "month": "July",
+      "day": "11",
+      "title": "Snowdonia Trail Eryri 2026: 10K",
+      "meta": "Snowdonia, Wales · Race day",
+      "tag": "Running",
+      "tag_type": "run"
     },
     {
-      "month": "Jul",
-      "day": "05",
-      "title": "Karting Championship — Rnd 3",
-      "meta": "TeamSport Indy, London · Race",
-      "tag": "Karting",
-      "tag_type": "race"
+      "month": "September",
+      "day": "27",
+      "title": "2026 Vitality London: 10K",
+      "meta": "London · Race day",
+      "tag": "Running",
+      "tag_type": "run"
     },
     {
-      "month": "Aug",
-      "day": "17",
-      "title": "Regional Archery Tournament",
-      "meta": "Longbow Club, Surrey · Competition",
-      "tag": "Archery",
-      "tag_type": "archery"
+      "month": "October",
+      "day": "11",
+      "title": "ASICS LDNX: 10K",
+      "meta": "London · Race day",
+      "tag": "Running",
+      "tag_type": "run"
+    },
+    {
+      "month": "November",
+      "day": "01",
+      "title": "Anglesey Trail Half Marathon 2026 Trail Running: Half Marathon",
+      "meta": "Anglesey, Wales · Race day",
+      "tag": "Running",
+      "tag_type": "run"
     }
   ]
 }

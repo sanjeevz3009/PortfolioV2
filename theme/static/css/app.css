@@ -119,3 +119,15 @@ html {
 #about {
   overflow: hidden;
 }
+
+@media (max-width: 767px) {
+  #about img {
+    filter: grayscale(0) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #about .group .absolute {
+    transform: translate(0.75rem, 0.75rem) !important;
+  }
+}

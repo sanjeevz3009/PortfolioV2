@@ -18,12 +18,119 @@ html {
   scroll-padding-top: calc(var(--nav-height) + 16px);
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 .about-copy p {
   margin-bottom: 1.25rem;
 }
 
 .about-copy p:last-child {
   margin-bottom: 0;
+}
+
+.eev-outline {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: var(--eev-stroke, 1.5px) #34d399;
+  color: transparent;
+}
+
+.nav-logo .eev-outline {
+  --eev-stroke: 0.8px;
+}
+
+#about {
+  overflow: hidden;
+}
+
+.nav-logo-eev {
+  display: inline;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition:
+    max-width 0.3s ease,
+    opacity 0.3s ease;
+  vertical-align: baseline;
+}
+
+.nav-logo:hover .nav-logo-eev {
+  opacity: 1;
+  max-width: 100px;
+}
+
+.hobby-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(52, 211, 153, 0.06) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hobby-card:hover::before {
+  opacity: 1;
+}
+
+.hobby-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(52, 211, 153, 0.4),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hobby-card:hover::after {
+  opacity: 1;
+}
+
+.tag-race {
+  background: rgba(251, 146, 60, 0.08);
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.2);
+}
+
+.tag-run {
+  background: rgba(52, 211, 153, 0.08);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.tag-tech {
+  background: rgba(96, 165, 250, 0.08);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.tag-archery {
+  background: rgba(167, 139, 250, 0.08);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.tl-spine-line {
+  flex: 1;
+  width: 1px;
+  background-color: #27272a;
+  margin-top: 0.25rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -52,107 +159,13 @@ html {
   }
 }
 
-.hobby-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(52, 211, 153, 0.06) 0%,
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: inherit;
-  pointer-events: none;
-}
-.hobby-card:hover::before {
-  opacity: 1;
-}
-.hobby-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(52, 211, 153, 0.4),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.hobby-card:hover::after {
-  opacity: 1;
-}
-
-.tag-race {
-  background: rgba(251, 146, 60, 0.08);
-  color: #fb923c;
-  border: 1px solid rgba(251, 146, 60, 0.2);
-}
-.tag-run {
-  background: rgba(52, 211, 153, 0.08);
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.2);
-}
-.tag-tech {
-  background: rgba(96, 165, 250, 0.08);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.2);
-}
-.tag-archery {
-  background: rgba(167, 139, 250, 0.08);
-  color: #a78bfa;
-  border: 1px solid rgba(167, 139, 250, 0.2);
-}
-
-.eev-outline {
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1.5px #34d399;
-  color: transparent;
-}
-
-#about {
-  overflow: hidden;
-}
-
 @media (max-width: 767px) {
   #about img {
     filter: grayscale(0) !important;
   }
-}
-
-
-@media (max-width: 767px) {
   #about .group .absolute {
     transform: translate(0.75rem, 0.75rem) !important;
   }
-}
-
-.nav-logo-eev {
-  display: inline;
-  opacity: 0;
-  max-width: 0;
-  overflow: hidden;
-  transition:
-    max-width 0.3s ease,
-    opacity 0.3s ease;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1.5px #34d399;
-  color: transparent;
-  vertical-align: baseline;
-}
-
-.nav-logo:hover .nav-logo-eev {
-  opacity: 1;
-  max-width: 100px;
-}
-
-@media (max-width: 767px) {
   .nav-logo-eev {
     opacity: 1 !important;
     max-width: 100px !important;

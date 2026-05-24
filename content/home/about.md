@@ -4,4 +4,4 @@ I’m Sanjeev, but you can call me **Sanj**. I love coding (when things work wit
 
 I enjoy the full journey of building software, from architecture and problem-solving to communication, teamwork, and turning ideas into something real that people can use.
 
-Outside of software engineering and working hard to deliver high priority projects at work, I spend my time running around, go karting, formula car racing, taking pictures, archery, coding random useful and useless projects (but no project is useless), and going on road trips.
+Outside of software engineering career and working hard to deliver high priority projects, I spend my time running around, go karting, formula car racing, taking pictures, archery, coding random useful and useless projects (but no project is useless), and going on road trips/ long drives around the UK.

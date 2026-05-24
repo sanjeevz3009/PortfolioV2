@@ -6,7 +6,8 @@
     <section id="home"
              class="min-h-screen flex flex-col items-center justify-center relative text-center px-6">
         <h1 class="text-6xl md:text-7xl font-normal leading-tight mb-4">
-            Hi, I am <span class="text-emerald-400">{{ AUTHOR.split()[0] }}</span>
+            Hi, I am
+            <span class="text-emerald-400">Sanj</span><span class="eev-outline">eev</span>
         </h1>
 
         <div class="flex flex-col items-center gap-1 text-2xl text-zinc-500 mt-8 mb-0">
@@ -81,7 +82,6 @@
                 <div class="grid gap-x-4 mb-6 reveal"
                      style="grid-template-columns: 110px 20px 1fr">
 
-                    <!-- Date -->
                     <!-- Date -->
                     <div class="text-right pt-1">
                         <span class="font-mono text-[11px] tracking-widest uppercase text-zinc-500 leading-relaxed">
@@ -448,6 +448,87 @@
                     View More on GitHub
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- Other Endeavors -->
+    <section id="other-endeavors"
+             class="min-h-screen flex items-center justify-center py-20 px-6">
+        <div class="max-w-4xl mx-auto w-full">
+
+            <!-- Other Endeavors -->
+            <p class="font-mono text-[11px] tracking-widest uppercase text-emerald-400 text-center mb-2 reveal">
+                Life outside the terminal
+            </p>
+            <h2 class="text-4xl font-normal text-emerald-400 text-center mb-4 reveal">
+                Hobbies & Passions
+            </h2>
+            <p class="text-sm text-zinc-500 text-center mb-12 reveal">
+                When I'm not shipping code, you'll find me doing something that involves speed, precision, or a camera.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-px bg-zinc-900 border border-zinc-900 rounded-xl overflow-hidden mb-20 reveal">
+                {% for hobby in HOME_PROFILE.hobbies %}
+                    <div class="hobby-card relative bg-zinc-950 px-4 py-6 transition-colors duration-200 cursor-default hover:bg-zinc-900/80">
+                        <span class="text-3xl mb-3 block leading-none">{{ hobby.icon }}</span>
+                        <p class="text-sm font-medium text-zinc-300 mb-1 transition-colors duration-200">
+                            {{ hobby.name }}
+                        </p>
+                        <p class="text-xs text-zinc-600 leading-relaxed font-mono">
+                            {{ hobby.description }}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Upcoming -->
+            <p class="font-mono text-[11px] tracking-widest uppercase text-emerald-400 text-center mb-2 reveal">
+                On the radar
+            </p>
+            <h2 class="text-4xl font-normal text-emerald-400 text-center mb-4 reveal">
+                Where I'll be next
+            </h2>
+            <p class="text-sm text-zinc-500 text-center mb-10 reveal">
+                Events, races, and meetups coming up.
+            </p>
+
+            <div class="flex flex-col gap-px reveal">
+                {% for event in HOME_PROFILE.upcoming_events %}
+                    <div class="flex items-center gap-4 px-5 py-4 bg-zinc-950/50 border border-zinc-900 {% if loop.first %}rounded-t-xl{% endif %} {% if loop.last %}rounded-b-xl{% endif %} hover:bg-zinc-900/40 transition-colors duration-200 relative group">
+
+                        <!-- Left accent line on hover -->
+                        <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200 {% if loop.first %}rounded-tl-xl{% endif %} {% if loop.last %}rounded-bl-xl{% endif %}">
+                        </div>
+
+                        <!-- Date chip -->
+                        <div class="font-mono text-center bg-emerald-400/6 border border-emerald-400/15 rounded-md px-2.5 py-1.5 flex-shrink-0 w-14">
+                            <span class="block text-[10px] tracking-widest uppercase text-emerald-400">
+                                {{ event.month }}
+                            </span>
+                            <span class="block text-lg font-medium text-white leading-tight">
+                                {{ event.day }}
+                            </span>
+                        </div>
+
+                        <!-- Info -->
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-zinc-200 truncate">
+                                {{ event.title }}
+                            </p>
+                            <p class="text-xs text-zinc-600 font-mono truncate">
+                                {{ event.meta }}
+                            </p>
+                        </div>
+
+                        <!-- Tag -->
+                        <span class="font-mono text-[10px] tracking-widest uppercase px-2.5 py-1 rounded-full flex-shrink-0 tag-{{ event.tag_type }}">
+                            {{ event.tag }}
+                        </span>
+
+                    </div>
+                {% endfor %}
+            </div>
+
         </div>
     </section>
 

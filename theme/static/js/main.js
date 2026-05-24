@@ -50,6 +50,7 @@
     'contact',
     'blog-preview',
     'projects',
+    'other-endeavors',
     'skills',
     'experience',
     'about',

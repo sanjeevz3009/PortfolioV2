@@ -370,5 +370,66 @@
       "live": "",
       "featured": false
     }
+  ],
+  "hobbies": [
+    {
+      "icon": "🏹",
+      "name": "Archery",
+      "description": "Recurve & compound. Precision under pressure."
+    },
+    {
+      "icon": "🏃",
+      "name": "Running",
+      "description": "5Ks to 10Ks. Chasing personal bests."
+    },
+    {
+      "icon": "🏎️",
+      "name": "Go Karting",
+      "description": "Track days & competitive indoor racing."
+    },
+    {
+      "icon": "🚗",
+      "name": "Formula Racing",
+      "description": "Sim & real-world circuit experiences."
+    },
+    {
+      "icon": "📷",
+      "name": "Photography",
+      "description": "Street, motorsport & landscape."
+    }
+  ],
+  "upcoming_events": [
+    {
+      "month": "Jun",
+      "day": "08",
+      "title": "London 10K — Hyde Park",
+      "meta": "Hyde Park, London · Race day",
+      "tag": "Running",
+      "tag_type": "run"
+    },
+    {
+      "month": "Jun",
+      "day": "21",
+      "title": "AWS Summit London 2025",
+      "meta": "ExCeL London · Conference",
+      "tag": "Tech",
+      "tag_type": "tech"
+    },
+    {
+      "month": "Jul",
+      "day": "05",
+      "title": "Karting Championship — Rnd 3",
+      "meta": "TeamSport Indy, London · Race",
+      "tag": "Karting",
+      "tag_type": "race"
+    },
+    {
+      "month": "Aug",
+      "day": "17",
+      "title": "Regional Archery Tournament",
+      "meta": "Longbow Club, Surrey · Competition",
+      "tag": "Archery",
+      "tag_type": "archery"
+    }
   ]
 }

@@ -124,27 +124,6 @@
 
         <link rel="stylesheet" href="/theme/static/css/style.css" />
 
-        <!-- Tailwind config — matches Figma dark theme -->
-        <script>
-          tailwind.config = {
-            theme: {
-              extend: {
-                colors: {
-                  zinc: {
-                    750: '#2a2a2a',
-                    850: '#111111',
-                    900: '#0a0a0a',
-                    950: '#09090b',
-                  },
-                },
-                fontFamily: {
-                  sans: ['Inter', 'system-ui', 'sans-serif'],
-                },
-              },
-            },
-          };
-        </script>
-
         <!-- Our CSS after Tailwind — wins the cascade -->
         <link rel="stylesheet" href="{{ theme_path }}/css/app.css" />
         <link rel="stylesheet" href="{{ theme_path }}/css/prose.css" />

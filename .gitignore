@@ -56,3 +56,10 @@ dmypy.json
 ._*
 Thumbs.db
 Desktop.ini
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Generated CSS — built at deploy time
+theme/static/css/style.css

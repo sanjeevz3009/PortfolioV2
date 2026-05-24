@@ -122,8 +122,7 @@
         <link rel="stylesheet"
               href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
-        <!-- Tailwind CDN -->
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/theme/static/css/style.css" />
 
         <!-- Tailwind config — matches Figma dark theme -->
         <script>
@@ -251,6 +250,6 @@
             &copy; {{ CURRENT_YEAR }} {{ SITENAME }}. All rights reserved.
         </footer>
 
-        <script src="{{ theme_path }}/js/main.js"></script>
+        <script src="{{ theme_path }}/js/main.js" defer></script>
     </body>
 </html>

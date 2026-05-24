@@ -395,22 +395,17 @@
     {
       "icon": "🏹",
       "name": "Archery",
-      "description": "I shoot a recurve olympic bow. Find the competitions I will be at below in the upcoming events section."
+      "description": "I shoot a recurve olympic bow."
     },
     {
       "icon": "🏃",
       "name": "Running",
-      "description": "Currently training for 10Ks, half marathons, marathons, and trail running versions of those. Find the races I'll be at below in the upcoming events section."
+      "description": "Currently training for 10Ks, half marathons, marathons, and trail running versions of those."
     },
     {
       "icon": "🏎️",
-      "name": "Go Karting",
-      "description": "You will find me on the karting track trying to not spin out. See the upcoming events section for the races I'll be at."
-    },
-    {
-      "icon": "🚗",
-      "name": "Formula Car Racing",
-      "description": "You will find me on the track, at Silverstone."
+      "name": "Go Karting | Formula Car Racing",
+      "description": "You will find me on the karting track trying to not spin out or at Silverstone."
     },
     {
       "icon": "📷",

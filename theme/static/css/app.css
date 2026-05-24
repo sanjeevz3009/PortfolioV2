@@ -39,12 +39,12 @@ html {
 
 @media (max-width: 768px) {
   #experience .grid {
-    grid-template-columns: 1fr !important;
+    display: block !important;
   }
   #experience .grid > div:nth-child(1) {
     text-align: left !important;
     padding-top: 0 !important;
-    padding-left: 0.5rem;
+    padding-left: 0;
     margin-bottom: 0.5rem;
   }
   #experience .grid > div:nth-child(2) {

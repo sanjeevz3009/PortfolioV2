@@ -62,46 +62,6 @@ body {
   max-width: 100px;
 }
 
-.hobby-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(52, 211, 153, 0.06) 0%,
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: inherit;
-  pointer-events: none;
-}
-
-.hobby-card:hover::before {
-  opacity: 1;
-}
-
-.hobby-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(52, 211, 153, 0.4),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.hobby-card:hover::after {
-  opacity: 1;
-}
-
 .tag-race {
   background: rgba(251, 146, 60, 0.08);
   color: #fb923c;

@@ -466,14 +466,14 @@
                 When I'm not shipping code, you'll find me doing something to do with the below activities.
             </p>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-zinc-900 border border-zinc-900 rounded-xl overflow-hidden mb-20 reveal">
+            <div class="flex flex-col gap-4 mb-20 reveal">
                 {% for hobby in HOME_PROFILE.hobbies %}
-                    <div class="hobby-card relative bg-zinc-950 px-4 py-6 transition-colors duration-200 cursor-default hover:bg-zinc-900/80">
+                    <div class="bg-zinc-950/50 border border-zinc-900 rounded-2xl p-6 hover:border-emerald-400/20 transition-colors duration-200">
                         <span class="text-3xl mb-3 block leading-none">{{ hobby.icon }}</span>
-                        <p class="text-sm font-medium text-zinc-300 mb-1 transition-colors duration-200">
+                        <p class="text-sm font-medium text-white mb-1">
                             {{ hobby.name }}
                         </p>
-                        <p class="text-xs text-zinc-600 leading-relaxed font-mono">
+                        <p class="text-xs text-zinc-500 leading-relaxed">
                             {{ hobby.description }}
                         </p>
                     </div>
@@ -495,11 +495,9 @@
                 {% for event in HOME_PROFILE.upcoming_events %}
                     <div class="flex items-center gap-4 px-5 py-4 bg-zinc-950/50 border border-zinc-900 {% if loop.first %}rounded-t-xl{% endif %} {% if loop.last %}rounded-b-xl{% endif %} hover:bg-zinc-900/40 transition-colors duration-200 relative group">
 
-                        <!-- Left accent line on hover -->
                         <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200 {% if loop.first %}rounded-tl-xl{% endif %} {% if loop.last %}rounded-bl-xl{% endif %}">
                         </div>
 
-                        <!-- Date chip -->
                         <div class="font-mono text-center bg-emerald-400/6 border border-emerald-400/15 rounded-md px-2.5 py-1.5 flex-shrink-0 w-14">
                             <span class="block text-[10px] tracking-widest uppercase text-emerald-400">
                                 {{ event.month }}
@@ -509,7 +507,6 @@
                             </span>
                         </div>
 
-                        <!-- Info -->
                         <div class="flex-1 min-w-0">
                             <p class="text-sm font-medium text-zinc-200">
                                 {{ event.title }}
@@ -519,7 +516,6 @@
                             </p>
                         </div>
 
-                        <!-- Tag -->
                         <span class="font-mono text-[10px] tracking-widest uppercase px-2.5 py-1 rounded-full flex-shrink-0 tag-{{ event.tag_type }}">
                             {{ event.tag }}
                         </span>

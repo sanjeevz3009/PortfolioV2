@@ -105,10 +105,10 @@ SITEMAP = {
 }
 
 # Typography
-TYPOGRIFY = True
+TYPOGRIFY = False
 
 # Don't mess with typography in these tags
-TYPOGRIFY_IGNORE_TAGS = ["pre", "code", "kbd", "math"]
+TYPOGRIFY_IGNORE_TAGS = ["pre", "code", "kbd", "math", "nav", "header"]
 
 # Pagination — off, keep it simple
 DEFAULT_PAGINATION = False

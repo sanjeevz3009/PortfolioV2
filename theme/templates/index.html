@@ -141,7 +141,7 @@
                             {% if job.highlights %}
                                 <div class="exp-bullets px-7">
                                     {% for highlight in job.highlights %}
-                                        <div class="exp-bullet flex items-start gap-3 py-3.5 {% if not loop.last %}border-b border-zinc-900/80{% endif %} {% if loop.index > 3 %}hidden{% endif %}">
+                                        <div class="exp-bullet flex items-start gap-3 py-3.5 {% if not loop.last %}border-b border-zinc-900/80{% endif %} hidden">
                                             <div class="w-1.5 h-1.5 rounded-full bg-emerald-400/40 flex-shrink-0 mt-[0.45rem]">
                                             </div>
                                             <p class="text-sm text-zinc-500 leading-relaxed">
@@ -150,15 +150,13 @@
                                         </div>
                                     {% endfor %}
                                 </div>
-                                {% if job.highlights|length > 3 %}
-                                    <div class="px-7 pb-4 pt-2">
-                                        <button onclick="toggleHighlights(this)"
-                                                data-expanded="false"
-                                                class="font-mono text-[11px] uppercase tracking-widest text-zinc-600 border border-zinc-800 rounded-md px-3 py-1.5 hover:text-emerald-400 hover:border-emerald-400/30 transition-colors duration-200">
-                                            See more ↓
-                                        </button>
-                                    </div>
-                                {% endif %}
+                                <div class="px-7 pb-4 pt-2">
+                                    <button onclick="toggleHighlights(this)"
+                                            data-expanded="false"
+                                            class="font-mono text-[11px] uppercase tracking-widest text-zinc-600 border border-zinc-800 rounded-md px-3 py-1.5 hover:text-emerald-400 hover:border-emerald-400/30 transition-colors duration-200">
+                                        See more ↓
+                                    </button>
+                                </div>
                             {% endif %}
                         </div>
 

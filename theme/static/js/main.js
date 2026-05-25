@@ -225,8 +225,8 @@ window.toggleHighlights = function (btn) {
   const cardBody = btn.closest('.exp-card-body');
   if (!cardBody) return;
 
-  cardBody.querySelectorAll('.exp-bullet').forEach((el, i) => {
-    if (i >= 3) el.classList.toggle('hidden', expanded);
+  cardBody.querySelectorAll('.exp-bullet').forEach((el) => {
+    el.classList.toggle('hidden', expanded);
   });
 
   btn.dataset.expanded = String(!expanded);

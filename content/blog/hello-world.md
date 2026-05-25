@@ -3,7 +3,7 @@ Date: 2026-05-25
 Slug: i-am-sanjeev
 Category: General
 Summary: This is my first blog post on my newly built personal website. I'll talk a bit about myself and what's to come.
-<!-- cover_image: /theme/images/mochi.jpg -->
+cover_image: /images/mochi2.png
 
 Yes, you're seeing a picture of me with a bunny on the cover image of this post 😄. His name is **Mochi**. He is very destructive and lives in Manchester currently, and as we speak, he is probably trying to eat my friend's shoes or something. He is not mine, Mochi resides with one of my friend who has two bunnies, **Mochi** and **Poffin**. I don't have many pictures of myself, or have social media, as I am a very private person. The only pictures I have now are front of a formula car, archery (to check my form and capture some moments) and with Mochi.
 

@@ -7,7 +7,7 @@ Summary: This is my first blog post on my newly built personal website. I'll tal
 
 Yes, you're seeing a picture of me with a bunny on the cover image of this post 😄. His name is **Mochi**. He is very destructive and lives in Manchester currently, and as we speak, he is probably trying to eat my friend's shoes or something. He is not mine, Mochi resides with one of my friend who has two bunnies, **Mochi** and **Poffin**. I don't have many pictures of myself, or have social media, as I am a very private person. The only pictures I have now are front of a formula car, archery (to check my form and capture some moments) and with Mochi.
 
-## A Bit About Myself/ Why Did I Spin Pp a Personal Website
+## A Bit About Myself/ Why Did I Spin Up a Personal Website
 
 At this stage in my career, and life, everywhere I go, I am asked for my socials and people want to know a bit more about me. I will never be on social media, but I do have LinkedIn, which I give out to people.
 

@@ -56,7 +56,7 @@ So I switched and focused in on the next equally important and passionate area I
 * My class in primary school maybe in year 6 was taken to Whitgift school which was a fancy private school with their own zoo and stuff... We learnt Scratch there and I made a little game along with rest of my class, but there were a few of us who were excited, including me.
 * I mostly got super excited by something that happened there which was the teacher could control any computer in that class room, remotely and you can see the mouse movements, applications being opened, etc. This blew my mind and that's probably what sparked something around technology and computers back then more making things on Scratch.
 
-## Where the Computer Science & Coding Journey Started
+## How the Computer Science & Coding Journey Started
 
 * Pilot dream was shattered, so I put that in my backlog as I am alive and well, there are other things I can do in this great country.
 * Secondary school was a struggle, which could be a another blog post or a book in itself, which I won't write.

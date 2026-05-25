@@ -111,7 +111,7 @@ body {
   #experience .grid > div:nth-child(1) {
     text-align: left !important;
     padding-top: 0 !important;
-    padding-left: 0;
+    padding-left: 0.5rem;
     margin-bottom: 0.5rem;
   }
   #experience .grid > div:nth-child(2) {

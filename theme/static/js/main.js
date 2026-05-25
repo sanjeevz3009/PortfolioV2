@@ -16,7 +16,6 @@
   window.addEventListener(
     'scroll',
     () => {
-      // Use zinc-900 (#18181b) to match Figma nav border-zinc-900
       nav.style.borderBottomColor =
         window.scrollY > threshold ? '#18181b' : 'transparent';
     },
@@ -35,12 +34,11 @@
     );
   };
 
-  // Non-home pages — match by path
   if (path.startsWith('/blog')) {
     setActive('blog');
     return;
   }
-  // Any future non-home, non-blog pages default to "home" — update this if new sections are added
+
   if (path !== '/' && path !== '/index.html') {
     setActive('home');
     return;
@@ -49,8 +47,9 @@
   const sectionIds = [
     'contact',
     'blog-preview',
+    'other-endeavours',
     'projects',
-    'other-endeavors',
+    'beyond',
     'skills',
     'experience',
     'about',
@@ -64,7 +63,9 @@
       if (!el) continue;
       const rect = el.getBoundingClientRect();
       if (rect.top <= mid) {
-        const navId = id === 'blog-preview' ? 'blog' : id;
+        let navId = id;
+        if (id === 'blog-preview') navId = 'blog';
+        if (id === 'beyond') navId = 'skills';
         setActive(navId);
         return;
       }
@@ -102,7 +103,6 @@
     }
   });
 
-  // Escape key closes mobile menu
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
       menu.classList.add('hidden');
@@ -159,7 +159,6 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Validate fields
     const nameEl = document.getElementById('name');
     const emailEl = document.getElementById('email');
     const messageEl = document.getElementById('message');
@@ -233,11 +232,3 @@ window.toggleHighlights = function (btn) {
   btn.dataset.expanded = String(!expanded);
   btn.textContent = !expanded ? 'See less ↑' : 'See more ↓';
 };
-
-document.querySelectorAll('#about img').forEach((img) => {
-  if (img.complete) {
-    img.classList.add('loaded');
-  } else {
-    img.addEventListener('load', () => img.classList.add('loaded'));
-  }
-});

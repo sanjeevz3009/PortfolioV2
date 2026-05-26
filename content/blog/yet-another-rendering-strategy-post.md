@@ -14,7 +14,7 @@ I decided to write this article on SSR, CSR, SSG, and ISR because I recently fou
 
 One of the reasons my personal website actually got fully built, deployed across multiple platforms at one point, and eventually took off was because of him, or more specifically, the inspiration, advice, and perspective I gained from speaking with him and researching his work online.
 
-We had a genuinely great conversation, although the details will stay private. You can probably tell from my website homepage and my first blog post (LINK HERE) that I have some experience within the JavaScript and React ecosystem, but I am by no means a front-end expert.
+We had a genuinely great conversation, although the details will stay private. You can probably tell from my website homepage and my first blog post [I am Sanjeev: How I Went From Picking Up Shrapnels to Picking Up Coding]({filename}/blog/hello-world.md) that I have some experience within the JavaScript and React ecosystem, but I am by no means a front-end expert.
 
 At work, I’ve mainly been learning from our front-end engineer while also delegating a lot of the heavier front-end work to our front-end engineer from Torchbox (TBX) 🙃.
 

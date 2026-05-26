@@ -1,7 +1,8 @@
 Title: Yet a Another Front-end Rendering Strategies Article: Beginners Guide to SSR, CSR, SSG, & ISR
 Date: 2026-05-25
 Slug: yet-another-front-end-rendering-strategies-article
-Category: General
+Category: Frontend Engineering
+Tags: SSR, CSR, SSG, ISR, React, Next.js, SEO, Core Web Vitals, Rendering
 Summary: A practical beginner-friendly guide that demystifies modern front-end rendering strategies including SSR, CSR, SSG, ISR, and Partial Prerendering (PPR). The article explores how each rendering approach works, their real-world use cases, performance and SEO trade-offs, and why modern web applications increasingly rely on hybrid rendering architectures. Written from the perspective of a Python-focused engineer revisiting the React and Next.js ecosystem.
 cover_image: /images/rendering_strategies.png
 

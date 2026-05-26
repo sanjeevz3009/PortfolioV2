@@ -554,4 +554,4 @@ Good luck!
 * [Vercel: How Core Web Vitals Affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo){target="_blank" rel="noopener noreferrer"}
 * [Vercel: How Vercel Improves Your Website's Search Engine Ranking](https://vercel.com/resources/how-vercel-improves-your-websites-search-engine-ranking#network-response-time-to-first-byte-(ttfb)){target="_blank" rel="noopener noreferrer"}
 * [Vercel: The User Experience of the Frontend Cloud](https://vercel.com/blog/the-user-experience-of-the-frontend-cloud){target="_blank" rel="noopener noreferrer"}
-* [Vercel: Next.js SEO Playbook](https://vercel.com/blog/nextjs-seo-playbook#content-strategies){target="_blank" rel="noopener noreferrer"}
+* [Vercel: Next.js SEO Playbook](https://vercel.com/blog/nextjs-seo-playbook){target="_blank" rel="noopener noreferrer"}

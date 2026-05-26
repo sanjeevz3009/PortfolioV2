@@ -504,6 +504,50 @@ In many ways, PPR represents where modern rendering architectures seem to be hea
 * Debugging streaming behaviour can introduce additional complexity
 * The ecosystem around PPR is still maturing
 
+## Closing Thoughts
+
+If you made it all the way to the end of this article, congratulations, you now probably understand front-end rendering strategies better than I did when I walked into that conversation with the senior director 😅.
+
+Hopefully this article helped demystify SSR, CSR, SSG, ISR, and even some of the newer ideas such as Partial Prerendering (PPR), without making them feel overly academic or unnecessarily complicated.
+
+One of the biggest things I realised while revisiting these concepts is that modern web engineering is increasingly becoming about choosing the right rendering strategy for the right problem rather than blindly committing to a single approach.
+
+The reality is:
+
+* modern applications are hybrid
+* trade-offs are everywhere
+* performance matters
+* SEO matters
+* user experience matters
+* and JavaScript bundles somehow still end up being 4MB regardless 🙃
+
+As someone whose background primarily lives within the Python ecosystem, particularly Flask, Django, and Wagtail, revisiting these concepts was genuinely refreshing. It also reminded me how much modern front-end engineering has evolved over the last few years.
+
+We have gone from:
+
+* “everything server-rendered”
+* to “everything client-rendered”
+
+And now towards intelligent hybrid architectures combining:
+
+* SSR
+8 SSG
+* ISR
+* streaming
+* edge rendering
+* Suspense boundaries
+* and selective hydration
+
+...all within the same application.
+
+Which is both incredibly exciting and overwhelming at the same time.
+
+Anyway, thank you for reading my “Yet Another Front-end Rendering Strategies Article”.
+
+Now go optimise your Core Web Vitals, reduce your JavaScript bundle sizes, and try not to accidentally turn your homepage into a distributed systems research paper.
+
+Good luck!
+
 ## References
 
 * [Vercel: How to Choose the Best Rendering Strategy for Your App](https://vercel.com/blog/how-to-choose-the-best-rendering-strategy-for-your-app){target="_blank" rel="noopener noreferrer"}

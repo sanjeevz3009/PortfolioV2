@@ -208,4 +208,9 @@ I am trying to do the same for this personal website.
 * I want share my experience with JS, React and anything I am learning such as Next.JS and Vercel products recently.
 * Utilise this site to put up my achievements career wise and having dedicated pages for archery, photography, racing/ go karting, running, etc. I already have the designs and code for these dedicated pages, and I will be slowly enabling them/ making them public.
 
-If you want to follow along, there's an [Atom feed](/feeds/all.atom.xml) - no newsletter, no tracking, just plain old RSS.
+If you want to follow along, there's an [Atom feed](/feeds/all.atom.xml){target="_blank" rel="noopener noreferrer"} - no newsletter, no tracking, just plain old RSS.
+
+## Follow Me On
+
+* [https://linkedin.com/in/sanjeev-srithevan-526718196](https://linkedin.com/in/sanjeev-srithevan-526718196){target="_blank" rel="noopener noreferrer"}
+* [https://github.com/sanjeevz3009](https://github.com/sanjeevz3009){target="_blank" rel="noopener noreferrer"}

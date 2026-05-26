@@ -44,7 +44,7 @@
                             {% if article.cover_image %}
                                 <img src="{{ article.cover_image }}"
                                      alt="{{ article.title }}"
-                                     class="h-full w-full object-cover" />
+                                     class="w-full h-auto" />
                             {% else %}
                                 <div class="h-56 bg-gradient-to-br from-emerald-400/20 to-black flex items-center justify-center relative overflow-hidden"
                                      aria-hidden="true">
@@ -84,7 +84,7 @@
                                        class="after:absolute after:inset-0">{{ article.title }}</a>
                                 </h2>
 
-                                <p class="text-zinc-500 mb-4 flex-1 line-clamp-3 text-sm leading-relaxed">
+                                <p class="text-zinc-500 mb-4 line-clamp-3 text-sm leading-relaxed">
                                     {{ article.summary }}
                                 </p>
 

@@ -7,7 +7,7 @@ cover_image: /images/rendering_strategies.png
 
 ## Why Am I Writing Yet Another Article On This Topic?
 
-**If you don't care about my personal context.** Skip to **LINK HERE**
+**If you don't care about my personal context.** Skip to [Let's Demystify SSR, CSR, SSG & ISR](#lets-demystify-ssr-csr-ssg-isr) <!-- markdownlint-disable-line MD051 -->
 
 I decided to write this article on SSR, CSR, SSG, and ISR because I recently found myself in a room with one of the senior directors of a very prominent tech company.
 

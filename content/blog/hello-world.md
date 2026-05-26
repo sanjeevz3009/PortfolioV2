@@ -162,7 +162,7 @@ So I switched and focused in on the next equally important and passionate area I
 
 ## Why a static site?
 
-I went with a SSG for this personal website. See my **blog post on SSG, SSR, CSR, and ISR** if you want to  understand these concepts deeper (I wrote that blog post to re-learn the concepts).
+I went with a SSG for this personal website. **[See my article on SSG, SSR, CSR, and ISR]({filename}/blog/yet-another-rendering-strategy-post.md)** if you want to  understand these concepts deeper (I wrote that blog post to re-learn the concepts).
 
 I always like to start a project or have a tech-stack that's very vanilla or barebones and build from there.
 

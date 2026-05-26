@@ -160,7 +160,7 @@ So I switched and focused in on the next equally important and passionate area I
 * I love **go karting** and a while ago have done the **formula car racing experience at Silverstone**. Soon I'll be outdoors for 70 mph karting but now that I have done a Formula car experience at Silverstone, 70 MPH karting seems easy now. Maybe I'll do few more F1 simulations and go back to Silverstone.
 * **Photography** is something I have been trying to get into recently. I got a fun film camera. I will put the pics up on the website photography page (when I enable that page), once I process the film roll in a lab.
 
-## Why a static site?
+## Why a Static Site?
 
 I went with a SSG for this personal website. **[See my article on SSG, SSR, CSR, and ISR]({filename}/blog/yet-another-rendering-strategy-post.md)** if you want to  understand these concepts deeper (I wrote that blog post to re-learn the concepts).
 

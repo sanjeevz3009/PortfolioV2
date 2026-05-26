@@ -57,10 +57,10 @@ Failing to properly understand rendering strategies can absolutely cost you in t
 * web performance
 * user experience
 * SEO rankings
-8 scalability
+* scalability
 * and even infrastructure costs in some cases
 
-If you want to go deeper into Core Web Vitals and metrics such as FCP, LCP, INP, FID, TTFB, TTI, TBT, and CLS, I have included references further below.
+If you want to go deeper into Core Web Vitals and metrics such as FCP, LCP, INP, FID, TTFB, TTI, TBT, and CLS, **I have included references further below**.
 
 And ultimately, poor performance costs users.
 
@@ -555,3 +555,6 @@ Good luck!
 * [Vercel: How Vercel Improves Your Website's Search Engine Ranking](https://vercel.com/resources/how-vercel-improves-your-websites-search-engine-ranking#network-response-time-to-first-byte-(ttfb)){target="_blank" rel="noopener noreferrer"}
 * [Vercel: The User Experience of the Frontend Cloud](https://vercel.com/blog/the-user-experience-of-the-frontend-cloud){target="_blank" rel="noopener noreferrer"}
 * [Vercel: Next.js SEO Playbook](https://vercel.com/blog/nextjs-seo-playbook){target="_blank" rel="noopener noreferrer"}
+* [Optimise LCP](https://web.dev/articles/optimize-lcp){target="_blank" rel="noopener noreferrer"}
+* [Optimise CLS](https://web.dev/articles/optimize-cls){target="_blank" rel="noopener noreferrer"}
+* [Optimise INP](https://web.dev/articles/optimize-inp){target="_blank" rel="noopener noreferrer"}

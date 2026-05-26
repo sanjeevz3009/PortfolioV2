@@ -176,7 +176,7 @@ One of the biggest criticisms of poorly optimised CSR applications is the infamo
 
 Static Site Generation (SSG): SSG prerenders pages at build time, resulting in static HTML files that can be cached at the edge and served quickly and efficiently.
 
-With SSG, HTML is gebnerated build time, not at request time. This way, the server doesn't do the rendering; it simply serves the pre-built files.
+With SSG, HTML is generated build time, not at request time. This way, the server doesn't do the rendering; it simply serves the pre-built files.
 
 The way SSG works is HTML for all pages is generated in advance and usually stored on a Content Delivery Network (CDN).
 

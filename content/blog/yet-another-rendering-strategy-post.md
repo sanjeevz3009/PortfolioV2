@@ -349,7 +349,7 @@ CSR works best when:
 
 * SEO is less important
 * interactivity is extremely important
-* and users spend long periods interacting with the application after the * initial load
+* and users spend long periods interacting with the application after the initial load
 
 A lot of modern SaaS products lean heavily into CSR.
 

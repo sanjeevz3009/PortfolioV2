@@ -147,7 +147,7 @@ So I switched and focused in on the next equally important and passionate area I
 * Within the Software Engineering community at the ONS, I became one of the fastest progressing engineers in the organisation. Ironically, the second fastest is my tech lead/ he is my close friend, who is still older than me. So naturally, my next goal is to beat even his record for progression within the organisation.
 * I am now a senior engineer working at a lead engineer level soon to progress once again, and as I write this blog post my tech-lead is off for a few weeks (just like me he has too much leave built up) while I am stepping into his technical-lead role, as we both can't be off at the same time.
 
-## What I Am Doing In My Life Now?
+## What Am I Doing In My Life Now?
 
 * Chasing dreams and finding opportunities, experiences for growth in my life whether it's for my career or to grow as a person mentally, spiritually etc.
 * This means I'll be reading all kinds of books from spiritual, business, self improvement, strategy or sitting in nature meditating or going somewhere and learning new skill.

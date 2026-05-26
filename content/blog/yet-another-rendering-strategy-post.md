@@ -531,7 +531,7 @@ We have gone from:
 And now towards intelligent hybrid architectures combining:
 
 * SSR
-8 SSG
+* SSG
 * ISR
 * streaming
 * edge rendering

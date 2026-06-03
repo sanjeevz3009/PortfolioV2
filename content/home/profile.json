@@ -8,7 +8,7 @@
       "location": "London, UK",
       "summary_short": "Currently working on the Wagtail-based CMS powering the new ONS website platform, contributing across backend engineering, search integration, authentication, CI/CD, developer experience, and technical leadership. Taking on a lead engineer role within the team, supporting the delivery of key features and releases for the new website platform as we move to phase 2.",
       "highlights": [
-        "Led and helped drive the delivery of phase 1 of the new website platform, contributing with hands on development, technical leadership, and cross-functional collaboration across multiple teams, especially during resourcing gaps filling in for DM, PM roles and regularly stepping into the technical-lead role.",
+        "Led and contributed to the delivery of phase 1 of the new website platform, contributing with hands on development, technical leadership, and cross-functional collaboration across multiple teams, especially during resourcing gaps filling in for DM, PM roles and regularly stepping into the technical-lead role.",
         "Led and implemented the Wagtail-Kafka search integration, synchronising CMS content updates with the ONS Search Service using event-driven architecture and Kafka messaging.",
         "Developed REST API endpoints using Django REST Framework (DRF) to expose indexable CMS content with pagination and contract-compliant schemas for downstream search services.",
         "Integrated AWS Cognito authentication into Wagtail CMS using JWT-based authentication flows and custom Django middleware.",

@@ -367,6 +367,22 @@
       "featured": true
     },
     {
+      "title": "Financial Dashboard",
+      "description": "A financial dashboard application featuring invoice management, customer tracking, and authentication. Built with Next.js App Router, featuring server actions, streaming with Suspense, and modern React patterns.",
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "React",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "NextAuth.js",
+        "Zod"
+      ],
+      "github": "https://github.com/sanjeevz3009/Financial-Dashboard",
+      "live": "",
+      "featured": true
+    },
+    {
       "title": "Scrabble",
       "description": "A fully playable browser-based Scrabble game with, letter scoring, double/triple word and letter squares, valid word checking, and connection validation.",
       "tech": ["JavaScript", "Node.js", "HTML", "CSS"],

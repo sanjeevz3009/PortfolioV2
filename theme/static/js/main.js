@@ -23,7 +23,7 @@
   );
 })();
 
-// Active nav — precise getBoundingClientRect scroll spy
+// Active nav - precise getBoundingClientRect scroll spy
 (function () {
   const links = document.querySelectorAll('.nav-link');
   const path = window.location.pathname;
@@ -212,7 +212,7 @@
       if (btn) btn.disabled = false;
       if (errorMsg) {
         errorMsg.textContent =
-          'Something went wrong — please try again or email me directly.';
+          'Something went wrong - please try again or email me directly.';
         errorMsg.classList.remove('hidden');
       }
     }

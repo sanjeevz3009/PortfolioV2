@@ -1,4 +1,4 @@
-"""Pelican configuration — local development."""
+"""Pelican configuration - local development."""
 
 from __future__ import annotations
 
@@ -28,10 +28,10 @@ DIRECT_TEMPLATES = ["blog"]
 BLOG_URL = "blog/"
 BLOG_SAVE_AS = "blog/index.html"
 
-# Disable Pelican's default index — homepage is handled by TEMPLATE_PAGES
+# Disable Pelican's default index - homepage is handled by TEMPLATE_PAGES
 INDEX_SAVE_AS = ""
 
-# One-pager is the real homepage — served from a custom template page
+# One-pager is the real homepage - served from a custom template page
 TEMPLATE_PAGES = {"index.html": "index.html"}
 
 # Disable unused author/category/tag/archive pages
@@ -43,7 +43,7 @@ AUTHORS_SAVE_AS = ""
 CATEGORIES_SAVE_AS = ""
 TAGS_SAVE_AS = ""
 
-# Feeds — off locally
+# Feeds - off locally
 FEED_ALL_ATOM = None
 FEED_ALL_RSS = None
 CATEGORY_FEED_ATOM = None
@@ -94,7 +94,7 @@ SITEMAP = {
     "format": "xml",
     "priorities": {
         "articles": 0.8,
-        "indexes": 0.9,  # homepage is an index — give it highest priority
+        "indexes": 0.9,  # homepage is an index - give it highest priority
         "pages": 0.6,
     },
     "changefreqs": {
@@ -110,10 +110,10 @@ TYPOGRIFY = False
 # Don't mess with typography in these tags
 TYPOGRIFY_IGNORE_TAGS = ["pre", "code", "kbd", "math", "nav", "header"]
 
-# Pagination — off, keep it simple
+# Pagination - off, keep it simple
 DEFAULT_PAGINATION = False
 
-# Caching — off in dev so changes always rebuild
+# Caching - off in dev so changes always rebuild
 LOAD_CONTENT_CACHE = False
 
 PAGINATED_TEMPLATES = {"blog": None}

@@ -434,14 +434,16 @@
     {
       "month": "May",
       "day": "31",
+      "year": "2026",
       "title": "AJ Bell Great Manchester Run: 10K 2026",
       "meta": "Manchester · Race day",
-      "tag": "Running",
+      "tag": "Completed",
       "tag_type": "run"
     },
     {
       "month": "July",
       "day": "11",
+      "year": "2026",
       "title": "Snowdonia Trail Eryri: 10K 2026",
       "meta": "Snowdonia, Wales · Race day",
       "tag": "Running",
@@ -450,6 +452,7 @@
     {
       "month": "Sep",
       "day": "27",
+      "year": "2026",
       "title": "Vitality London: 10K 2026",
       "meta": "London · Race day",
       "tag": "Running",
@@ -458,6 +461,7 @@
     {
       "month": "Oct",
       "day": "11",
+      "year": "2026",
       "title": "ASICS LDNX: 10K 2026",
       "meta": "London · Race day",
       "tag": "Running",
@@ -466,6 +470,7 @@
     {
       "month": "Nov",
       "day": "01",
+      "year": "2026",
       "title": "Anglesey Trail Half Marathon Trail Running: Half Marathon 2026",
       "meta": "Anglesey, Wales · Race day",
       "tag": "Running",

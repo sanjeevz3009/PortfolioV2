@@ -19,7 +19,7 @@ Personal portfolio and blog. Built with [Pelican](https://getpelican.com), style
 
 ## Prerequisites
 
-- Python 3.14.x (via pyenv — `.python-version` is committed)
+- Python 3.14.x (via pyenv - `.python-version` is committed)
 - [uv](https://docs.astral.sh/uv/) installed
 
 ```bash
@@ -71,7 +71,7 @@ Then:
 
 ```bash
 git add content/blog/my-post-title.md
-git commit -m "feat: add post — my post title"
+git commit -m "feat: add post - my post title"
 git push
 ```
 
@@ -80,7 +80,7 @@ Vercel builds and deploys automatically.
 ## Deployment
 
 Vercel is configured via `vercel.json`. Connect the GitHub repo in Vercel
-dashboard and it handles everything — build, deploy, SSL.
+dashboard and it handles everything - build, deploy, SSL.
 
 Set `SITEURL` in the environment for production builds (publishconf requires it).
 

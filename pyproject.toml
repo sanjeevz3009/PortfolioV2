@@ -16,9 +16,10 @@ dev = [
     "pre-commit>=4.0.0",
     "ruff>=0.9.0",
     "djlint>=1.36.0",           # HTML/Jinja2 template linting + formatting
+    "pillow>=12.2.0",
 ]
 
-# Ruff — lint + format (replaces flake8, isort, pyupgrade, bandit subset)
+# Ruff - lint + format (replaces flake8, isort, pyupgrade, bandit subset)
 [tool.ruff]
 target-version = "py313"
 line-length = 88
@@ -51,7 +52,7 @@ quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 
-# djLint — Jinja2 template linting
+# djLint - Jinja2 template linting
 [tool.djlint]
 profile = "jinja"
 indent = 4

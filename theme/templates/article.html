@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
 {% block title %}
-    {{ article.title }} — {{ SITENAME }}
+    {{ article.title }} - {{ SITENAME }}
 {% endblock title %}
 
 {% block description %}
-    {{ article.summary }}
+    {{ article.summary | striptags | trim }}
 {% endblock description %}
 
 {% block og_title %}
-    {{ article.title }}
+    {{ article.title }} - {{ SITENAME }}
 {% endblock og_title %}
 
 {% block og_description %}
-    {{ article.summary }}
+    {{ article.summary | striptags | trim }}
 {% endblock og_description %}
 
 {% block og_type %}
@@ -82,19 +82,25 @@
                          stroke-linejoin="round">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
                     </svg>
-                    <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime("%B %d, %Y") }}</time>
+                    <time datetime="{{ article.date.strftime('%Y-%m-%d') }}">{{ article.date.strftime("%B %d, %Y") }}</time>
                 </span>
             </div>
 
-            <!-- Thumb — gradient -->
+            <!-- Thumb - gradient -->
             {% if article.cover_image %}
-                <img src="{{ article.cover_image }}"
-                     alt="{{ article.title }}"
-                     class="w-full h-auto rounded-lg mb-12" />
+                <picture>
+                    <source srcset="{{ article.cover_image | replace('.png', '.webp') | replace('.jpg', '.webp') }}"
+                            type="image/webp" />
+                    <img src="{{ article.cover_image }}"
+                         alt=""
+                         loading="lazy"
+                         class="w-full h-auto rounded-lg mb-12" />
+                </picture>
             {% else %}
                 <div class="h-96 bg-gradient-to-br from-emerald-400/20 to-black rounded-lg mb-12 flex items-center justify-center"
                      aria-hidden="true">
-                    <span class="text-9xl font-bold opacity-20 uppercase select-none">{{ article.title[0] }}</span>
+                    <span class="text-9xl font-bold opacity-20 uppercase select-none"
+                          aria-hidden="true">{{ article.title[0] }}</span>
                 </div>
             {% endif %}
 

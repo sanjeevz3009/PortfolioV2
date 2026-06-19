@@ -19,7 +19,7 @@
             </p>
         </div>
 
-        <!-- Bouncing arrow — absolute bottom centre -->
+        <!-- Bouncing arrow - absolute bottom centre -->
         <a href="/#about"
            aria-label="Scroll to about"
            class="hero-arrow absolute bottom-12 left-1/2 -translate-x-1/2 text-zinc-500 hover:text-emerald-400 transition-colors">
@@ -60,9 +60,14 @@
                         <div class="absolute inset-0 border border-emerald-400/50 rounded-sm translate-x-4 translate-y-4 transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:translate-y-3">
                         </div>
                         <!-- Image -->
-                        <img src="{{ HOME_PROFILE.photo }}"
-                             alt="Photo of {{ AUTHOR }}"
-                             class="relative z-10 w-full h-full object-cover rounded-sm md:grayscale hover:grayscale-0 transition-all duration-500 ease-out" />
+                        <picture>
+                            <source srcset="/images/photo.webp" type="image/webp" />
+                            <img src="{{ HOME_PROFILE.photo }}"
+                                 alt="Photo of {{ AUTHOR }}"
+                                 width="420"
+                                 height="520"
+                                 class="relative z-10 w-full h-full object-cover rounded-sm md:grayscale hover:grayscale-0 transition-all duration-500 ease-out" />
+                        </picture>
                     </div>
                 </div>
 
@@ -85,9 +90,9 @@
                     <!-- Date -->
                     <div class="text-right pt-1">
                         <span class="font-mono text-[11px] tracking-widest uppercase text-zinc-500 leading-relaxed">
-                            {% set parts = job.period.split('—') %}
+                            {% set parts = job.period.split('-') %}
                             {% if parts|length > 1 %}
-                                {{ parts[0].strip() }} — {{ parts[1].strip() }}
+                                {{ parts[0].strip() }} - {{ parts[1].strip() }}
                             {% else %}
                                 {{ parts[0].strip() }}
                             {% endif %}
@@ -115,13 +120,13 @@
                             <div class="flex flex-wrap gap-x-4 gap-y-1">
                                 {% if ':' in job.role %}
                                     <span class="font-mono text-[11px] flex items-baseline gap-1.5">
-                                        <span class="text-zinc-700 uppercase tracking-widest shrink-0">Team</span>
+                                        <span class="text-zinc-500 uppercase tracking-widest shrink-0">Team</span>
                                         <span class="text-zinc-500">{{ job.role.split(":")[1] .strip() }}</span>
                                     </span>
                                 {% endif %}
                                 {% if job.location %}
                                     <span class="font-mono text-[11px] flex items-baseline gap-1.5">
-                                        <span class="text-zinc-700 uppercase tracking-widest shrink-0">Location</span>
+                                        <span class="text-zinc-500 uppercase tracking-widest shrink-0">Location</span>
                                         <span class="text-zinc-500">{{ job.location }}</span>
                                     </span>
                                 {% endif %}
@@ -496,12 +501,15 @@
                         <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200 {% if loop.first %}rounded-tl-xl{% endif %} {% if loop.last %}rounded-bl-xl{% endif %}">
                         </div>
 
-                        <div class="font-mono text-center bg-emerald-400/6 border border-emerald-400/15 rounded-md px-2.5 py-1.5 flex-shrink-0 w-14">
+                        <div class="font-mono text-center bg-emerald-400/6 border border-emerald-400/15 rounded-md px-2.5 py-1.5 flex-shrink-0 w-16">
                             <span class="block text-[10px] tracking-widest uppercase text-emerald-400">
                                 {{ event.month }}
                             </span>
                             <span class="block text-lg font-medium text-white leading-tight">
                                 {{ event.day }}
+                            </span>
+                            <span class="block text-[9px] text-zinc-500 font-mono leading-tight">
+                                {{ event.year }}
                             </span>
                         </div>
 
@@ -509,7 +517,7 @@
                             <p class="text-sm font-medium text-zinc-200">
                                 {{ event.title }}
                             </p>
-                            <p class="text-xs text-zinc-600 font-mono">
+                            <p class="text-xs text-zinc-500 font-mono">
                                 {{ event.meta }}
                             </p>
                         </div>
@@ -556,11 +564,16 @@
                     {% for article in articles[:3] %}
                         <article class="relative flex flex-col bg-zinc-950/50 border border-zinc-900 rounded-lg overflow-hidden hover:border-emerald-400/50 transition-all duration-200 group reveal">
 
-                            <!-- Gradient thumb — matches Figma from-emerald-400/20 to-black -->
+                            <!-- Gradient thumb - matches Figma from-emerald-400/20 to-black -->
                             {% if article.cover_image %}
-                                <img src="{{ article.cover_image }}"
-                                     alt="{{ article.title }}"
-                                     class="h-full w-full object-cover" />
+                                <picture>
+                                    <source srcset="{{ article.cover_image | replace('.png', '.webp') | replace('.jpg', '.webp') }}"
+                                            type="image/webp" />
+                                    <img src="{{ article.cover_image }}"
+                                         alt=""
+                                         loading="lazy"
+                                         class="h-full w-full object-cover" />
+                                </picture>
                             {% else %}
                                 <div class="h-48 bg-gradient-to-br from-emerald-400/20 to-black flex items-center justify-center"
                                      aria-hidden="true">
@@ -582,7 +595,7 @@
                                     {{ article.summary }}
                                 </p>
 
-                                <div class="flex items-center gap-4 text-zinc-600 text-xs mb-4">
+                                <div class="flex items-center gap-4 text-zinc-500 text-xs mb-4">
                                     <span class="flex items-center gap-1">
                                         <svg aria-hidden="true"
                                              focusable="false"
@@ -709,13 +722,13 @@
                 <p id="form-success"
                    class="hidden text-center text-sm text-emerald-400 py-2"
                    role="alert">
-                    ✓ Message sent — I'll be in touch soon.
+                    ✓ Message sent - I'll be in touch soon.
                 </p>
 
                 <p id="form-error"
                    class="hidden text-center text-sm text-red-400 py-2"
                    role="alert">
-                    Something went wrong — please try again or email me directly.
+                    Something went wrong - please try again or email me directly.
                 </p>
             </form>
 

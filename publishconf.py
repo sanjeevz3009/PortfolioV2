@@ -1,4 +1,4 @@
-"""Pelican configuration — production."""
+"""Pelican configuration - production."""
 
 from __future__ import annotations
 
@@ -24,10 +24,10 @@ except KeyError:
 
 RELATIVE_URLS = False
 
-# Feeds — enabled in production
+# Feeds - enabled in production
 FEED_ALL_ATOM = "feeds/all.atom.xml"
 
-# Cache — enable in production for faster builds
+# Cache - enable in production for faster builds
 LOAD_CONTENT_CACHE = True
 CACHE_CONTENT = True
 

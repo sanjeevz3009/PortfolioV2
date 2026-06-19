@@ -48,7 +48,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Gitleaks — detect secrets
+      - name: Gitleaks - detect secrets
         uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

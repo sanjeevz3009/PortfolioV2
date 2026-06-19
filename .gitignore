@@ -21,7 +21,7 @@ venv/
 env/
 .uv/
 
-# Pyenv — .python-version is intentionally committed, not ignored
+# Pyenv - .python-version is intentionally committed, not ignored
 
 # Mypy
 .mypy_cache/
@@ -43,7 +43,7 @@ dmypy.json
 *.swo
 *~
 
-# Environment / secrets — NEVER commit these
+# Environment / secrets - NEVER commit these
 .env
 .env.*
 !.env.example
@@ -61,5 +61,5 @@ Desktop.ini
 node_modules/
 npm-debug.log*
 
-# Generated CSS — built at deploy time
+# Generated CSS - built at deploy time
 theme/static/css/style.css
